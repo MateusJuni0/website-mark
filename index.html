@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="C&M Tecnologia - Agência Digital especializada em Design, Websites, Apps Móveis, E-Commerce e Automação com IA. Transformamos sua visão digital em resultados reais.">
+    <meta name="keywords" content="design, website, app móvel, e-commerce, automação, IA, agência digital, Portugal">
+    <meta name="author" content="C&M Tecnologia">
+    <meta name="theme-color" content="#7C3AED">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="C&M Tecnologia - Agência Digital">
+    <meta property="og:description" content="Transformamos sua visão digital em resultados reais. Design, Websites, Apps, E-Commerce e Automação.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cm-tecnologia.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/styles.css">
+    
+    <title>C&M Tecnologia - Agência Digital Profissional</title>
+</head>
+<body>
+    <!-- Header/Navegação -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <rect width="40" height="40" rx="8" fill="#7C3AED"/>
+                        <text x="50%" y="50%" font-size="20" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">CM</text>
+                    </svg>
+                    <span class="logo-text">C&M Tecnologia</span>
+                </div>
+                
+                <nav class="nav" id="nav">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#services" class="nav-link">Serviços</a>
+                    <a href="#portfolio" class="nav-link">Portfólio</a>
+                    <a href="#about" class="nav-link">Sobre</a>
+                    <a href="#contact" class="nav-link">Contato</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                    
+                    <button class="cta-button">Solicitar Orçamento</button>
+                    
+                    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="container">
+                <h1 class="hero-title">Transformamos sua visão digital em resultados reais</h1>
+                <p class="hero-subtitle">Design • Websites • Apps • E-Commerce • Automação & IA</p>
+                <p class="hero-description">Somos a agência digital que empreendedores, startups e pequenos empresários escolhem para crescer online. 5 anos de experiência, 10+ projetos entregues, soluções personalizadas que funcionam.</p>
+                
+                <div class="hero-ctas">
+                    <button class="btn btn-primary" data-action="scroll-contact">Solicitar Orçamento Grátis</button>
+                    <button class="btn btn-secondary" data-action="scroll-services">Conhecer Serviços</button>
+                </div>
+                
+                <div class="hero-social-proof">
+                    <span>✅ 10+ Projetos Entregues</span>
+                    <span>⭐ 4.9/5 em Reviews</span>
+                    <span>🚀 Crescimento Real</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-background"></div>
+    </section>
+
+    <!-- Serviços Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Nossos Serviços</h2>
+            <p class="section-subtitle">Soluções completas para transformar seu negócio digital</p>
+            
+            <div class="services-grid">
+                <!-- Design de Marca -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                            <circle cx="30" cy="30" r="28" stroke="#FFD700" stroke-width="2"/>
+                            <circle cx="20" cy="20" r="8" fill="#7C3AED"/>
+                            <circle cx="40" cy="20" r="8" fill="#10B981"/>
+                            <circle cx="30" cy="40" r="8" fill="#FFD700"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Design de Marca</h3>
+                    <p class="service-benefit">Identidade Visual Que Vende</p>
+                    <p class="service-description">Criamos identidades visuais que representam sua marca. Logo, cores, tipografia e guia completo. Personalizado conforme sua necessidade.</p>
+                    <ul class="service-features">
+                        <li>✅ Logo Profissional</li>
+                        <li>✅ Paleta de Cores</li>
+                        <li>✅ Guia de Marca</li>
+                    </ul>
+                    <button class="btn btn-outline">Ver Portfólio</button>
+                </div>
+
+                <!-- Websites -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                            <rect x="8" y="12" width="44" height="36" rx="2" stroke="#7C3AED" stroke-width="2"/>
+                            <line x1="8" y1="18" x2="52" y2="18" stroke="#7C3AED" stroke-width="2"/>
+                            <circle cx="12" cy="15" r="1.5" fill="#7C3AED"/>
+                            <circle cx="18" cy="15" r="1.5" fill="#7C3AED"/>
+                            <circle cx="24" cy="15" r="1.5" fill="#7C3AED"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Criação de Websites</h3>
+                    <p class="service-benefit">Site Que Atrai e Converte Clientes</p>
+                    <p class="service-description">Website profissional que gera leads e vendas. Responsivo, otimizado para SEO, rápido e seguro. Hospedagem, domínio e suporte inclusos.</p>
+                    <ul class="service-features">
+                        <li>✅ Design Responsivo</li>
+                        <li>✅ SEO Otimizado</li>
+                        <li>✅ Suporte Contínuo</li>
+                    </ul>
+                    <button class="btn btn-outline">Ver Websites</button>
+                </div>
+
+                <!-- Apps Móveis -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                            <rect x="18" y="8" width="24" height="44" rx="3" stroke="#10B981" stroke-width="2"/>
+                            <line x1="18" y1="14" x2="42" y2="14" stroke="#10B981" stroke-width="2"/>
+                            <circle cx="30" cy="50" r="2" fill="#10B981"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Apps Móveis</h3>
+                    <p class="service-benefit">Seu Negócio No Bolso Dos Clientes</p>
+                    <p class="service-description">Apps nativas iOS e Android com backend robusto. Seu negócio sempre acessível no celular dos seus clientes.</p>
+                    <ul class="service-features">
+                        <li>✅ iOS & Android</li>
+                        <li>✅ Backend Robusto</li>
+                        <li>✅ Suporte Técnico</li>
+                    </ul>
+                    <button class="btn btn-outline">Ver Apps</button>
+                </div>
+
+                <!-- E-Commerce -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                            <path d="M12 18L18 8H42L48 18" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+                            <rect x="10" y="18" width="40" height="28" rx="2" stroke="#FFD700" stroke-width="2"/>
+                            <line x1="20" y1="18" x2="20" y2="46" stroke="#FFD700" stroke-width="2"/>
+                            <line x1="30" y1="18" x2="30" y2="46" stroke="#FFD700" stroke-width="2"/>
+                            <line x1="40" y1="18" x2="40" y2="46" stroke="#FFD700" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Lojas Online</h3>
+                    <p class="service-benefit">Venda Online Em 30 Dias</p>
+                    <p class="service-description">E-commerce pronto para vender. Integração de pagamento, automação de pedidos, gerenciamento inteligente.</p>
+                    <ul class="service-features">
+                        <li>✅ Pagamento Online</li>
+                        <li>✅ Automação</li>
+                        <li>✅ Gestão de Estoque</li>
+                    </ul>
+                    <button class="btn btn-outline">Ver Lojas</button>
+                </div>
+
+                <!-- Design de Banners -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                            <rect x="8" y="12" width="44" height="36" rx="2" stroke="#7C3AED" stroke-width="2"/>
+                            <circle cx="22" cy="25" r="6" fill="#7C3AED" opacity="0.5"/>
+                            <path d="M44 38L32 20L20 32" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="44" cy="20" r="3" fill="#10B981"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Design de Banners</h3>
+                    <p class="service-benefit">Visuais Que Roubam Atenção</p>
+                    <p class="service-description">Visuais profissionais para todas as plataformas. Banners, posts, anúncios que convertem e comunicam com impacto.</p>
+                    <ul class="service-features">
+                        <li>✅ Redes Sociais</li>
+                        <li>✅ Google Ads</li>
+                        <li>✅ Email Marketing</li>
+                    </ul>
+                    <button class="btn btn-outline">Ver Portfolio</button>
+                </div>
+
+                <!-- IA & Automação -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                            <circle cx="30" cy="30" r="20" stroke="#10B981" stroke-width="2"/>
+                            <circle cx="30" cy="30" r="14" stroke="#10B981" stroke-width="2"/>
+                            <circle cx="30" cy="30" r="8" fill="#10B981"/>
+                            <line x1="30" y1="10" x2="30" y2="6" stroke="#10B981" stroke-width="2"/>
+                            <line x1="50" y1="30" x2="54" y2="30" stroke="#10B981" stroke-width="2"/>
+                            <line x1="30" y1="50" x2="30" y2="54" stroke="#10B981" stroke-width="2"/>
+                            <line x1="10" y1="30" x2="6" y2="30" stroke="#10B981" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">IA & Automação</h3>
+                    <p class="service-benefit">Processos Inteligentes, Menos Trabalho</p>
+                    <p class="service-description">Automação inteligente 24/7. Chatbots, processos automatizados, integração com suas ferramentas, análise de dados.</p>
+                    <ul class="service-features">
+                        <li>✅ Chatbots IA</li>
+                        <li>✅ Automação RPA</li>
+                        <li>✅ Análise de Dados</li>
+                    </ul>
+                    <button class="btn btn-outline">Solicitar Demo</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfólio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2 class="section-title">Nosso Portfólio</h2>
+            <p class="section-subtitle">Projetos que transformaram negócios</p>
+            
+            <div class="portfolio-grid">
+                <!-- Case 1 -->
+                <div class="portfolio-card">
+                    <div class="portfolio-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <div class="portfolio-overlay">
+                            <button class="btn btn-outline-white">Ver Projeto →</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">E-Commerce de Moda</h3>
+                        <span class="portfolio-category website">Website + E-commerce</span>
+                        <p class="portfolio-description"><strong>Problema:</strong> Loja física sem presença online. <strong>Solução:</strong> E-commerce completo com integração de pagamento. <strong>Resultado:</strong> +250% em vendas online.</p>
+                    </div>
+                </div>
+
+                <!-- Case 2 -->
+                <div class="portfolio-card">
+                    <div class="portfolio-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <div class="portfolio-overlay">
+                            <button class="btn btn-outline-white">Ver Projeto →</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">App de Delivery</h3>
+                        <span class="portfolio-category app">App Móvel</span>
+                        <p class="portfolio-description"><strong>Problema:</strong> Pedidos apenas por telefone. <strong>Solução:</strong> App iOS/Android com sistema de rastreamento. <strong>Resultado:</strong> +400% em pedidos/mês.</p>
+                    </div>
+                </div>
+
+                <!-- Case 3 -->
+                <div class="portfolio-card">
+                    <div class="portfolio-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <div class="portfolio-overlay">
+                            <button class="btn btn-outline-white">Ver Projeto →</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Consultoria Digital</h3>
+                        <span class="portfolio-category ecom">Website + Automação</span>
+                        <p class="portfolio-description"><strong>Problema:</strong> Processos manuais e lentos. <strong>Solução:</strong> Website + automação RPA. <strong>Resultado:</strong> -60% em tempo operacional.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="about-image-placeholder"></div>
+                </div>
+                
+                <div class="about-text">
+                    <h2 class="section-title">Sobre a C&M Tecnologia</h2>
+                    <p class="about-description">A C&M Tecnologia nasceu da paixão por transformar visões digitais em resultados reais. Com 5 anos de experiência, ajudamos 10+ clientes a crescerem online através de soluções personalizadas em design, desenvolvimento e marketing digital. Acreditamos que tecnologia deve ser acessível para empreendedores e pequenos negócios.</p>
+                    
+                    <div class="about-differentials">
+                        <div class="differential">
+                            <span class="differential-icon">✅</span>
+                            <div>
+                                <h4>Soluções Personalizadas</h4>
+                                <p>Cada projeto é único e adaptado às suas necessidades</p>
+                            </div>
+                        </div>
+                        <div class="differential">
+                            <span class="differential-icon">✅</span>
+                            <div>
+                                <h4>Pacote Completo</h4>
+                                <p>Design até automação, tudo em um só lugar</p>
+                            </div>
+                        </div>
+                        <div class="differential">
+                            <span class="differential-icon">✅</span>
+                            <div>
+                                <h4>Foco em Resultados</h4>
+                                <p>Mensuramos tudo e otimizamos continuamente</p>
+                            </div>
+                        </div>
+                        <div class="differential">
+                            <span class="differential-icon">✅</span>
+                            <div>
+                                <h4>Suporte Contínuo</h4>
+                                <p>Parcerias duradouras, não apenas projetos</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-process">
+                        <h3>Nosso Processo</h3>
+                        <div class="process-steps">
+                            <div class="process-step">
+                                <span class="process-number">1</span>
+                                <p>Discovery</p>
+                            </div>
+                            <div class="process-arrow">→</div>
+                            <div class="process-step">
+                                <span class="process-number">2</span>
+                                <p>Design</p>
+                            </div>
+                            <div class="process-arrow">→</div>
+                            <div class="process-step">
+                                <span class="process-number">3</span>
+                                <p>Desenvolvimento</p>
+                            </div>
+                            <div class="process-arrow">→</div>
+                            <div class="process-step">
+                                <span class="process-number">4</span>
+                                <p>Suporte</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h4 class="stat-number" data-count="10">0</h4>
+                            <p>Projetos Entregues</p>
+                        </div>
+                        <div class="stat">
+                            <h4 class="stat-number" data-count="10">0</h4>
+                            <p>Clientes Satisfeitos</p>
+                        </div>
+                        <div class="stat">
+                            <h4 class="stat-number" data-count="5">0</h4>
+                            <p>Anos de Experiência</p>
+                        </div>
+                        <div class="stat">
+                            <h4 class="stat-number" data-count="100">0</h4>
+                            <p>% Dedicação</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testemunhos Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">O Que Nossos Clientes Dizem</h2>
+            <p class="section-subtitle">Histórias de sucesso que inspiram</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Entrega rápida, site perfeito e suporte impecável. A C&M Tecnologia transformou minha presença online. Recomendo muito!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"></div>
+                        <div>
+                            <h4 class="author-name">João Silva</h4>
+                            <p class="author-role">CEO - Empresa Tech</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Transformou meu negócio completamente. Antes eu tinha dúvidas, agora tenho resultados mensuráveis. Equipe profissional e dedicada!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"></div>
+                        <div>
+                            <h4 class="author-name">Maria Santos</h4>
+                            <p class="author-role">Founder - StartUp Digital</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Suporte impecável mesmo após o projeto finalizado. Sinto-me seguro com a C&M Tecnologia cuidando do meu negócio online."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"></div>
+                        <div>
+                            <h4 class="author-name">Carlos Oliveira</h4>
+                            <p class="author-role">Empresário - E-Commerce</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Perguntas Frequentes</h2>
+            <p class="section-subtitle">Tire suas dúvidas sobre nossos serviços</p>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Quanto tempo demora um projeto?</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Websites: 2-4 semanas. Apps: 6-12 semanas. E-commerce: 3-6 semanas. Design: 2 semanas. Nos reunimos e criamos cronograma realista conforme sua necessidade.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Vocês oferecem suporte após entrega?</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sim! Suporte contínuo, manutenção mensal, updates e consultoria estratégica. Você não fica sozinho após o launch. Somos parceiros de longo prazo.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Posso ver exemplos do trabalho?</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Claro! Veja o portfólio acima com 10+ projetos. Para casos específicos ou mais detalhes, chame no WhatsApp ou preencha o formulário de contato.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Como funciona o pagamento?</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Proposta → 30% adiantado → Entrega → 70% final. Você aprova em cada etapa. Oferecemos flexibilidade de pagamento conforme sua necessidade.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Qual plataforma vocês usam?</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Web (React, Node.js, PHP), Mobile (iOS, Android), E-commerce (Shopify, WooCommerce), Automação customizada. Escolhemos a melhor tecnologia para seu projeto.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Qual é o valor mínimo de um projeto?</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Não há mínimo fixo. Logo: €500+, Website: €2000+, App: €5000+, E-commerce: €3000+. Agende consultoria gratuita para uma proposta personalizada.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing/CTA Section -->
+    <section class="pricing-cta">
+        <div class="container">
+            <h2 class="section-title">Cada Projeto é Único</h2>
+            <p class="section-subtitle">Não oferecemos pacotes genéricos. Vamos criar uma solução específica para seu negócio.</p>
+            
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="pricing-icon">🎯</div>
+                    <h3>Consultoria</h3>
+                    <p>Análise customizada do seu negócio e estratégia específica</p>
+                    <button class="btn btn-primary">Agendar Consultoria</button>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-icon">💼</div>
+                    <h3>Projeto</h3>
+                    <p>Desenvolvimento completo com acompanhamento e suporte</p>
+                    <button class="btn btn-primary">Solicitar Proposta</button>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-icon">🚀</div>
+                    <h3>Suporte</h3>
+                    <p>Manutenção, updates e consultoria estratégica contínua</p>
+                    <button class="btn btn-primary">Conhecer Planos</button>
+                </div>
+            </div>
+
+            <div class="pricing-cta-main">
+                <h3>Consultoria Gratuita</h3>
+                <p>Vamos analisar seu negócio e criar uma estratégia específica</p>
+                <button class="btn btn-primary btn-large" data-action="scroll-contact">Falar com Especialista</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulário de Contato -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <p class="section-subtitle">Vamos conversar sobre seu projeto</p>
+            
+            <div class="contact-content">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nome Completo</label>
+                        <input type="text" id="name" name="name" placeholder="Seu nome" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Telefone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+351 9..." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Tipo de Projeto</label>
+                        <select id="service" name="service" required>
+                            <option value="">Selecione um serviço</option>
+                            <option value="design">Design de Marca</option>
+                            <option value="website">Website</option>
+                            <option value="app">App Móvel</option>
+                            <option value="ecommerce">E-Commerce</option>
+                            <option value="automation">Automação/IA</option>
+                            <option value="other">Outro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" name="message" placeholder="Conte sobre seu projeto..." rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large">Enviar Mensagem</button>
+                </form>
+
+                <div class="contact-info">
+                    <h3>Informações de Contato</h3>
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <div>
+                            <p class="contact-label">Email</p>
+                            <a href="mailto:cmtecnologia12@gmail.com">cmtecnologia12@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📱</span>
+                        <div>
+                            <p class="contact-label">WhatsApp</p>
+                            <a href="https://wa.me/351961227666" target="_blank" rel="noopener noreferrer">+351 961 227 666</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🌐</span>
+                        <div>
+                            <p class="contact-label">Redes Sociais</p>
+                            <div class="social-links">
+                                <a href="#" aria-label="Instagram">Instagram</a>
+                                <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                                <a href="#" aria-label="Facebook">Facebook</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <rect width="40" height="40" rx="8" fill="white" opacity="0.1"/>
+                            <text x="50%" y="50%" font-size="20" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">CM</text>
+                        </svg>
+                        <span>C&M Tecnologia</span>
+                    </div>
+                    <p class="footer-tagline">Transformando visões digitais em resultados reais</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Serviços</a></li>
+                        <li><a href="#portfolio">Portfólio</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Serviços</h4>
+                    <ul>
+                        <li><a href="#services">Design de Marca</a></li>
+                        <li><a href="#services">Websites</a></li>
+                        <li><a href="#services">Apps Móveis</a></li>
+                        <li><a href="#services">E-Commerce</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><a href="mailto:cmtecnologia12@gmail.com">cmtecnologia12@gmail.com</a></li>
+                        <li><a href="https://wa.me/351961227666" target="_blank" rel="noopener noreferrer">+351 961 227 666</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="social-icons">
+                    <a href="#" aria-label="Instagram"><span>📷</span></a>
+                    <a href="#" aria-label="LinkedIn"><span>💼</span></a>
+                    <a href="#" aria-label="Facebook"><span>👍</span></a>
+                    <a href="#" aria-label="GitHub"><span>🐙</span></a>
+                </div>
+                <p>&copy; 2025 C&M Tecnologia. Todos direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/351961227666" class="whatsapp-button" id="whatsappButton" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco no WhatsApp" title="Fale Conosco no WhatsApp">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.946 1.347l-.355.203-3.675-.964.984 3.202-.203.323a9.847 9.847 0 001.438 4.753c.711 1.292 1.733 2.46 2.926 3.278 1.256.845 2.779 1.645 4.649 1.645 2.621 0 5.193-.855 7.203-2.399 1.573-1.198 2.82-2.864 3.4-4.77.58-1.906.58-3.996-.173-5.92-.752-1.924-2.271-3.539-4.165-4.44-1.894-.9-4.04-1.547-6.234-1.547z"/>
+        </svg>
+    </a>
+
+    <!-- Scripts -->
+    <script src="/main.js"></script>
+    <script src="/animations.js"></script>
+    <script src="/dark-mode.js"></script>
+    <script src="/form.js"></script>
+</body>
+</html>
