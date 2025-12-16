@@ -189,9 +189,11 @@ const titleObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.3 });
 
 document.querySelectorAll('.section-title, .section-subtitle').forEach(title => {
-    title.style.opacity = '0';
+    title.style.opacity = '1';  // Mude de '0' para '1'
+    title.style.visibility = 'visible';  // ADICIONE esta linha
     titleObserver.observe(title);
 });
+
 
 // Smooth scroll behavior for all internal links
 document.querySelectorAll('a[href^="#"]').forEach(link => {

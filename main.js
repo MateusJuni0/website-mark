@@ -157,9 +157,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe service cards, portfolio cards, etc.
 document.querySelectorAll('.service-card, .portfolio-card, .testimonial-card, .faq-item').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
     observer.observe(el);
 });
 

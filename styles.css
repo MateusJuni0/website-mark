@@ -62,13 +62,14 @@
     --transition-base: 300ms ease-in-out;
     --transition-slow: 500ms ease-in-out;
     
+    
     /* Light Mode */
-    --bg-primary: var(--white);
-    --bg-secondary: var(--gray-50);
-    --text-primary: var(--gray-900);
-    --text-secondary: var(--gray-600);
-    --border-color: var(--gray-200);
-}
+    --bg-primary: #7C3AED;
+    --bg-secondary: #6D28D9;
+    --text-primary: #FFFFFF;
+    --text-secondary: #E9D5FF;
+    --border-color: #A78BFA;
+
 
 /* Dark Mode */
 body.dark-mode {
@@ -378,7 +379,7 @@ body.dark-mode .moon-icon {
     position: relative;
     z-index: 1;
     text-align: center;
-    animation: fadeInUp 0.8s ease-out;
+   
 }
 
 .hero-title {
@@ -883,7 +884,7 @@ section {
     padding: var(--spacing-lg);
     text-align: center;
     transition: all var(--transition-base);
-    animation: fadeInUp 0.6s ease-out;
+    animation: fadeInUp 0.6s ease-out forwards;
 }
 
 .pricing-card:hover {
@@ -1011,8 +1012,75 @@ section {
 .social-links {
     display: flex;
     gap: var(--spacing-md);
-    flex-wrap: wrap;
 }
+
+.social-links a {
+    color: var(yellow);
+    font-size: 1.5rem;
+    transition: all var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--border-color);
+}
+
+.social-links a:hover {
+    color: var(--energy);
+    background-color: rgba(255, 215, 0, 0.1);
+    border-color: var(--energy);
+    transform: translateY(-3px);
+}
+
+.social-links svg {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: currentColor;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+    .social-links {
+        gap: var(--spacing-sm);
+    }
+    
+    .social-links a {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .social-links svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-links {
+        gap: 0.75rem;
+    }
+    
+    .social-links a {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .social-links svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+
+
+
+
+
 
 /* ===== FOOTER ===== */
 .footer {
@@ -1120,7 +1188,7 @@ body.dark-mode .footer {
     box-shadow: var(--shadow-xl);
     transition: all var(--transition-base);
     z-index: 999;
-    animation: slideInUp 0.6s ease-out;
+    animation: slideInUp 0.6s ease-out forwards;
 }
 
 .whatsapp-button:hover {
@@ -1136,7 +1204,7 @@ body.dark-mode .footer {
 /* ===== ANIMATIONS ===== */
 @keyframes fadeInUp {
     from {
-        opacity: 0;
+        opacity: 1;
         transform: translateY(30px);
     }
     to {
@@ -1147,7 +1215,7 @@ body.dark-mode .footer {
 
 @keyframes slideInUp {
     from {
-        opacity: 0;
+        opacity: 1;
         transform: translateY(100px);
     }
     to {
@@ -1356,3 +1424,4 @@ body.dark-mode .footer {
         padding: var(--spacing-lg) 0;
     }
 }
+}    
