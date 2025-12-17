@@ -6,61 +6,50 @@ const nav = document.getElementById('nav');
 let mobileMenuOpen = false;
 
 if (menuToggle) {
-    menuToggle.addEventListener('click', () => {
+    menuToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
         mobileMenuOpen = !mobileMenuOpen;
+        
         if (mobileMenuOpen) {
-            nav.style.display = 'flex';
-            nav.style.position = 'absolute';
-            nav.style.top = '100%';
-            nav.style.left = '0';
-            nav.style.right = '0';
-            nav.style.flexDirection = 'column';
-            nav.style.backgroundColor = 'var(--bg-primary)';
-            nav.style.padding = 'var(--spacing-lg)';
-            nav.style.gap = 'var(--spacing-md)';
-            nav.style.borderBottom = '1px solid var(--border-color)';
-            nav.style.zIndex = '999';
+            nav.classList.add('mobile-menu-open');
         } else {
-            nav.style.display = '';
-            nav.style.position = '';
-            nav.style.top = '';
-            nav.style.left = '';
-            nav.style.right = '';
-            nav.style.flexDirection = '';
-            nav.style.backgroundColor = '';
-            nav.style.padding = '';
-            nav.style.gap = '';
-            nav.style.borderBottom = '';
-            nav.style.zIndex = '';
+            nav.classList.remove('mobile-menu-open');
         }
     });
 }
 
-// Close mobile menu when clicking nav links
-const navLinks = document.querySelectorAll('.nav-link');
-navLinks.forEach(link => {
+// Close menu when clicking nav links
+document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
         mobileMenuOpen = false;
-        if (nav) {
-            nav.style.display = '';
-            nav.style.position = '';
-            nav.style.top = '';
-            nav.style.left = '';
-            nav.style.right = '';
-            nav.style.flexDirection = '';
-            nav.style.backgroundColor = '';
-            nav.style.padding = '';
-            nav.style.gap = '';
-            nav.style.borderBottom = '';
-            nav.style.zIndex = '';
+        nav.classList.remove('mobile-menu-open');
+    });
+});
+
+// CTA Button click
+document.querySelectorAll('.cta-button').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+            const headerHeight = document.getElementById('header').offsetHeight;
+            const targetPosition = contactSection.offsetTop - headerHeight;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
         }
     });
 });
 
+
 // Scroll to section functionality
 document.querySelectorAll('[data-action="scroll-contact"]').forEach(btn => {
-    btn.addEventListener('click', (e) => {
+    btn.addEventListener('click', function(e) {
         e.preventDefault();
+        e.stopPropagation();
         const contactSection = document.getElementById('contact');
         if (contactSection) {
             contactSection.scrollIntoView({ behavior: 'smooth' });
@@ -69,8 +58,9 @@ document.querySelectorAll('[data-action="scroll-contact"]').forEach(btn => {
 });
 
 document.querySelectorAll('[data-action="scroll-services"]').forEach(btn => {
-    btn.addEventListener('click', (e) => {
+    btn.addEventListener('click', function(e) {
         e.preventDefault();
+        e.stopPropagation();
         const servicesSection = document.getElementById('services');
         if (servicesSection) {
             servicesSection.scrollIntoView({ behavior: 'smooth' });
@@ -94,7 +84,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const href = this.getAttribute('href');
         if (href !== '#' && document.querySelector(href)) {
             e.preventDefault();
-            document.querySelector(href).scrollIntoView({
+            const target = document.querySelector(href);
+            const headerHeight = header.offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight;
+            
+            window.scrollTo({
+                top: targetPosition,
                 behavior: 'smooth'
             });
         }
@@ -151,15 +146,44 @@ const observer = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
             entry.target.style.transform = 'translateY(0)';
+            entry.target.style.visibility = 'visible';
         }
     });
 }, observerOptions);
 
 // Observe service cards, portfolio cards, etc.
 document.querySelectorAll('.service-card, .portfolio-card, .testimonial-card, .faq-item').forEach(el => {
-        el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+    el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
     observer.observe(el);
 });
+
+
+// FAQ Accordion
+document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const faqItem = this.closest('.faq-item');
+        if (!faqItem) return;
+        
+        const isActive = faqItem.classList.contains('active');
+        
+        // Close all other items
+        document.querySelectorAll('.faq-item.active').forEach(item => {
+            if (item !== faqItem) {
+                item.classList.remove('active');
+            }
+        });
+        
+        // Toggle current item
+        faqItem.classList.toggle('active');
+    });
+});
+
+
 
 // Counter animation for stats
 function animateCounter(element, target, duration = 2000) {
@@ -177,6 +201,9 @@ function animateCounter(element, target, duration = 2000) {
         }
     }, 16);
 }
+
+
+
 
 // Start counter animation when stats section is visible
 const statsObserver = new IntersectionObserver((entries) => {
@@ -208,4 +235,4 @@ function preventScrollbarShift() {
 preventScrollbarShift();
 window.addEventListener('resize', preventScrollbarShift);
 
-console.log('Main.js loaded successfully');
+console.log('✅ Main.js loaded successfully');
