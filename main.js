@@ -151,8 +151,9 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe service cards, portfolio cards, etc.
-document.querySelectorAll('.service-card, .portfolio-card, .testimonial-card, .faq-item').forEach(el => {
+
+// Observe service cards, portfolio cards, etc. (MAS NÃO FAQ!)
+document.querySelectorAll('.service-card, .portfolio-card, .testimonial-card').forEach(el => {
     el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
@@ -160,28 +161,29 @@ document.querySelectorAll('.service-card, .portfolio-card, .testimonial-card, .f
 });
 
 
-// FAQ Accordion
+
+
+// FAQ Accordion - Versão Simples e Funcional
 document.querySelectorAll('.faq-question').forEach(button => {
     button.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
         
-        const faqItem = this.closest('.faq-item');
+        const faqItem = this.parentElement.closest('.faq-item');
         if (!faqItem) return;
         
-        const isActive = faqItem.classList.contains('active');
-        
-        // Close all other items
-        document.querySelectorAll('.faq-item.active').forEach(item => {
+        // Fechar todos os outros
+        document.querySelectorAll('.faq-item').forEach(item => {
             if (item !== faqItem) {
                 item.classList.remove('active');
             }
         });
         
-        // Toggle current item
+        // Toggle o atual
         faqItem.classList.toggle('active');
     });
 });
+
 
 
 

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projetos - C&M Tecnologia">
+    <title>Projetos - C&M Tecnologia</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/styles.css">
+    
+    <title>Projetos - C&M Tecnologia</title>
+</head>
+<body>
+    <!-- Header (igual ao index.html ) -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="logoc.jpeg" alt="C&M Tecnologia Logo" style="height: 70px; width: auto; object-fit: contain;">
+                    <span class="logo-text">C&M Tecnologia</span>
+                </div>
+                
+                <nav class="nav" id="nav">
+                    <a href="index.html#home" class="nav-link">Home</a>
+                    <a href="index.html#services" class="nav-link">Serviços</a>
+                    <a href="index.html#portfolio" class="nav-link">Portfólio</a>
+                    <a href="index.html#about" class="nav-link">Sobre</a>
+                    <a href="index.html#contact" class="nav-link">Contato</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                    
+                    <button class="cta-button">Solicitar Orçamento</button>
+                    
+                    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Projeto Section -->
+    <section class="projeto-detail" style="padding-top: 100px;">
+        <div class="container">
+            <a href="index.html" class="btn btn-outline" style="margin-bottom: 2rem;">← Voltar</a>
+            
+            <div id="projeto-content">
+                <!-- Conteúdo dinâmico aqui -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (igual ao index.html) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>C&M Tecnologia</h3>
+                    <p>Transformando visões digitais em resultados reais</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#services">Serviços</a></li>
+                        <li><a href="index.html#portfolio">Portfólio</a></li>
+                        <li><a href="index.html#about">Sobre</a></li>
+                        <li><a href="index.html#contact">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><a href="mailto:cmtecnologia12@gmail.com">cmtecnologia12@gmail.com</a></p>
+                    <p><a href="tel:+351961227666">+351 961 227 666</a></p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 C&M Tecnologia. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/dark-mode.js"></script>
+    <script src="/main.js"></script>
+    <script>
+        // Carregar projeto específico
+        const urlParams = new URLSearchParams(window.location.search);
+        const projeto = urlParams.get('projeto');
+        
+        const projetos = {
+            obras: {
+                titulo: 'Site de Obras',
+                descricao: 'Website profissional para empresa de construção civil',
+                imagem: '🏗️',
+                cor: 'linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%)',
+                detalhes: `
+                    <h2>Site de Obras - Projeto Completo</h2>
+                    <p>Desenvolvemos um website profissional para uma empresa de construção civil, com:</p>
+                    <ul>
+                        <li>✅ Galeria de projetos</li>
+                        <li>✅ Portfólio de obras</li>
+                        <li>✅ Formulário de orçamento</li>
+                        <li>✅ Responsivo para mobile</li>
+                        <li>✅ SEO otimizado</li>
+                    </ul>
+                    <p><strong>Resultado:</strong> 150% de aumento em leads, 5 novos projetos fechados.</p>
+                `
+            },
+            cartao: {
+                titulo: 'Cartão de Visita Digital',
+                descricao: 'Cartão de visita interativo com QR code',
+                imagem: '💳',
+                cor: 'linear-gradient(135deg, #10B981 0%, #059669 100%)',
+                detalhes: `
+                    <h2>Cartão de Visita Digital</h2>
+                    <p>Criamos um cartão de visita digital interativo com:</p>
+                    <ul>
+                        <li>✅ QR code integrado</li>
+                        <li>✅ Links para redes sociais</li>
+                        <li>✅ Contato direto via WhatsApp</li>
+                        <li>✅ Design moderno e profissional</li>
+                        <li>✅ Compartilhável por email</li>
+                    </ul>
+                    <p><strong>Resultado:</strong> Melhor apresentação profissional, fácil compartilhamento.</p>
+                `
+            },
+            app: {
+                titulo: 'App Mobile',
+                descricao: 'Aplicação mobile para gerenciamento de tarefas',
+                imagem: '📱',
+                cor: 'linear-gradient(135deg, #FFD700 0%, #FFC107 100%)',
+                detalhes: `
+                    <h2>App Mobile - Gerenciador de Tarefas</h2>
+                    <p>Desenvolvemos uma aplicação mobile completa com:</p>
+                    <ul>
+                        <li>✅ Gerenciamento de tarefas</li>
+                        <li>✅ Sincronização em nuvem</li>
+                        <li>✅ Notificações push</li>
+                        <li>✅ Interface intuitiva</li>
+                        <li>✅ iOS e Android</li>
+                    </ul>
+                    <p><strong>Resultado:</strong> 10k+ downloads, 4.8 estrelas na app store.</p>
+                `
+            }
+        };
+        
+        if (projeto && projetos[projeto]) {
+            const p = projetos[projeto];
+            document.getElementById('projeto-content').innerHTML = `
+                <div style="background: ${p.cor}; height: 300px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 5rem; margin-bottom: 2rem;">
+                    ${p.imagem}
+                </div>
+                <div class="projeto-info">
+                    ${p.detalhes}
+                </div>
+                <div style="margin-top: 2rem;">
+                    <a href="index.html#contact" class="btn btn-primary">Solicitar Orçamento</a>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
