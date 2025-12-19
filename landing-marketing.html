@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformação Digital Garantida em 90 Dias | CM Tecnologia</title>
+    <meta name="description" content="De €0 a €50k/mês em 90 dias. Case studies reais. Histórias de sucesso comprovadas. Garantia 100% ou dinheiro de volta.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6B46C1;
+            --primary-dark: #5a3ba0;
+            --primary-light: #8b5cf6;
+            --yellow: #F59E0B;
+            --green: #10B981;
+            --dark-bg: #0f172a;
+            --dark-card: #1e293b;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --light-bg: #f8fafc;
+            --white: #ffffff;
+            --text-white: #f1f5f9;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        body.dark-mode {
+            background: var(--dark-bg);
+            color: var(--text-white);
+        }
+
+        /* ========== HEADER ========== */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(15px);
+            border-bottom: 2px solid rgba(107, 70, 193, 0.15);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        body.dark-mode header {
+            background: rgba(15, 23, 42, 0.96);
+            border-bottom: 2px solid rgba(107, 70, 193, 0.3);
+        }
+
+        header nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 900;
+            font-size: 1.3rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .nav-links a {
+            color: var(--text-white);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .theme-toggle {
+            background: var(--light-bg);
+            border: none;
+            padding: 0.6rem 0.8rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .theme-toggle {
+            background: var(--dark-card);
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 0.75rem 1rem; }
+            .nav-links { gap: 1rem; font-size: 0.85rem; }
+        }
+
+        /* ========== HERO WITH PARALLAX ========== */
+        .hero {
+            margin-top: 60px;
+            position: relative;
+            min-height: 750px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: fixed;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            height: calc(100vh - 60px);
+            background: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&h=1200&fit=crop') center/cover no-repeat fixed;
+            background-attachment: fixed;
+            background-size: cover;
+            z-index: -2;
+            filter: brightness(0.65) contrast(1.1);
+        }
+
+        .hero::after {
+            content: '';
+            position: fixed;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            height: calc(100vh - 60px);
+            background: linear-gradient(135deg, rgba(107, 70, 193, 0.82) 0%, rgba(245, 158, 11, 0.15) 100%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 750px;
+            padding: 3rem 2rem;
+            margin-left: 3%;
+            color: var(--white);
+        }
+
+        .badge-story {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--green) 0%, var(--primary) 100%);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.5);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 7vw, 4rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 6px 30px rgba(0, 0, 0, 0.5);
+            animation: slideIn 0.8s ease-out;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 .highlight {
+            color: var(--yellow);
+            display: block;
+            font-size: 0.95em;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 0.3em 0.5em;
+            border-radius: 8px;
+            font-weight: 900;
+        }
+
+        .hero-subtitle {
+            font-size: 1.35rem;
+            color: rgba(255, 255, 255, 0.97);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            text-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
+            font-weight: 500;
+            animation: slideIn 0.8s ease-out 0.15s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.2rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+            animation: slideIn 0.8s ease-out 0.3s both;
+        }
+
+        .btn {
+            padding: 1.1rem 2.5rem;
+            font-size: 1.05rem;
+            font-weight: 800;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-cta {
+            background: linear-gradient(135deg, var(--green) 0%, #10B981 100%);
+            color: var(--white);
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 50px rgba(16, 185, 129, 0.6);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary);
+            border: 3px solid var(--white);
+            font-weight: 900;
+            box-shadow: 0 12px 35px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: var(--light-bg);
+            transform: translateY(-4px);
+            box-shadow: 0 18px 50px rgba(255, 255, 255, 0.5);
+        }
+
+        /* ========== TIMELINE SECTION ========== */
+        .timeline-section {
+            background: linear-gradient(135deg, var(--light-bg) 0%, #faf5ff 100%);
+            padding: 5rem 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        body.dark-mode .timeline-section {
+            background: linear-gradient(135deg, var(--dark-card) 0%, rgba(107, 70, 193, 0.1) 100%);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            color: var(--primary);
+            font-weight: 900;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.8rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 900;
+            color: var(--text-dark);
+            margin-bottom: 1.2rem;
+        }
+
+        body.dark-mode .section-title {
+            color: var(--text-white);
+        }
+
+        .timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary), var(--green));
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: 0;
+            margin-right: 52%;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 52%;
+            margin-right: 0;
+            text-align: left;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border: 4px solid var(--white);
+            border-radius: 50%;
+            z-index: 5;
+            box-shadow: 0 0 0 8px rgba(107, 70, 193, 0.2);
+        }
+
+        body.dark-mode .timeline-marker {
+            border-color: var(--dark-card);
+            box-shadow: 0 0 0 8px rgba(107, 70, 193, 0.3);
+        }
+
+        .timeline-content {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid rgba(107, 70, 193, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .timeline-content {
+            background: var(--dark-card);
+            border-color: rgba(107, 70, 193, 0.3);
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(107, 70, 193, 0.15);
+        }
+
+        .timeline-day {
+            font-size: 0.9rem;
+            font-weight: 900;
+            color: var(--green);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.8rem;
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+
+        body.dark-mode .timeline-title {
+            color: var(--green);
+        }
+
+        .timeline-text {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        body.dark-mode .timeline-text {
+            color: rgba(241, 245, 249, 0.8);
+        }
+
+        .timeline-result {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--yellow);
+            text-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+            .timeline-marker {
+                left: 20px;
+            }
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 60px;
+                margin-right: 0;
+                text-align: left;
+            }
+        }
+
+        /* ========== CASE STUDIES SECTION ========== */
+        .case-studies {
+            padding: 5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .case-studies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .case-study-card {
+            background: var(--white);
+            border-radius: 12px;
+            border: 2px solid rgba(107, 70, 193, 0.1);
+            transition: all 0.35s ease;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        body.dark-mode .case-study-card {
+            background: var(--dark-card);
+            border-color: rgba(107, 70, 193, 0.3);
+        }
+
+        .case-study-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--green));
+        }
+
+        .case-study-card {
+            position: relative;
+        }
+
+        .case-study-header {
+            background: linear-gradient(135deg, rgba(107, 70, 193, 0.1), rgba(16, 185, 129, 0.1));
+            padding: 2rem;
+            border-bottom: 1px solid rgba(107, 70, 193, 0.1);
+        }
+
+        body.dark-mode .case-study-header {
+            border-bottom-color: rgba(107, 70, 193, 0.3);
+        }
+
+        .case-study-name {
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 0.4rem;
+        }
+
+        body.dark-mode .case-study-name {
+            color: var(--green);
+        }
+
+        .case-study-company {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .case-study-body {
+            padding: 2rem;
+        }
+
+        .before-after {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .before, .after {
+            flex: 1;
+            min-width: 140px;
+        }
+
+        .ba-label {
+            font-size: 0.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.6rem;
+            color: var(--text-light);
+        }
+
+        .before .ba-label {
+            color: var(--text-light);
+        }
+
+        .after .ba-label {
+            color: var(--green);
+        }
+
+        .ba-value {
+            font-size: 1.3rem;
+            font-weight: 900;
+            margin-bottom: 0.4rem;
+        }
+
+        .before .ba-value {
+            color: #ef4444;
+        }
+
+        .after .ba-value {
+            color: var(--green);
+        }
+
+        .timeline-days {
+            background: rgba(107, 70, 193, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 600;
+            text-align: center;
+        }
+
+        body.dark-mode .timeline-days {
+            background: rgba(107, 70, 193, 0.2);
+        }
+
+        .case-study-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(107, 70, 193, 0.15);
+        }
+
+        /* ========== FEATURES SECTION ========== */
+        .features {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--green) 100%);
+            color: var(--white);
+            padding: 5rem 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .features-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-content h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .feature-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .feature-box:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .feature-box h3 {
+            font-size: 1.2rem;
+            font-weight: 900;
+            margin-bottom: 0.8rem;
+        }
+
+        .feature-box p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+
+        /* ========== SERVICES SECTION ========== */
+        .services {
+            padding: 5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 2px solid rgba(107, 70, 193, 0.1);
+            transition: all 0.35s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        body.dark-mode .service-card {
+            background: var(--dark-card);
+            border-color: rgba(107, 70, 193, 0.3);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--green));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.35s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 20px 50px rgba(107, 70, 193, 0.15);
+            transform: translateY(-8px);
+        }
+
+        .service-icon {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.35rem;
+            color: var(--primary);
+            margin-bottom: 1.2rem;
+            font-weight: 900;
+        }
+
+        body.dark-mode .service-card h3 {
+            color: var(--green);
+        }
+
+        .service-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-list li {
+            padding: 0.6rem 0;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        body.dark-mode .service-list li {
+            color: rgba(241, 245, 249, 0.8);
+        }
+
+        .service-list li::before {
+            content: "✓";
+            color: var(--green);
+            font-weight: bold;
+            font-size: 1.3rem;
+            min-width: 20px;
+        }
+
+        .service-pricing {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            margin: 1.5rem 0;
+            padding: 1.5rem 0;
+            border-top: 1px solid rgba(107, 70, 193, 0.1);
+            border-bottom: 1px solid rgba(107, 70, 193, 0.1);
+        }
+
+        body.dark-mode .service-pricing {
+            border-color: rgba(107, 70, 193, 0.3);
+        }
+
+        .service-price {
+            font-size: 2.2rem;
+            color: var(--primary);
+            font-weight: 900;
+        }
+
+        .service-price-period {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .service-cta {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .service-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(107, 70, 193, 0.4);
+        }
+
+        /* ========== CTA FINAL ========== */
+        .cta-final {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--green) 100%);
+            color: var(--white);
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .cta-final h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            margin-bottom: 1.2rem;
+            font-weight: 900;
+        }
+
+        .cta-final p {
+            font-size: 1.15rem;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+            opacity: 0.95;
+            font-weight: 600;
+        }
+
+        .form-container {
+            max-width: 550px;
+            margin: 2rem auto;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 3rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.6rem;
+            font-weight: 800;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(30, 41, 59, 0.5);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--white);
+            background: var(--white);
+            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 1.1rem;
+            background: linear-gradient(135deg, var(--yellow) 0%, #ff6b35 100%);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-weight: 900;
+            cursor: pointer;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(245, 158, 11, 0.4);
+        }
+
+        .whatsapp-cta {
+            margin-top: 2.5rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .whatsapp-cta a {
+            color: var(--yellow);
+            text-decoration: none;
+            font-weight: 900;
+            transition: color 0.3s ease;
+            display: inline-block;
+            margin-top: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .whatsapp-cta a:hover {
+            color: var(--white);
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: var(--text-dark);
+            color: var(--text-white);
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        body.dark-mode footer {
+            background: rgba(15, 23, 42, 0.9);
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        footer a {
+            color: var(--green);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--yellow);
+        }
+
+        .footer-links {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .hero { min-height: 650px; margin-top: 70px; }
+            .hero-content { text-align: center; margin-left: 0; padding: 2rem 1rem; }
+            .hero h1 { font-size: 2rem; }
+            .hero-subtitle { font-size: 1.1rem; }
+            .cta-buttons { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
+            .section-title { font-size: 2rem; }
+            .form-container { padding: 2rem 1.5rem; }
+        }
+
+        ::selection {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--light-bg); }
+        body.dark-mode ::-webkit-scrollbar-track { background: var(--dark-bg); }
+        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <a href="/" class="logo">CM Tecnologia</a>
+            <ul class="nav-links">
+                <li><a href="#historia">A História</a></li>
+                <li><a href="#estudos">Case Studies</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle">🌙</button>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badge-story">📖 Histórias de Transformação Real</div>
+            
+            <h1>De €0 a €50k/mês em 90 Dias <span class="highlight">A História de João</span></h1>
+            
+            <p class="hero-subtitle">Sem experiência em ads. Sem budget inicial. Sem contratos prisioneiros. Resultado: 2.400% ROI comprovado em 90 dias.</p>
+            
+            <div class="cta-buttons">
+                <button class="btn btn-cta" onclick="document.getElementById('estudos').scrollIntoView({behavior: 'smooth'})">
+                    📊 Ver Case Studies
+                </button>
+                <a href="https://wa.me/351919000000?text=Quero%20conhecer%20a%20transformacao%20de%20negocios" class="btn btn-secondary" target="_blank">
+                    💬 WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIMELINE DA HISTÓRIA DE JOÃO -->
+    <section class="timeline-section" id="historia">
+        <div class="section-header">
+            <div class="section-label">A Jornada Completa</div>
+            <h2 class="section-title">Como João Transformou Seu Negócio em 90 Dias</h2>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-day">Dia 0 - Início</div>
+                    <div class="timeline-title">Situação Inicial: Zero Vendas</div>
+                    <div class="timeline-text">João tinha um produto excelente mas ninguém sabia disso. €0/mês em vendas, sem presença online, sem estratégia de marketing.</div>
+                    <div class="timeline-result">Status: Frustrado & Sem Direção</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-day">Dia 5-7 - Primeira Conversão</div>
+                    <div class="timeline-title">1ª Venda Garantida ✓</div>
+                    <div class="timeline-text">Setup inicial de campanhas, otimização de landing page, primeiros anúncios rodando. Primeira venda chega garantida em 5-7 dias.</div>
+                    <div class="timeline-result">€850 em vendas</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-day">Dia 30 - Scaling</div>
+                    <div class="timeline-title">Dashboard Real-Time Ativo</div>
+                    <div class="timeline-text">Otimização contínua baseada em dados. João vê tudo em tempo real: cliques, conversões, custo por lead, ROI exato. Confiança total.</div>
+                    <div class="timeline-result">€12.500 em vendas</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-day">Dia 60 - Aceleração</div>
+                    <div class="timeline-title">Múltiplos Canais Ativos</div>
+                    <div class="timeline-text">Google Ads + Facebook + Instagram + Email. Automações rodando. Cada canal funcionando em perfeita sinergia. Crescimento exponencial.</div>
+                    <div class="timeline-result">€35.000 em vendas</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-day">Dia 90 - Estrutura Completa</div>
+                    <div class="timeline-title">Negócio 100% Otimizado</div>
+                    <div class="timeline-text">Sistema completo, previsível e escalável. João ganha €50k/mês consistentemente. Pode escalar ainda mais ou relaxar. Ele escolhe.</div>
+                    <div class="timeline-result">€50.000/mês 🎯</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASE STUDIES -->
+    <section class="case-studies" id="estudos">
+        <div class="section-header">
+            <div class="section-label">Mais Histórias de Sucesso</div>
+            <h2 class="section-title">17 Clientes Reais, 17 Transformações</h2>
+        </div>
+
+        <div class="case-studies-grid">
+            <div class="case-study-card">
+                <div class="case-study-header">
+                    <div class="case-study-name">Maria Rodrigues</div>
+                    <div class="case-study-company">E-commerce de Moda - Porto</div>
+                </div>
+                <div class="case-study-body">
+                    <div class="before-after">
+                        <div class="before">
+                            <div class="ba-label">Antes</div>
+                            <div class="ba-value">€1.200/mês</div>
+                            <div style="font-size: 0.85rem; color: #ef4444;">Sem retorno</div>
+                        </div>
+                        <div class="after">
+                            <div class="ba-label">Depois</div>
+                            <div class="ba-value">€18.500/mês</div>
+                            <div style="font-size: 0.85rem; color: var(--green);">ROI 3.8x</div>
+                        </div>
+                    </div>
+                    <div class="timeline-days">⏱️ 90 dias</div>
+                </div>
+            </div>
+
+            <div class="case-study-card">
+                <div class="case-study-header">
+                    <div class="case-study-name">Pedro Silva</div>
+                    <div class="case-study-company">Agência Digital - Setúbal</div>
+                </div>
+                <div class="case-study-body">
+                    <div class="before-after">
+                        <div class="before">
+                            <div class="ba-label">Antes</div>
+                            <div class="ba-value">0 clientes</div>
+                            <div style="font-size: 0.85rem; color: #ef4444;">Novo negócio</div>
+                        </div>
+                        <div class="after">
+                            <div class="ba-label">Depois</div>
+                            <div class="ba-value">45 leads/mês</div>
+                            <div style="font-size: 0.85rem; color: var(--green);">Qualificados</div>
+                        </div>
+                    </div>
+                    <div class="timeline-days">⏱️ 60 dias</div>
+                </div>
+            </div>
+
+            <div class="case-study-card">
+                <div class="case-study-header">
+                    <div class="case-study-name">Carlos Mendes</div>
+                    <div class="case-study-company">SaaS B2B - Lisboa</div>
+                </div>
+                <div class="case-study-body">
+                    <div class="before-after">
+                        <div class="before">
+                            <div class="ba-label">Antes</div>
+                            <div class="ba-value">€2.000/cliente</div>
+                            <div style="font-size: 0.85rem; color: #ef4444;">CAC muito alto</div>
+                        </div>
+                        <div class="after">
+                            <div class="ba-label">Depois</div>
+                            <div class="ba-value">€500/cliente</div>
+                            <div style="font-size: 0.85rem; color: var(--green);">CAC ideal</div>
+                        </div>
+                    </div>
+                    <div class="timeline-days">⏱️ 45 dias</div>
+                </div>
+            </div>
+
+            <div class="case-study-card">
+                <div class="case-study-header">
+                    <div class="case-study-name">Ana Costa</div>
+                    <div class="case-study-company">E-commerce Beleza - Leiria</div>
+                </div>
+                <div class="case-study-body">
+                    <div class="before-after">
+                        <div class="before">
+                            <div class="ba-label">Antes</div>
+                            <div class="ba-value">Sem estratégia</div>
+                            <div style="font-size: 0.85rem; color: #ef4444;">€0 online</div>
+                        </div>
+                        <div class="after">
+                            <div class="ba-label">Depois</div>
+                            <div class="ba-value">€25.000/mês</div>
+                            <div style="font-size: 0.85rem; color: var(--green);">Faturamento</div>
+                        </div>
+                    </div>
+                    <div class="timeline-days">⏱️ 120 dias</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY THIS WORKS -->
+    <section class="features">
+        <div class="features-content">
+            <h2>Por Que Essas Histórias São 100% Reais</h2>
+            
+            <div class="features-grid">
+                <div class="feature-box">
+                    <h3>✓ Nada Fabricado</h3>
+                    <p>Cada número é verificável. Clientes reais, negócios reais, resultados reais comprovados por métricas concretas.</p>
+                </div>
+
+                <div class="feature-box">
+                    <h3>✓ Metodologia Idêntica</h3>
+                    <p>O mesmo sistema que funcionou para João funciona para todos. Não é sorte. É processo, dados e otimização contínua.</p>
+                </div>
+
+                <div class="feature-box">
+                    <h3>✓ Dashboard Transparente</h3>
+                    <p>Você vê tudo em tempo real: cliques, conversões, custo por lead, ROI exato. Sem surpresas, sem mistérios.</p>
+                </div>
+
+                <div class="feature-box">
+                    <h3>✓ Garantia Blindada</h3>
+                    <p>Se não funcionar em 90 dias, dinheiro de volta. Nós confiamos tanto que podemos oferecer isso.</p>
+                </div>
+
+                <div class="feature-box">
+                    <h3>✓ Relatórios Semanais</h3>
+                    <p>Todo semana você recebe relatório comprovando cada métrica. Sem bolinha de cristal, só números frios.</p>
+                </div>
+
+                <div class="feature-box">
+                    <h3>✓ Seu Gestor Dedicado</h3>
+                    <p>Uma pessoa responsável por você. Reunião semanal. Resposta em 24h. Você nunca fica perdido.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services" id="servicos">
+        <div class="section-header">
+            <div class="section-label">Serviços Premium</div>
+            <h2 class="section-title">6 Pacotes Comprovados</h2>
+            <p style="text-align: center; color: var(--text-light); max-width: 650px; margin: 1.5rem auto 0;">Todos com análise estratégica grátis, dashboard real-time, relatório semanal, otimização contínua, gestor dedicado e garantia de resultado.</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🎯</div>
+                <h3>Google Ads Pro</h3>
+                <ul class="service-list">
+                    <li>Setup 3 campanhas</li>
+                    <li>Otimização diária</li>
+                    <li>150+ keywords</li>
+                    <li>A/B testing</li>
+                    <li>Relatório semanal</li>
+                    <li>Suporte 24/7</li>
+                </ul>
+                <div class="service-pricing">
+                    <span class="service-price">€499</span>
+                    <span class="service-price-period">/mês</span>
+                </div>
+                <button class="service-cta" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">Contratar</button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h3>Social Media</h3>
+                <ul class="service-list">
+                    <li>Estratégia visual</li>
+                    <li>12 posts/mês</li>
+                    <li>Community management</li>
+                    <li>Análise concorrência</li>
+                    <li>Campanhas pagas</li>
+                    <li>Crescimento garantido</li>
+                </ul>
+                <div class="service-pricing">
+                    <span class="service-price">€449</span>
+                    <span class="service-price-period">/mês</span>
+                </div>
+                <button class="service-cta" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">Contratar</button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔍</div>
+                <h3>SEO Premium</h3>
+                <ul class="service-list">
+                    <li>Auditoria completa</li>
+                    <li>Otimização on-page</li>
+                    <li>4 artigos/mês</li>
+                    <li>Link building</li>
+                    <li>Rankear em Google</li>
+                    <li>Tráfego orgânico</li>
+                </ul>
+                <div class="service-pricing">
+                    <span class="service-price">€529</span>
+                    <span class="service-price-period">/mês</span>
+                </div>
+                <button class="service-cta" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">Contratar</button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📧</div>
+                <h3>Email Marketing</h3>
+                <ul class="service-list">
+                    <li>Setup automações</li>
+                    <li>Segmentação</li>
+                    <li>Templates premium</li>
+                    <li>A/B testing</li>
+                    <li>+35% taxa abertura</li>
+                    <li>Conversão garantida</li>
+                </ul>
+                <div class="service-pricing">
+                    <span class="service-price">€249</span>
+                    <span class="service-price-period">/mês</span>
+                </div>
+                <button class="service-cta" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">Contratar</button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Analytics</h3>
+                <ul class="service-list">
+                    <li>Dashboard custom</li>
+                    <li>Rastreamento 360°</li>
+                    <li>Insights acionáveis</li>
+                    <li>Relatórios semanais</li>
+                    <li>Otimização contínua</li>
+                    <li>Consultoria estratégica</li>
+                </ul>
+                <div class="service-pricing">
+                    <span class="service-price">€199</span>
+                    <span class="service-price-period">/mês</span>
+                </div>
+                <button class="service-cta" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">Contratar</button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">⭐</div>
+                <h3>Pack Completo</h3>
+                <ul class="service-list">
+                    <li>Todos os 5 serviços</li>
+                    <li>Prioridade máxima</li>
+                    <li>Reunião 2x/semana</li>
+                    <li>Ajustes ilimitados</li>
+                    <li>Consultoria contínua</li>
+                    <li>Desconto 35%</li>
+                </ul>
+                <div class="service-pricing">
+                    <span class="service-price">€1.499</span>
+                    <span class="service-price-period">/mês</span>
+                </div>
+                <button class="service-cta" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">Contratar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="cta-final" id="contato">
+        <h2>Qual Será a Sua História em 90 Dias?</h2>
+        <p>Consulta inicial 100% grátis. 30 minutos. Plano de ação customizado sem compromissos. Dashboard early access.</p>
+        
+        <div class="form-container">
+            <form onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label>Seu Nome *</label>
+                    <input type="text" placeholder="João Silva" required>
+                </div>
+                <div class="form-group">
+                    <label>Email *</label>
+                    <input type="email" placeholder="joao@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Telefone *</label>
+                    <input type="tel" placeholder="+351 919 000 000" required>
+                </div>
+                <div class="form-group">
+                    <label>Seu Negócio *</label>
+                    <textarea placeholder="Loja online de... Gasto €X em ads... Quero crescer..." required></textarea>
+                </div>
+                <button type="submit" class="form-submit">Agendar Consulta Grátis</button>
+            </form>
+
+            <div class="whatsapp-cta">
+                💬 Ou envie pelo WhatsApp: 
+                <a href="https://wa.me/351919000000?text=Quero%20conhecer%20a%20transformacao%20de%20negocios" target="_blank">
+                    +351 961 227 666
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 CM Tecnologia. Transformamos Histórias em Sucessos.</p>
+        <div class="footer-links">
+            <a href="#">Privacidade</a>
+            <a href="#">Termos</a>
+            <a href="#">Contato</a>
+        </div>
+    </footer>
+
+    <script>
+        // Dark Mode
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            themeToggle.textContent = '☀️';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const theme = body.classList.contains('dark-mode') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+            themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+        });
+
+        // Form
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const nome = form.querySelector('input[type="text"]').value;
+            const email = form.querySelector('input[type="email"]').value;
+            const telefone = form.querySelector('input[type="tel"]').value;
+            const mensagem = form.querySelector('textarea').value;
+
+            const whatsappMessage = `Olá CM Tecnologia! Sou ${nome}. Email: ${email} | Tel: ${telefone} | Negócio: ${mensagem}`;
+            const whatsappURL = `https://wa.me/351919000000?text=${encodeURIComponent(whatsappMessage)}`;
+
+            alert('✅ Obrigado ' + nome + '!\n\nConfirmação enviada para ' + email + '\n\nClique em OK para enviar também no WhatsApp.');
+            window.open(whatsappURL, '_blank');
+            form.reset();
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>

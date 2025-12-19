@@ -1,0 +1,666 @@
+<!-- LANDING PAGE 1: WEB DESIGN -->
+<!-- Copiar este código e salvar como: landing-web-design.html -->
+
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design Profissional | Website-Mark</title>
+    <meta name="description" content="Seu website profissional em 2 semanas. Design moderno + desenvolvimento + suporte contínuo.">
+    
+    <!-- Google Ads Conversion Tracking -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-XXXXXXXXXX');
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1E3A8A;
+            --secondary-color: #F97316;
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --bg-light: #F9FAFB;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: white;
+        }
+
+        header {
+            background: white;
+            padding: 20px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 20px;
+            color: var(--primary-color);
+        }
+
+        .cta-header {
+            background: var(--secondary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #ea580c;
+        }
+
+        /* SECTION */
+        section {
+            padding: 60px 0;
+        }
+
+        section h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+        }
+
+        section p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        /* PROBLEMAS */
+        .problems {
+            background: var(--bg-light);
+        }
+
+        .problem-item {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--secondary-color);
+            border-radius: 5px;
+        }
+
+        .problem-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        /* BENEFÍCIOS */
+        .benefits {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .benefit-card {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .benefit-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .benefit-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        /* PROCESSO */
+        .process {
+            background: var(--bg-light);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .step {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            border-top: 3px solid var(--secondary-color);
+        }
+
+        .step-number {
+            background: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin: 0 auto 15px;
+        }
+
+        .step h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        /* PREÇOS */
+        .pricing {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .price-card {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .price-card.featured {
+            border-color: var(--secondary-color);
+            background: white;
+            box-shadow: 0 10px 30px rgba(249, 115, 22, 0.2);
+        }
+
+        .price-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 32px;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .price-card ul {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        .price-card li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e5e7eb;
+            color: var(--text-light);
+        }
+
+        .price-card li:before {
+            content: "✓ ";
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* TESTIMONIALS */
+        .testimonial-item {
+            background: var(--bg-light);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-top: 15px;
+        }
+
+        /* FORMULÁRIO */
+        .form-section {
+            background: var(--bg-light);
+            padding: 60px 0;
+        }
+
+        form {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        form h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: inherit;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-submit {
+            background: var(--secondary-color);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+
+        .form-submit:hover {
+            background: #ea580c;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .benefits, .pricing, .process-steps, .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Website-Mark</div>
+            <a href="#form" class="cta-header">Solicitar Orçamento</a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <h1>Seu Website Profissional Em 2 Semanas</h1>
+            <p>Do Design ao Launch - Tudo que você precisa para vender online</p>
+            <a href="#form" class="cta-button">Começar Agora</a>
+        </div>
+    </section>
+
+    <!-- PROBLEMA -->
+    <section class="problems">
+        <div class="container">
+            <h2>O Seu Problema</h2>
+            <p style="text-align: center; margin-bottom: 40px;">Muitas empresas ainda não têm presença online...</p>
+            
+            <div class="problem-item">
+                <h3>❌ Site desatualizado ou inexistente</h3>
+                <p>Seus potenciais clientes não conseguem encontrá-lo na internet</p>
+            </div>
+
+            <div class="problem-item">
+                <h3>❌ Website não profissional</h3>
+                <p>Site que não transmite confiança e perde oportunidades de venda</p>
+            </div>
+
+            <div class="problem-item">
+                <h3>❌ Sem estratégia digital</h3>
+                <p>Não sabe como atrair clientes através da internet</p>
+            </div>
+
+            <div class="problem-item">
+                <h3>❌ Manutenção complicada</h3>
+                <p>Ninguém para cuidar do site, atualizações, segurança</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFÍCIOS -->
+    <section>
+        <div class="container">
+            <h2>Por Que Escolher Website-Mark?</h2>
+            
+            <div class="benefits">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎨</div>
+                    <h3>Design Moderno</h3>
+                    <p>Sites bonitos, profissionais e que vendem. Adaptados ao seu branding.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Desenvolvimento Rápido</h3>
+                    <p>Website pronto em 2 semanas. Sem burocracia, sem atrasos.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">📱</div>
+                    <h3>Responsivo 100%</h3>
+                    <p>Perfeito em mobile, tablet e desktop. Seus clientes veem bem em qualquer dispositivo.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔍</div>
+                    <h3>SEO Otimizado</h3>
+                    <p>Seu site aparece no Google. Mais visitas = mais clientes.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">📊</div>
+                    <h3>Gerenciamento Ads</h3>
+                    <p>Já faz Google Ads? Nós gerenciamos suas campanhas para maximizar ROI.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🛡️</div>
+                    <h3>Suporte Contínuo</h3>
+                    <p>Manutenção, atualizações, segurança. Seu site sempre ativo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESSO -->
+    <section class="process">
+        <div class="container">
+            <h2>Como Funciona</h2>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Briefing</h3>
+                    <p>Entendemos seu negócio, público e objetivos</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Design</h3>
+                    <p>Criamos design moderno e profissional</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Desenvolvimento</h3>
+                    <p>Desenvolvemos seu site responsivo e rápido</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Launch</h3>
+                    <p>Site no ar + suporte inicial</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PREÇOS -->
+    <section>
+        <div class="container">
+            <h2>Nossos Pacotes</h2>
+            
+            <div class="pricing">
+                <div class="price-card">
+                    <h3>Startup</h3>
+                    <div class="price">€599</div>
+                    <ul>
+                        <li>Website 5 páginas</li>
+                        <li>Design responsivo</li>
+                        <li>Formulário de contato</li>
+                        <li>SEO básico</li>
+                        <li>Hospedagem 1 ano</li>
+                        <li>Suporte 30 dias</li>
+                    </ul>
+                    <a href="#form" class="cta-button" style="display: block;">Solicitar Orçamento</a>
+                </div>
+
+                <div class="price-card featured">
+                    <h3>Growth</h3>
+                    <div class="price">€1.299</div>
+                    <ul>
+                        <li>Website até 15 páginas</li>
+                        <li>Design + Branding</li>
+                        <li>SEO avançado</li>
+                        <li>Blog integrado</li>
+                        <li>Hospedagem 1 ano</li>
+                        <li>Google Ads setup</li>
+                        <li>Suporte 3 meses</li>
+                    </ul>
+                    <a href="#form" class="cta-button" style="display: block;">Solicitar Orçamento</a>
+                </div>
+
+                <div class="price-card">
+                    <h3>Premium</h3>
+                    <div class="price">€2.499</div>
+                    <ul>
+                        <li>Website ilimitado</li>
+                        <li>E-commerce integrado</li>
+                        <li>SEO + conteúdo</li>
+                        <li>Gestão Google Ads</li>
+                        <li>Hospedagem 1 ano</li>
+                        <li>Manutenção mensal</li>
+                        <li>Suporte prioritário</li>
+                    </ul>
+                    <a href="#form" class="cta-button" style="display: block;">Solicitar Orçamento</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="problems">
+        <div class="container">
+            <h2>O Que Nossos Clientes Dizem</h2>
+            
+            <div class="testimonial-item">
+                <p>"Website-Mark criou meu site em 2 semanas exatamente como combinado. Profissional, responsivo e já estou recebendo clientes através dele!"</p>
+                <div class="testimonial-author">João Silva - Consultor de Negócios</div>
+            </div>
+
+            <div class="testimonial-item">
+                <p>"A equipe foi extremamente atenciosa, ouviu meus pedidos e entregou muito mais do que esperava. Recomendo!"</p>
+                <div class="testimonial-author">Maria Costa - Loja de Moda</div>
+            </div>
+
+            <div class="testimonial-item">
+                <p>"Melhor investimento que fiz para meu negócio. O site gera leads constantemente. Muito satisfeito!"</p>
+                <div class="testimonial-author">Pedro Ferreira - Serviços</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULÁRIO -->
+    <section class="form-section" id="form">
+        <div class="container">
+            <form onsubmit="trackFormSubmit(); submitForm(event);">
+                <h2>Solicitar Orçamento Grátis</h2>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Seu Nome *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Seu Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Telefone *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company">Empresa/Negócio *</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Qual serviço te interessa? *</label>
+                    <select id="service" name="service" required>
+                        <option value="">-- Selecione --</option>
+                        <option value="Novo website">Criar um novo website</option>
+                        <option value="Redesign">Redesenhar website atual</option>
+                        <option value="Google Ads">Gerenciamento Google Ads</option>
+                        <option value="Manutenção">Manutenção de site</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Mensagem / Observações</label>
+                    <textarea id="message" name="message"></textarea>
+                </div>
+
+                <button type="submit" class="form-submit">Enviar Solicitação</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Website-Mark. Todos os direitos reservados.</p>
+            <p>Telefone: +351 XXX XXX XXX | Email: info@website-mark.pt</p>
+        </div>
+    </footer>
+
+    <script>
+        // Tracking de conversão
+        function trackFormSubmit() {
+            gtag('event', 'conversion', {
+                'send_to': 'AW-XXXXXXXXXX/XXXXXXXXXXXX'
+            });
+        }
+
+        // Submeter formulário
+        function submitForm(event) {
+            event.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                company: document.getElementById('company').value,
+                service: document.getElementById('service').value,
+                message: document.getElementById('message').value
+            };
+
+            // Enviar para seu email (usar FormSubmit.co ou similar)
+            console.log('Formulário enviado:', formData);
+            
+            // Mostrar mensagem de sucesso
+            alert('Obrigado! Em breve entraremos em contacto!');
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
