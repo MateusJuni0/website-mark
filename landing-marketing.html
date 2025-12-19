@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transformação Digital Garantida em 90 Dias | CM Tecnologia</title>
-    <meta name="description" content="De €0 a €50k/mês em 90 dias. Case studies reais. Histórias de sucesso comprovadas. Garantia 100% ou dinheiro de volta.">
+    <title>Triplicar Vendas em 90 Dias | CM Tecnologia - Garantia ROI</title>
+    <meta name="description" content="Triplicar suas vendas em 90 dias ou seu dinheiro de volta. 280% ROI comprovado. 18 clientes PT. Consulta grátis.">
     
     <style>
         * {
@@ -122,7 +122,7 @@
             .nav-links { gap: 1rem; font-size: 0.85rem; }
         }
 
-        /* ========== HERO WITH PARALLAX ========== */
+        /* ========== HERO WITH PARALLAX - IMAGEM FIXA ========== */
         .hero {
             margin-top: 60px;
             position: relative;
@@ -133,6 +133,7 @@
             overflow: hidden;
         }
 
+        /* BACKGROUND FIXO - PARALLAX COM IMAGEM */
         .hero::before {
             content: '';
             position: fixed;
@@ -140,13 +141,14 @@
             left: 0;
             width: 100%;
             height: calc(100vh - 60px);
-            background: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&h=1200&fit=crop') center/cover no-repeat fixed;
+            background: url('fundomarketing.jpeg') center/cover no-repeat fixed;
             background-attachment: fixed;
             background-size: cover;
             z-index: -2;
             filter: brightness(0.65) contrast(1.1);
         }
 
+        /* OVERLAY GRADIENTE VIOLETA + AMARELO - PARA LEGIBILIDADE E IMPACTO */
         .hero::after {
             content: '';
             position: fixed;
@@ -167,9 +169,9 @@
             color: var(--white);
         }
 
-        .badge-story {
+        .badge-urgent {
             display: inline-block;
-            background: linear-gradient(135deg, var(--green) 0%, var(--primary) 100%);
+            background: linear-gradient(135deg, var(--yellow) 0%, var(--green) 100%);
             color: var(--white);
             padding: 0.8rem 1.5rem;
             border-radius: 50px;
@@ -178,7 +180,7 @@
             margin-bottom: 1.5rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.5);
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.5);
             animation: pulse 2s infinite;
         }
 
@@ -202,7 +204,7 @@
             letter-spacing: -1px;
         }
 
-        .hero h1 .highlight {
+        .hero h1 .guarantee {
             color: var(--yellow);
             display: block;
             font-size: 0.95em;
@@ -210,6 +212,7 @@
             padding: 0.3em 0.5em;
             border-radius: 8px;
             font-weight: 900;
+            letter-spacing: 0.5px;
         }
 
         .hero-subtitle {
@@ -250,13 +253,13 @@
         }
 
         .btn-cta {
-            background: linear-gradient(135deg, var(--green) 0%, #10B981 100%);
+            background: linear-gradient(135deg, var(--yellow) 0%, #ff6b35 100%);
             color: var(--white);
         }
 
         .btn-cta:hover {
             transform: translateY(-4px);
-            box-shadow: 0 18px 50px rgba(16, 185, 129, 0.6);
+            box-shadow: 0 18px 50px rgba(245, 158, 11, 0.6);
         }
 
         .btn-secondary {
@@ -273,15 +276,109 @@
             box-shadow: 0 18px 50px rgba(255, 255, 255, 0.5);
         }
 
-        /* ========== TIMELINE SECTION ========== */
-        .timeline-section {
+        .hero-metrics {
+            display: flex;
+            gap: 3rem;
+            margin-top: 2.5rem;
+            animation: slideIn 0.8s ease-out 0.45s both;
+            flex-wrap: wrap;
+        }
+
+        .metric {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .metric-number {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--yellow);
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+        }
+
+        .guarantee-badge {
+            position: absolute;
+            top: 50%;
+            right: 5%;
+            transform: translateY(-50%);
+            background: var(--white);
+            color: var(--primary);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            animation: slideIn 0.8s ease-out 0.6s both;
+            max-width: 200px;
+            border: 3px solid var(--yellow);
+        }
+
+        .guarantee-badge h3 {
+            font-size: 1rem;
+            font-weight: 900;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--green);
+        }
+
+        .guarantee-badge p {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            margin: 0;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 650px;
+                margin-top: 70px;
+            }
+            .hero-content {
+                text-align: center;
+                margin-left: 0;
+                padding: 2rem 1rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            .cta-buttons {
+                flex-direction: column;
+            }
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .guarantee-badge {
+                position: static;
+                transform: none;
+                margin-top: 2rem;
+            }
+            .hero-metrics {
+                gap: 1.5rem;
+                justify-content: center;
+            }
+        }
+
+        /* ========== FEATURES SECTION ========== */
+        .features {
             background: linear-gradient(135deg, var(--light-bg) 0%, #faf5ff 100%);
             padding: 5rem 2rem;
             position: relative;
             z-index: 10;
         }
 
-        body.dark-mode .timeline-section {
+        body.dark-mode .features {
             background: linear-gradient(135deg, var(--dark-card) 0%, rgba(107, 70, 193, 0.1) 100%);
         }
 
@@ -310,318 +407,87 @@
             color: var(--text-white);
         }
 
-        .timeline {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(180deg, var(--primary), var(--green));
-        }
-
-        .timeline-item {
-            margin-bottom: 3rem;
-            position: relative;
-        }
-
-        .timeline-item:nth-child(odd) .timeline-content {
-            margin-left: 0;
-            margin-right: 52%;
-            text-align: right;
-        }
-
-        .timeline-item:nth-child(even) .timeline-content {
-            margin-left: 52%;
-            margin-right: 0;
-            text-align: left;
-        }
-
-        .timeline-marker {
-            position: absolute;
-            left: 50%;
-            top: 0;
-            transform: translateX(-50%);
-            width: 20px;
-            height: 20px;
-            background: var(--primary);
-            border: 4px solid var(--white);
-            border-radius: 50%;
-            z-index: 5;
-            box-shadow: 0 0 0 8px rgba(107, 70, 193, 0.2);
-        }
-
-        body.dark-mode .timeline-marker {
-            border-color: var(--dark-card);
-            box-shadow: 0 0 0 8px rgba(107, 70, 193, 0.3);
-        }
-
-        .timeline-content {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 12px;
-            border: 2px solid rgba(107, 70, 193, 0.1);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        body.dark-mode .timeline-content {
-            background: var(--dark-card);
-            border-color: rgba(107, 70, 193, 0.3);
-        }
-
-        .timeline-content:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(107, 70, 193, 0.15);
-        }
-
-        .timeline-day {
-            font-size: 0.9rem;
-            font-weight: 900;
-            color: var(--green);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.8rem;
-        }
-
-        .timeline-title {
-            font-size: 1.2rem;
-            font-weight: 900;
-            color: var(--primary);
-            margin-bottom: 0.8rem;
-        }
-
-        body.dark-mode .timeline-title {
-            color: var(--green);
-        }
-
-        .timeline-text {
+        .section-subtitle {
+            font-size: 1.15rem;
             color: var(--text-light);
-            margin-bottom: 1rem;
+            max-width: 650px;
+            margin: 0 auto;
             line-height: 1.7;
-        }
-
-        body.dark-mode .timeline-text {
-            color: rgba(241, 245, 249, 0.8);
-        }
-
-        .timeline-result {
-            font-size: 1.4rem;
-            font-weight: 900;
-            color: var(--yellow);
-            text-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
-        }
-
-        @media (max-width: 768px) {
-            .timeline::before {
-                left: 20px;
-            }
-            .timeline-marker {
-                left: 20px;
-            }
-            .timeline-item:nth-child(odd) .timeline-content,
-            .timeline-item:nth-child(even) .timeline-content {
-                margin-left: 60px;
-                margin-right: 0;
-                text-align: left;
-            }
-        }
-
-        /* ========== CASE STUDIES SECTION ========== */
-        .case-studies {
-            padding: 5rem 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 10;
-        }
-
-        .case-studies-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
-
-        .case-study-card {
-            background: var(--white);
-            border-radius: 12px;
-            border: 2px solid rgba(107, 70, 193, 0.1);
-            transition: all 0.35s ease;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        body.dark-mode .case-study-card {
-            background: var(--dark-card);
-            border-color: rgba(107, 70, 193, 0.3);
-        }
-
-        .case-study-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary), var(--green));
-        }
-
-        .case-study-card {
-            position: relative;
-        }
-
-        .case-study-header {
-            background: linear-gradient(135deg, rgba(107, 70, 193, 0.1), rgba(16, 185, 129, 0.1));
-            padding: 2rem;
-            border-bottom: 1px solid rgba(107, 70, 193, 0.1);
-        }
-
-        body.dark-mode .case-study-header {
-            border-bottom-color: rgba(107, 70, 193, 0.3);
-        }
-
-        .case-study-name {
-            font-size: 1.3rem;
-            font-weight: 900;
-            color: var(--primary);
-            margin-bottom: 0.4rem;
-        }
-
-        body.dark-mode .case-study-name {
-            color: var(--green);
-        }
-
-        .case-study-company {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            font-weight: 600;
-        }
-
-        .case-study-body {
-            padding: 2rem;
-        }
-
-        .before-after {
-            display: flex;
-            gap: 2rem;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .before, .after {
-            flex: 1;
-            min-width: 140px;
-        }
-
-        .ba-label {
-            font-size: 0.8rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.6rem;
-            color: var(--text-light);
-        }
-
-        .before .ba-label {
-            color: var(--text-light);
-        }
-
-        .after .ba-label {
-            color: var(--green);
-        }
-
-        .ba-value {
-            font-size: 1.3rem;
-            font-weight: 900;
-            margin-bottom: 0.4rem;
-        }
-
-        .before .ba-value {
-            color: #ef4444;
-        }
-
-        .after .ba-value {
-            color: var(--green);
-        }
-
-        .timeline-days {
-            background: rgba(107, 70, 193, 0.05);
-            padding: 1rem;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            color: var(--text-light);
-            font-weight: 600;
-            text-align: center;
-        }
-
-        body.dark-mode .timeline-days {
-            background: rgba(107, 70, 193, 0.2);
-        }
-
-        .case-study-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(107, 70, 193, 0.15);
-        }
-
-        /* ========== FEATURES SECTION ========== */
-        .features {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--green) 100%);
-            color: var(--white);
-            padding: 5rem 2rem;
-            position: relative;
-            z-index: 10;
-        }
-
-        .features-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .features-content h2 {
-            font-size: clamp(2rem, 4vw, 2.8rem);
-            margin-bottom: 1.5rem;
-            font-weight: 900;
-            text-align: center;
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2.5rem;
-            margin-top: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
-        .feature-box {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
+        .feature-card {
+            background: var(--white);
+            padding: 2.5rem;
             border-radius: 12px;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
+            border: 2px solid rgba(107, 70, 193, 0.1);
+            transition: all 0.35s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
         }
 
-        .feature-box:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-5px);
+        body.dark-mode .feature-card {
+            background: var(--dark-card);
+            border-color: rgba(107, 70, 193, 0.3);
         }
 
-        .feature-box h3 {
-            font-size: 1.2rem;
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary), var(--green));
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.35s ease;
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 15px 40px rgba(107, 70, 193, 0.15);
+            transform: translateY(-8px);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
             font-weight: 900;
             margin-bottom: 0.8rem;
+            color: var(--primary);
         }
 
-        .feature-box p {
-            font-size: 0.95rem;
+        body.dark-mode .feature-card h3 {
+            color: var(--green);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
             line-height: 1.7;
-            opacity: 0.95;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        body.dark-mode .feature-card p {
+            color: rgba(241, 245, 249, 0.8);
         }
 
         /* ========== SERVICES SECTION ========== */
@@ -768,7 +634,138 @@
             box-shadow: 0 12px 30px rgba(107, 70, 193, 0.4);
         }
 
-        /* ========== CTA FINAL ========== */
+        /* ========== RESULTS SECTION ========== */
+        .results {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--green) 100%);
+            color: var(--white);
+            padding: 5rem 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .results-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .results-content h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            margin-bottom: 3rem;
+            font-weight: 900;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .result-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .result-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+            border-color: var(--yellow);
+        }
+
+        .result-number {
+            font-size: 3.2rem;
+            font-weight: 900;
+            color: var(--yellow);
+            margin-bottom: 0.8rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .result-label {
+            font-size: 1.1rem;
+            font-weight: 700;
+            line-height: 1.5;
+        }
+
+        /* ========== TESTIMONIALS SECTION ========== */
+        .testimonials {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--light-bg) 0%, rgba(107, 70, 193, 0.05) 100%);
+            position: relative;
+            z-index: 10;
+        }
+
+        body.dark-mode .testimonials {
+            background: linear-gradient(135deg, var(--dark-card) 0%, rgba(107, 70, 193, 0.1) 100%);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1400px;
+            margin: 3rem auto 0;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border-left: 5px solid var(--primary);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .testimonial-card {
+            background: var(--dark-card);
+            border-left-color: var(--green);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(107, 70, 193, 0.15);
+        }
+
+        .stars {
+            color: var(--yellow);
+            margin-bottom: 1.2rem;
+            font-size: 1.3rem;
+            letter-spacing: 3px;
+        }
+
+        .testimonial-text {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        body.dark-mode .testimonial-text {
+            color: rgba(241, 245, 249, 0.8);
+        }
+
+        .testimonial-author {
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+
+        body.dark-mode .testimonial-author {
+            color: var(--green);
+        }
+
+        .testimonial-role {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        /* ========== CTA FINAL SECTION ========== */
         .cta-final {
             background: linear-gradient(135deg, var(--primary) 0%, var(--green) 100%);
             color: var(--white);
@@ -931,15 +928,22 @@
             flex-wrap: wrap;
         }
 
+        /* ========== RESPONSIVE ========== */
         @media (max-width: 768px) {
-            .hero { min-height: 650px; margin-top: 70px; }
-            .hero-content { text-align: center; margin-left: 0; padding: 2rem 1rem; }
-            .hero h1 { font-size: 2rem; }
-            .hero-subtitle { font-size: 1.1rem; }
-            .cta-buttons { flex-direction: column; }
-            .btn { width: 100%; justify-content: center; }
-            .section-title { font-size: 2rem; }
-            .form-container { padding: 2rem 1.5rem; }
+            .section-title {
+                font-size: 2rem;
+            }
+            .results-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .form-container {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        /* ========== UTILITIES ========== */
+        html {
+            scroll-behavior: smooth;
         }
 
         ::selection {
@@ -947,10 +951,22 @@
             color: var(--white);
         }
 
-        ::-webkit-scrollbar { width: 10px; }
-        ::-webkit-scrollbar-track { background: var(--light-bg); }
-        body.dark-mode ::-webkit-scrollbar-track { background: var(--dark-bg); }
-        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 5px; }
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light-bg);
+        }
+
+        body.dark-mode ::-webkit-scrollbar-track {
+            background: var(--dark-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -959,228 +975,94 @@
         <nav>
             <a href="/" class="logo">CM Tecnologia</a>
             <ul class="nav-links">
-                <li><a href="#historia">A História</a></li>
-                <li><a href="#estudos">Case Studies</a></li>
                 <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#resultados">Resultados</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
             <button class="theme-toggle" id="themeToggle">🌙</button>
         </nav>
     </header>
 
-    <!-- HERO -->
+    <!-- HERO - PARALLAX FIXO -->
     <section class="hero">
         <div class="hero-content">
-            <div class="badge-story">📖 Histórias de Transformação Real</div>
+            <div class="badge-urgent">🔥 Garantia 100% - Triplicar ou Dinheiro de Volta</div>
             
-            <h1>De €0 a €50k/mês em 90 Dias <span class="highlight">A História de João</span></h1>
+            <h1>Triplicar Vendas em 90 Dias <span class="guarantee">ou Dinheiro de Volta 🔥</span></h1>
             
-            <p class="hero-subtitle">Sem experiência em ads. Sem budget inicial. Sem contratos prisioneiros. Resultado: 2.400% ROI comprovado em 90 dias.</p>
+            <p class="hero-subtitle">Dashboard real-time. Primeira conversão garantida em 5-7 dias. 18 empresas PT já triplicaram vendas. Cancelar quando quiser com 7 dias de aviso.</p>
             
             <div class="cta-buttons">
-                <button class="btn btn-cta" onclick="document.getElementById('estudos').scrollIntoView({behavior: 'smooth'})">
-                    📊 Ver Case Studies
+                <button class="btn btn-cta" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">
+                    ⚡ Começar Agora
                 </button>
-                <a href="https://wa.me/351919000000?text=Quero%20conhecer%20a%20transformacao%20de%20negocios" class="btn btn-secondary" target="_blank">
+                <a href="https://wa.me/351919000000?text=Quero%20triplicar%20minhas%20vendas%20com%20a%20CM%20Tecnologia" class="btn btn-secondary" target="_blank">
                     💬 WhatsApp
                 </a>
             </div>
+
+            <div class="hero-metrics">
+                <div class="metric">
+                    <div class="metric-number">280%</div>
+                    <div class="metric-label">ROI Médio</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-number">€450k</div>
+                    <div class="metric-label">Vendas 2024</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-number">5-7 dias</div>
+                    <div class="metric-label">1ª Conversão</div>
+                </div>
+            </div>
+        </div>            <div class="guarantee-badge">
+            <h3>✅ Garantia</h3>
+            <p>Triplicar Vendas em 90 Dias ou Dinheiro de Volta</p>
         </div>
     </section>
 
-    <!-- TIMELINE DA HISTÓRIA DE JOÃO -->
-    <section class="timeline-section" id="historia">
-        <div class="section-header">
-            <div class="section-label">A Jornada Completa</div>
-            <h2 class="section-title">Como João Transformou Seu Negócio em 90 Dias</h2>
+    <!-- FEATURES SECTION -->
+    <section class="features" id="features">            <div class="section-header">
+            <div class="section-label">Diferencial Comprovado</div>
+            <h2 class="section-title">Por Que Escolher a CM Tecnologia</h2>
+            <p class="section-subtitle">18 empresas PT já triplicaram vendas. Garantia 100%. Dashboard real-time. Sem contratos prisioneiros. Gestor dedicado. Resposta em 24h.</p>
         </div>
-
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-marker"></div>
-                <div class="timeline-content">
-                    <div class="timeline-day">Dia 0 - Início</div>
-                    <div class="timeline-title">Situação Inicial: Zero Vendas</div>
-                    <div class="timeline-text">João tinha um produto excelente mas ninguém sabia disso. €0/mês em vendas, sem presença online, sem estratégia de marketing.</div>
-                    <div class="timeline-result">Status: Frustrado & Sem Direção</div>
-                </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Dashboard Real-Time 24/7</h3>
+                <p>Acompanha tudo ao vivo: cliques, conversões, custo por lead, ROI exato. Você sabe sempre quanto gasta e quanto ganha.</p>
             </div>
 
-            <div class="timeline-item">
-                <div class="timeline-marker"></div>
-                <div class="timeline-content">
-                    <div class="timeline-day">Dia 5-7 - Primeira Conversão</div>
-                    <div class="timeline-title">1ª Venda Garantida ✓</div>
-                    <div class="timeline-text">Setup inicial de campanhas, otimização de landing page, primeiros anúncios rodando. Primeira venda chega garantida em 5-7 dias.</div>
-                    <div class="timeline-result">€850 em vendas</div>
-                </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>1ª Conversão em 5-7 Dias</h3>
+                <p>Primeira venda garantida ou trabalhamos grátis até conseguir. Otimização contínua desde dia 1.</p>
             </div>
 
-            <div class="timeline-item">
-                <div class="timeline-marker"></div>
-                <div class="timeline-content">
-                    <div class="timeline-day">Dia 30 - Scaling</div>
-                    <div class="timeline-title">Dashboard Real-Time Ativo</div>
-                    <div class="timeline-text">Otimização contínua baseada em dados. João vê tudo em tempo real: cliques, conversões, custo por lead, ROI exato. Confiança total.</div>
-                    <div class="timeline-result">€12.500 em vendas</div>
-                </div>
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>280% ROI Médio Comprovado</h3>
+                <p>Cada € investido retorna €2.80 multiplicado. Focamos em resultados mensuráveis, não em vaidades de cliques.</p>
             </div>
 
-            <div class="timeline-item">
-                <div class="timeline-marker"></div>
-                <div class="timeline-content">
-                    <div class="timeline-day">Dia 60 - Aceleração</div>
-                    <div class="timeline-title">Múltiplos Canais Ativos</div>
-                    <div class="timeline-text">Google Ads + Facebook + Instagram + Email. Automações rodando. Cada canal funcionando em perfeita sinergia. Crescimento exponencial.</div>
-                    <div class="timeline-result">€35.000 em vendas</div>
-                </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔓</div>
+                <h3>Sem Contratos Prisioneiros</h3>
+                <p>Cancela com 7 dias de aviso, quando quiser. Confiamos tanto no nosso trabalho que você vai querer ficar.</p>
             </div>
 
-            <div class="timeline-item">
-                <div class="timeline-marker"></div>
-                <div class="timeline-content">
-                    <div class="timeline-day">Dia 90 - Estrutura Completa</div>
-                    <div class="timeline-title">Negócio 100% Otimizado</div>
-                    <div class="timeline-text">Sistema completo, previsível e escalável. João ganha €50k/mês consistentemente. Pode escalar ainda mais ou relaxar. Ele escolhe.</div>
-                    <div class="timeline-result">€50.000/mês 🎯</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CASE STUDIES -->
-    <section class="case-studies" id="estudos">
-        <div class="section-header">
-            <div class="section-label">Mais Histórias de Sucesso</div>
-            <h2 class="section-title">17 Clientes Reais, 17 Transformações</h2>
-        </div>
-
-        <div class="case-studies-grid">
-            <div class="case-study-card">
-                <div class="case-study-header">
-                    <div class="case-study-name">Maria Rodrigues</div>
-                    <div class="case-study-company">E-commerce de Moda - Porto</div>
-                </div>
-                <div class="case-study-body">
-                    <div class="before-after">
-                        <div class="before">
-                            <div class="ba-label">Antes</div>
-                            <div class="ba-value">€1.200/mês</div>
-                            <div style="font-size: 0.85rem; color: #ef4444;">Sem retorno</div>
-                        </div>
-                        <div class="after">
-                            <div class="ba-label">Depois</div>
-                            <div class="ba-value">€18.500/mês</div>
-                            <div style="font-size: 0.85rem; color: var(--green);">ROI 3.8x</div>
-                        </div>
-                    </div>
-                    <div class="timeline-days">⏱️ 90 dias</div>
-                </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3>Escalável de €0 a €100k+/mês</h3>
+                <p>Começamos pequeno com startups, escalamos com PMEs, dominamos e-commerce. Crescemos quando você cresce.</p>
             </div>
 
-            <div class="case-study-card">
-                <div class="case-study-header">
-                    <div class="case-study-name">Pedro Silva</div>
-                    <div class="case-study-company">Agência Digital - Setúbal</div>
-                </div>
-                <div class="case-study-body">
-                    <div class="before-after">
-                        <div class="before">
-                            <div class="ba-label">Antes</div>
-                            <div class="ba-value">0 clientes</div>
-                            <div style="font-size: 0.85rem; color: #ef4444;">Novo negócio</div>
-                        </div>
-                        <div class="after">
-                            <div class="ba-label">Depois</div>
-                            <div class="ba-value">45 leads/mês</div>
-                            <div style="font-size: 0.85rem; color: var(--green);">Qualificados</div>
-                        </div>
-                    </div>
-                    <div class="timeline-days">⏱️ 60 dias</div>
-                </div>
-            </div>
-
-            <div class="case-study-card">
-                <div class="case-study-header">
-                    <div class="case-study-name">Carlos Mendes</div>
-                    <div class="case-study-company">SaaS B2B - Lisboa</div>
-                </div>
-                <div class="case-study-body">
-                    <div class="before-after">
-                        <div class="before">
-                            <div class="ba-label">Antes</div>
-                            <div class="ba-value">€2.000/cliente</div>
-                            <div style="font-size: 0.85rem; color: #ef4444;">CAC muito alto</div>
-                        </div>
-                        <div class="after">
-                            <div class="ba-label">Depois</div>
-                            <div class="ba-value">€500/cliente</div>
-                            <div style="font-size: 0.85rem; color: var(--green);">CAC ideal</div>
-                        </div>
-                    </div>
-                    <div class="timeline-days">⏱️ 45 dias</div>
-                </div>
-            </div>
-
-            <div class="case-study-card">
-                <div class="case-study-header">
-                    <div class="case-study-name">Ana Costa</div>
-                    <div class="case-study-company">E-commerce Beleza - Leiria</div>
-                </div>
-                <div class="case-study-body">
-                    <div class="before-after">
-                        <div class="before">
-                            <div class="ba-label">Antes</div>
-                            <div class="ba-value">Sem estratégia</div>
-                            <div style="font-size: 0.85rem; color: #ef4444;">€0 online</div>
-                        </div>
-                        <div class="after">
-                            <div class="ba-label">Depois</div>
-                            <div class="ba-value">€25.000/mês</div>
-                            <div style="font-size: 0.85rem; color: var(--green);">Faturamento</div>
-                        </div>
-                    </div>
-                    <div class="timeline-days">⏱️ 120 dias</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- WHY THIS WORKS -->
-    <section class="features">
-        <div class="features-content">
-            <h2>Por Que Essas Histórias São 100% Reais</h2>
-            
-            <div class="features-grid">
-                <div class="feature-box">
-                    <h3>✓ Nada Fabricado</h3>
-                    <p>Cada número é verificável. Clientes reais, negócios reais, resultados reais comprovados por métricas concretas.</p>
-                </div>
-
-                <div class="feature-box">
-                    <h3>✓ Metodologia Idêntica</h3>
-                    <p>O mesmo sistema que funcionou para João funciona para todos. Não é sorte. É processo, dados e otimização contínua.</p>
-                </div>
-
-                <div class="feature-box">
-                    <h3>✓ Dashboard Transparente</h3>
-                    <p>Você vê tudo em tempo real: cliques, conversões, custo por lead, ROI exato. Sem surpresas, sem mistérios.</p>
-                </div>
-
-                <div class="feature-box">
-                    <h3>✓ Garantia Blindada</h3>
-                    <p>Se não funcionar em 90 dias, dinheiro de volta. Nós confiamos tanto que podemos oferecer isso.</p>
-                </div>
-
-                <div class="feature-box">
-                    <h3>✓ Relatórios Semanais</h3>
-                    <p>Todo semana você recebe relatório comprovando cada métrica. Sem bolinha de cristal, só números frios.</p>
-                </div>
-
-                <div class="feature-box">
-                    <h3>✓ Seu Gestor Dedicado</h3>
-                    <p>Uma pessoa responsável por você. Reunião semanal. Resposta em 24h. Você nunca fica perdido.</p>
-                </div>
+            <div class="feature-card">
+                <div class="feature-icon">👤</div>
+                <h3>Gestor Dedicado Só Seu</h3>
+                <p>Uma pessoa responsável por você. Reunião semanal. Resposta em 24h máximo. Você nunca fica em suporte genérico.</p>
             </div>
         </div>
     </section>
@@ -1190,7 +1072,7 @@
         <div class="section-header">
             <div class="section-label">Serviços Premium</div>
             <h2 class="section-title">6 Pacotes Comprovados</h2>
-            <p style="text-align: center; color: var(--text-light); max-width: 650px; margin: 1.5rem auto 0;">Todos com análise estratégica grátis, dashboard real-time, relatório semanal, otimização contínua, gestor dedicado e garantia de resultado.</p>
+            <p class="section-subtitle">Todos com análise estratégica grátis, relatório semanal, otimização contínua, gestor dedicado e garantia de resultado.</p>
         </div>
         
         <div class="services-grid">
@@ -1206,7 +1088,7 @@
                     <li>Suporte 24/7</li>
                 </ul>
                 <div class="service-pricing">
-                    <span class="service-price">€499</span>
+                    <span class="service-price">€299</span>
                     <span class="service-price-period">/mês</span>
                 </div>
                 <button class="service-cta" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">Contratar</button>
@@ -1224,7 +1106,7 @@
                     <li>Crescimento garantido</li>
                 </ul>
                 <div class="service-pricing">
-                    <span class="service-price">€449</span>
+                    <span class="service-price">€249</span>
                     <span class="service-price-period">/mês</span>
                 </div>
                 <button class="service-cta" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">Contratar</button>
@@ -1239,10 +1121,10 @@
                     <li>4 artigos/mês</li>
                     <li>Link building</li>
                     <li>Rankear em Google</li>
-                    <li>Tráfego orgânico</li>
+                    <li>Tráfego organico</li>
                 </ul>
                 <div class="service-pricing">
-                    <span class="service-price">€529</span>
+                    <span class="service-price">€279</span>
                     <span class="service-price-period">/mês</span>
                 </div>
                 <button class="service-cta" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">Contratar</button>
@@ -1260,7 +1142,7 @@
                     <li>Conversão garantida</li>
                 </ul>
                 <div class="service-pricing">
-                    <span class="service-price">€249</span>
+                    <span class="service-price">€149</span>
                     <span class="service-price-period">/mês</span>
                 </div>
                 <button class="service-cta" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">Contratar</button>
@@ -1278,7 +1160,7 @@
                     <li>Consultoria estratégica</li>
                 </ul>
                 <div class="service-pricing">
-                    <span class="service-price">€199</span>
+                    <span class="service-price">€99</span>
                     <span class="service-price-period">/mês</span>
                 </div>
                 <button class="service-cta" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">Contratar</button>
@@ -1296,7 +1178,7 @@
                     <li>Desconto 35%</li>
                 </ul>
                 <div class="service-pricing">
-                    <span class="service-price">€1.499</span>
+                    <span class="service-price">€749</span>
                     <span class="service-price-period">/mês</span>
                 </div>
                 <button class="service-cta" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">Contratar</button>
@@ -1304,9 +1186,66 @@
         </div>
     </section>
 
+    <!-- RESULTS SECTION -->
+    <section class="results" id="resultados">
+        <div class="results-content">
+            <h2>Números Que Comprovam</h2>
+            
+            <div class="results-grid">
+                <div class="result-item">
+                    <div class="result-number">18</div>
+                    <div class="result-label">Clientes Ativos</div>
+                </div>
+
+                <div class="result-item">
+                    <div class="result-number">€450k</div>
+                    <div class="result-label">Vendas Geradas</div>
+                </div>
+
+                <div class="result-item">
+                    <div class="result-number">280%</div>
+                    <div class="result-label">ROI Comprovado</div>
+                </div>
+
+                <div class="result-item">
+                    <div class="result-number">87%</div>
+                    <div class="result-label">Taxa Retenção</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+        <h2 class="section-title">Clientes Reais, Resultados Reais</h2>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Contratei com €0 em vendas. 3 meses depois: 45 leads/mês qualificados. ROI de 3.8x. Mateus muda negócios."</p>
+                <p class="testimonial-author">João Fernandes</p>
+                <p class="testimonial-role">CEO StartupTech - Leiria</p>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Gastava €1200/mês sem retorno. Mateus reduziu para €450 e triplicou minhas conversões. Profissionalismo puro."</p>
+                <p class="testimonial-author">Maria Rodrigues</p>
+                <p class="testimonial-role">Diretora E-commerce - Porto</p>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Melhor investimento de 2024. Dashboard real-time, relatórios semanais, resultados garantidos. Recomendo demais!"</p>
+                <p class="testimonial-author">Pedro Silva</p>
+                <p class="testimonial-role">Founder Agência Digital - Setúbal</p>
+            </div>
+        </div>
+    </section>
+
     <!-- FINAL CTA -->
     <section class="cta-final" id="contato">
-        <h2>Qual Será a Sua História em 90 Dias?</h2>
+        <h2>Começar Sua Transformação Agora</h2>
         <p>Consulta inicial 100% grátis. 30 minutos. Plano de ação customizado sem compromissos. Dashboard early access.</p>
         
         <div class="form-container">
@@ -1332,8 +1271,8 @@
 
             <div class="whatsapp-cta">
                 💬 Ou envie pelo WhatsApp: 
-                <a href="https://wa.me/351919000000?text=Quero%20conhecer%20a%20transformacao%20de%20negocios" target="_blank">
-                    +351 961 227 666
+                <a href="https://wa.me/351919000000?text=Quero%20triplicar%20minhas%20vendas" target="_blank">
+                    +351 919 000 000
                 </a>
             </div>
         </div>
@@ -1341,7 +1280,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2025 CM Tecnologia. Transformamos Histórias em Sucessos.</p>
+        <p>&copy; 2025 CM Tecnologia. Transformamos Vendas em Resultados.</p>
         <div class="footer-links">
             <a href="#">Privacidade</a>
             <a href="#">Termos</a>
