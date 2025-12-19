@@ -693,6 +693,79 @@ body.dark-mode .moon-icon {
 
 
 
+/* MOBILE MARKETING SECTION - OTIMIZADO */
+@media (max-width: 768px) {
+    .marketing-hero {
+        min-height: auto !important;
+        margin-top: 20px !important;
+        padding: 2rem 1rem !important;
+    }
+    
+    .marketing-content {
+        padding: 1.5rem 1rem !important;
+    }
+    
+    .marketing-header {
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .marketing-header h2 {
+        font-size: 1.4rem !important;
+        margin-bottom: 0.8rem !important;
+    }
+    
+    .marketing-header p {
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    .channels-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.2rem !important;
+        margin-top: 2rem !important;
+    }
+    
+    .channel-card {
+        padding: 1.25rem 1rem !important;
+        border-radius: 12px !important;
+    }
+    
+    .channel-icon {
+        font-size: 2.2rem !important;
+        margin-bottom: 0.6rem !important;
+    }
+    
+    .channel-title {
+        font-size: 0.95rem !important;
+        margin-bottom: 0.4rem !important;
+        font-weight: 700 !important;
+    }
+    
+    .channel-description {
+        font-size: 0.8rem !important;
+        line-height: 1.4 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .marketing-hero {
+        padding: 1.5rem 0.75rem !important;
+    }
+    
+    .channels-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2031,3 +2104,9 @@ section {
         grid-template-columns: 1fr;
     }
 }
+
+
+
+
+
+
