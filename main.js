@@ -256,3 +256,7 @@ preventScrollbarShift();
 window.addEventListener('resize', preventScrollbarShift);
 
 console.log('✅ Main.js loaded successfully');
+
+
+
+

@@ -3,190 +3,926 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Projetos - C&M Tecnologia">
-    <title>Projetos - C&M Tecnologia</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="/styles.css">
-    
-    <title>Projetos - C&M Tecnologia</title>
+    <title>Projetos de Websites - C&M Tecnologia</title>
+    <style>
+        :root {
+            --color-purple: #7C4DFF;
+            --color-yellow: #FFD700;
+            --color-green: #4CAF50;
+            --color-dark-bg: #1a1a1a;
+            --color-dark-card: #2d2d2d;
+            --color-light-bg: #f5f5f5;
+            --color-light-card: #ffffff;
+            --color-text-dark: #ffffff;
+            --color-text-light: #1a1a1a;
+            --color-border: rgba(124, 77, 255, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--color-dark-bg);
+            color: var(--color-text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Background fixo */
+        body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(124, 77, 255, 0.1) 0%, rgba(76, 17, 255, 0.1) 100%),
+              url('fundomarketing.jpeg') center/cover no-repeat;
+  background-attachment: fixed;
+  z-index: -1;
+  opacity: 0.9;
+}
+
+        /* Overlay escuro */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 26, 26, 0.85);
+            z-index: -1;
+            background-attachment: fixed;
+        }
+
+        /* Header */
+        header {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--color-border);
+            backdrop-filter: blur(10px);
+            background: rgba(26, 26, 26, 0.8);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--color-purple);
+            text-decoration: none;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--color-text-dark);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--color-yellow);
+        }
+
+        .theme-toggle {
+            background: var(--color-purple);
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            background: var(--color-green);
+        }
+
+        /* Container principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            margin-bottom: 80px;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--color-purple), var(--color-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #aaa;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: 2px solid var(--color-purple);
+            background: transparent;
+            color: var(--color-purple);
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: var(--color-purple);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .btn.primary {
+            background: var(--color-purple);
+            color: white;
+            border-color: var(--color-purple);
+        }
+
+        .btn.primary:hover {
+            background: var(--color-green);
+            border-color: var(--color-green);
+        }
+
+        /* Grid de Projetos */
+        .projetos-section {
+            margin-bottom: 60px;
+        }
+
+        .projetos-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            text-align: center;
+            color: var(--color-yellow);
+        }
+
+        .projetos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .projeto-card {
+            background: rgba(45, 45, 45, 0.8);
+            border: 2px solid var(--color-border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 0.6s ease;
+        }
+
+        .projeto-card:hover {
+            border-color: var(--color-purple);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(124, 77, 255, 0.3);
+        }
+
+        .projeto-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background: linear-gradient(135deg, var(--color-purple), var(--color-green));
+        }
+
+        .projeto-card-content {
+            padding: 25px;
+        }
+
+        .projeto-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--color-yellow);
+        }
+
+        .projeto-card p {
+            color: #aaa;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .projeto-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            background: rgba(76, 175, 80, 0.2);
+            color: var(--color-green);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid var(--color-green);
+        }
+
+        .projeto-card-footer {
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+        }
+
+        .projeto-card-footer button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-ver-projeto {
+            background: var(--color-purple);
+            color: white;
+        }
+
+        .btn-ver-projeto:hover {
+            background: var(--color-yellow);
+            color: #000;
+        }
+
+        .btn-detalhes {
+            background: transparent;
+            border: 2px solid var(--color-green);
+            color: var(--color-green);
+        }
+
+        .btn-detalhes:hover {
+            background: var(--color-green);
+            color: white;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            position: relative;
+            width: 90%;
+            height: 90vh;
+            max-width: 1000px;
+            background: var(--color-dark-card);
+            border: 2px solid var(--color-purple);
+            border-radius: 12px;
+            overflow: hidden;
+            animation: slideUp 0.3s ease;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 25px;
+            background: linear-gradient(135deg, var(--color-purple), var(--color-green));
+            border-bottom: 2px solid var(--color-border);
+        }
+
+        .modal-header h2 {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .modal-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .modal-btn:hover {
+            background: white;
+            color: var(--color-purple);
+        }
+
+        .modal-body {
+            width: 100%;
+            height: calc(90vh - 70px);
+            overflow: hidden;
+            position: relative;
+        }
+
+        #projeto-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: var(--color-light-bg);
+        }
+
+        .iframe-error {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 100, 100, 0.1);
+            border: 2px solid #ff6464;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            color: #ff6464;
+            z-index: 100;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        .iframe-error h3 {
+            margin-bottom: 15px;
+        }
+
+        .iframe-error p {
+            margin-bottom: 20px;
+            color: #aaa;
+        }
+
+        .iframe-error button {
+            background: #ff6464;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .iframe-error button:hover {
+            background: #ff4444;
+        }
+
+        .close-modal {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .close-modal:hover {
+            background: white;
+            color: var(--color-purple);
+        }
+
+        /* Cartão com Flip */
+        .cartao-card {
+            perspective: 1000px;
+        }
+
+        .cartao-content {
+            position: relative;
+            width: 100%;
+            height: 280px;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .cartao-card.flipped .cartao-content {
+            transform: rotateY(180deg);
+        }
+
+        .cartao-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .cartao-front {
+            background: linear-gradient(135deg, var(--color-purple), var(--color-green));
+            color: white;
+        }
+
+        .cartao-back {
+            background: linear-gradient(135deg, var(--color-yellow), var(--color-purple));
+            color: #000;
+            transform: rotateY(180deg);
+        }
+
+        .cartao-back p {
+            color: #000;
+        }
+
+        /* Timeline (para cartões e apps) */
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--color-purple), var(--color-green));
+        }
+
+        .timeline-item {
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            text-align: right;
+            padding-right: 55%;
+        }
+
+        .timeline-item:nth-child(even) {
+            text-align: left;
+            padding-left: 55%;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 15px;
+            height: 15px;
+            background: var(--color-yellow);
+            border: 3px solid var(--color-dark-card);
+            border-radius: 50%;
+            z-index: 10;
+        }
+
+        .timeline-content {
+            background: rgba(45, 45, 45, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 2px solid var(--color-purple);
+        }
+
+        .timeline-content h4 {
+            color: var(--color-yellow);
+            margin-bottom: 8px;
+        }
+
+        .timeline-content p {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+                padding: 15px 20px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+            }
+
+            nav a {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .projetos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                width: 95%;
+                height: 95vh;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                padding: 0 0 30px 80px !important;
+                text-align: left !important;
+            }
+
+            .timeline-dot {
+                left: 12px;
+            }
+
+            .timeline-content {
+                border-left: 2px solid var(--color-purple);
+            }
+        }
+
+        /* Animações */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Dark Mode (padrão) */
+        body {
+            background: var(--color-dark-bg);
+            color: var(--color-text-dark);
+        }
+
+        /* Light Mode */
+        body.light-mode {
+            --color-dark-bg: #f5f5f5;
+            --color-dark-card: #ffffff;
+            --color-text-dark: #1a1a1a;
+            --color-text-light: #f5f5f5;
+        }
+
+        body.light-mode #projeto-iframe {
+            background: var(--color-light-bg);
+        }
+    </style>
 </head>
 <body>
-    <!-- Header (igual ao index.html ) -->
-    <header class="header" id="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <img src="logoc.jpeg" alt="C&M Tecnologia Logo" style="height: 70px; width: auto; object-fit: contain;">
-                    <span class="logo-text">C&M Tecnologia</span>
-                </div>
-                
-                <nav class="nav" id="nav">
-                    <a href="index.html#home" class="nav-link">Home</a>
-                    <a href="index.html#services" class="nav-link">Serviços</a>
-                    <a href="index.html#portfolio" class="nav-link">Portfólio</a>
-                    <a href="index.html#about" class="nav-link">Sobre</a>
-                    <a href="index.html#contact" class="nav-link">Contato</a>
-                </nav>
-                
-                <div class="header-actions">
-                    <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
-                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="5"></circle>
-                            <line x1="12" y1="1" x2="12" y2="3"></line>
-                            <line x1="12" y1="21" x2="12" y2="23"></line>
-                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                            <line x1="1" y1="12" x2="3" y2="12"></line>
-                            <line x1="21" y1="12" x2="23" y2="12"></line>
-                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                        </svg>
-                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                        </svg>
-                    </button>
-                    
-                    <button class="cta-button">Solicitar Orçamento</button>
-                    
-                    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                </div>
-            </div>
-        </div>
+    <!-- Header -->
+    <header>
+        <a href="/" class="logo">
+            <img src="logoc.jpeg" alt="C&M Tecnologia">
+            <span>C&M Tecnologia</span>
+        </a>
+        <nav>
+            <a href="/projetos">Websites</a>
+            <a href="/landing-cartoes.html" class="nav-link">Cartões</a>
+            <a href="/landing-apps.html" class="nav-link">Apps</a>
+            <a href="/">Voltar</a>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
+        </nav>
     </header>
 
-    <!-- Projeto Section -->
-    <section class="projeto-detail" style="padding-top: 100px;">
-        <div class="container">
-            <a href="index.html" class="btn btn-outline" style="margin-bottom: 2rem;">← Voltar</a>
-            
-            <div id="projeto-content">
-                <!-- Conteúdo dinâmico aqui -->
+    <!-- Container Principal -->
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Nossos Projetos de Websites</h1>
+            <p>Veja alguns dos projetos que desenvolvemos para nossos clientes. Sites modernos, responsivos e otimizados para conversão.</p>
+            <div class="hero-buttons">
+                <button class="btn primary" onclick="document.querySelector('.projetos-section').scrollIntoView({ behavior: 'smooth' })">Ver Projetos</button>
+                <a href="/" class="btn">Solicitar Orçamento</a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer (igual ao index.html) -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>C&M Tecnologia</h3>
-                    <p>Transformando visões digitais em resultados reais</p>
-                </div>
+        <!-- Seção de Projetos -->
+        <section class="projetos-section">
+            <h2>Websites Desenvolvidos</h2>
+            <div class="projetos-grid" id="projetos-grid">
+                <!-- Projetos carregados aqui via JavaScript -->
+            </div>
+        </section>
+    </div>
 
-                <div class="footer-section">
-                    <h3>Links Rápidos</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html#home">Home</a></li>
-                        <li><a href="index.html#services">Serviços</a></li>
-                        <li><a href="index.html#portfolio">Portfólio</a></li>
-                        <li><a href="index.html#about">Sobre</a></li>
-                        <li><a href="index.html#contact">Contato</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h3>Contato</h3>
-                    <p><a href="mailto:cmtecnologia12@gmail.com">cmtecnologia12@gmail.com</a></p>
-                    <p><a href="tel:+351961227666">+351 961 227 666</a></p>
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Projeto</h2>
+                <div class="modal-buttons">
+                    <button class="modal-btn" onclick="abrirFullscreen()">🖥️ Tela Cheia</button>
+                    <button class="modal-btn" onclick="fecharModal()" title="Fechar">✕</button>
                 </div>
             </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2024 C&M Tecnologia. Todos os direitos reservados.</p>
+            <div class="modal-body">
+                <iframe id="projeto-iframe" onload="onIframeLoad()" onerror="onIframeError()"></iframe>
+                <div class="iframe-error" id="iframe-error">
+                    <h3>⚠️ Projeto Bloqueado</h3>
+                    <p>Este projeto não pode ser visualizado em um iframe. Clique abaixo para abrir em tela cheia.</p>
+                    <button onclick="abrirFullscreen()">Abrir em Tela Cheia</button>
+                </div>
             </div>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="/dark-mode.js"></script>
-    <script src="/main.js"></script>
+ </div>
+    </div>
     <script>
-        // Carregar projeto específico
-        const urlParams = new URLSearchParams(window.location.search);
-        const projeto = urlParams.get('projeto');
+        // Dados dos projetos (substitua com seus dados)
         
-        const projetos = {
-            obras: {
-                titulo: 'Site de Obras',
-                descricao: 'Website profissional para empresa de construção civil',
-                imagem: '🏗️',
-                cor: 'linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%)',
-                detalhes: `
-                    <h2>Site de Obras - Projeto Completo</h2>
-                    <p>Desenvolvemos um website profissional para uma empresa de construção civil, com:</p>
-                    <ul>
-                        <li>✅ Galeria de projetos</li>
-                        <li>✅ Portfólio de obras</li>
-                        <li>✅ Formulário de orçamento</li>
-                        <li>✅ Responsivo para mobile</li>
-                        <li>✅ SEO otimizado</li>
-                    </ul>
-                    <p><strong>Resultado:</strong> 150% de aumento em leads, 5 novos projetos fechados.</p>
-                `
-            },
-            cartao: {
-                titulo: 'Cartão de Visita Digital',
-                descricao: 'Cartão de visita interativo com QR code',
-                imagem: '💳',
-                cor: 'linear-gradient(135deg, #10B981 0%, #059669 100%)',
-                detalhes: `
-                    <h2>Cartão de Visita Digital</h2>
-                    <p>Criamos um cartão de visita digital interativo com:</p>
-                    <ul>
-                        <li>✅ QR code integrado</li>
-                        <li>✅ Links para redes sociais</li>
-                        <li>✅ Contato direto via WhatsApp</li>
-                        <li>✅ Design moderno e profissional</li>
-                        <li>✅ Compartilhável por email</li>
-                    </ul>
-                    <p><strong>Resultado:</strong> Melhor apresentação profissional, fácil compartilhamento.</p>
-                `
-            },
-            app: {
-                titulo: 'App Mobile',
-                descricao: 'Aplicação mobile para gerenciamento de tarefas',
-                imagem: '📱',
-                cor: 'linear-gradient(135deg, #FFD700 0%, #FFC107 100%)',
-                detalhes: `
-                    <h2>App Mobile - Gerenciador de Tarefas</h2>
-                    <p>Desenvolvemos uma aplicação mobile completa com:</p>
-                    <ul>
-                        <li>✅ Gerenciamento de tarefas</li>
-                        <li>✅ Sincronização em nuvem</li>
-                        <li>✅ Notificações push</li>
-                        <li>✅ Interface intuitiva</li>
-                        <li>✅ iOS e Android</li>
-                    </ul>
-                    <p><strong>Resultado:</strong> 10k+ downloads, 4.8 estrelas na app store.</p>
-                `
-            }
-        };
+
+const projetos = [
+    {
+        id: 1,
+        titulo: "Gráfico de Despesa",
+        descricao: "Dashboard interativo para visualização de despesas",
+        tecnologias: ["HTML", "CSS", "JavaScript"],
+        imagem: "https://via.placeholder.com/320x220?text=Grafico+Despesa",
+        url: "https://graficodedespesa.netlify.app",
+        cliente: "Cliente A",
+        resultado: "Melhorou controle financeiro em 300%"
+    },
+    {
+        id: 2,
+        titulo: "Portal E-commerce",
+        descricao: "Loja online completa com integração de pagamento",
+        tecnologias: ["HTML", "CSS", "JavaScript", "Node.js"],
+        imagem: "https://via.placeholder.com/320x220?text=E-commerce",
+        url: "https://seu-projeto-2.netlify.app",
+        cliente: "Cliente B",
+        resultado: "Aumentou vendas em 250%"
+    },
+    {
+        id: 3,
+        titulo: "Agência Digital",
+        descricao: "Site moderno para agência de marketing",
+        tecnologias: ["React", "CSS", "Figma"],
+        imagem: "https://via.placeholder.com/320x220?text=Agencia",
+        url: "https://seu-projeto-3.netlify.app",
+        cliente: "Cliente C",
+        resultado: "Triplicou leads gerados"
+    },
+    {
+        id: 4,
+        titulo: "Portfólio Fotógrafo",
+        descricao: "Site responsivo para portfólio fotográfico",
+        tecnologias: ["HTML", "CSS", "JavaScript"],
+        imagem: "https://via.placeholder.com/320x220?text=Portfolio",
+        url: "https://seu-projeto-4.netlify.app",
+        cliente: "Cliente D",
+        resultado: "Aumentou agendamentos em 180%"
+    },
+    {
+        id: 5,
+        titulo: "Restaurante Online",
+        descricao: "Sistema de reservas e cardápio digital",
+        tecnologias: ["HTML", "CSS", "JavaScript", "PHP"],
+        imagem: "https://via.placeholder.com/320x220?text=Restaurante",
+        url: "https://seu-projeto-5.netlify.app",
+        cliente: "Cliente E",
+        resultado: "Otimizou agendamentos de mesas"
+    }
+
+    
+
+
+];
+
+
+
+
+
+
+        // Variável global para armazenar URL atual
+        let currentProjectUrl = '';
+
+
+
+
+        // Carregar projetos
         
-        if (projeto && projetos[projeto]) {
-            const p = projetos[projeto];
-            document.getElementById('projeto-content').innerHTML = `
-                <div style="background: ${p.cor}; height: 300px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 5rem; margin-bottom: 2rem;">
-                    ${p.imagem}
+
+function carregarProjetos() {
+    const grid = document.getElementById('projetos-grid');
+    grid.innerHTML = '';
+
+    projetos.forEach(projeto => {
+        const card = document.createElement('div');
+        card.className = 'projeto-card';
+        card.innerHTML = `
+            <img src="${projeto.imagem}" alt="${projeto.titulo}">
+            <div class="projeto-card-content">
+                <h3>${projeto.titulo}</h3>
+                <p>${projeto.descricao}</p>
+                <div class="projeto-tags">
+                    ${projeto.tecnologias.map(tech => `<span class="tag">${tech}</span>`).join('')}
                 </div>
-                <div class="projeto-info">
-                    ${p.detalhes}
+                <p style="color: var(--color-yellow); font-size: 0.9rem; margin-bottom: 15px; font-weight: 600;">
+                    ✓ ${projeto.resultado}
+                </p>
+                <div class="projeto-card-footer">
+                    <button class="btn-ver-projeto" onclick="abrirModal(${projeto.id})">
+                        Ver Projeto →
+                    </button>
+                    <button class="btn-detalhes" onclick="verDetalhes(${projeto.id})">
+                        Detalhes
+                    </button>
                 </div>
-                <div style="margin-top: 2rem;">
-                    <a href="index.html#contact" class="btn btn-primary">Solicitar Orçamento</a>
-                </div>
-            `;
+            </div>
+        `;
+        grid.appendChild(card);
+    });
+}
+
+
+
+        // Abrir modal com iframe
+        function abrirModal(projetoId) {
+    const projeto = projetos.find(p => p.id === projetoId);
+    if (!projeto) {
+        console.error('Projeto não encontrado');
+        return;
+    }
+    
+    currentProjectUrl = projeto.url;
+    document.getElementById('modal').classList.add('show');
+    document.getElementById('modal-title').textContent = projeto.titulo;
+    document.getElementById('projeto-iframe').src = projeto.url;
+    document.getElementById('iframe-error').style.display = 'none';
+    document.body.style.overflow = 'hidden';
+}
+
+
+        // Fechar modal
+        function fecharModal() {
+            document.getElementById('modal').classList.remove('show');
+            document.getElementById('projeto-iframe').src = '';
+            document.body.style.overflow = 'auto';
         }
+
+        // Abrir em tela cheia
+        function abrirFullscreen() {
+            window.open(currentProjectUrl, '_blank', 'width=1200,height=800');
+        }
+
+        // Ao carregar iframe
+        function onIframeLoad() {
+            console.log('iframe carregado com sucesso');
+            document.getElementById('iframe-error').style.display = 'none';
+        }
+
+        // Erro ao carregar iframe
+        function onIframeError() {
+            console.log('Erro ao carregar iframe');
+            document.getElementById('iframe-error').style.display = 'flex';
+        }
+
+        // Ver detalhes
+        function verDetalhes(projetoId) {
+    const projeto = projetos.find(p => p.id === projetoId);
+    if (!projeto) {
+        console.error('Projeto não encontrado');
+        return;
+    }
+    alert(`Projeto: ${projeto.titulo}\n\nCliente: ${projeto.cliente}\nResultado: ${projeto.resultado}\n\nTecnologias: ${projeto.tecnologias.join(', ')}`);
+}
+
+
+        // Toggle Dark/Light Mode
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            const btn = document.querySelector('.theme-toggle');
+            if (document.body.classList.contains('light-mode')) {
+                btn.textContent = '☀️ Light';
+            } else {
+                btn.textContent = '🌙 Dark';
+            }
+            localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+        }
+
+        // Carregar tema salvo
+        function loadTheme() {
+            const theme = localStorage.getItem('theme') || 'dark';
+            if (theme === 'light') {
+                document.body.classList.add('light-mode');
+                document.querySelector('.theme-toggle').textContent = '☀️ Light';
+            }
+        }
+
+        // Fechar modal ao clicar fora
+        document.addEventListener('click', function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target === modal) {
+                fecharModal();
+            }
+        });
+
+        // Tecla ESC para fechar modal
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                fecharModal();
+            }
+        });
+
+        // Inicializar
+        loadTheme();
+        carregarProjetos();
     </script>
 </body>
 </html>
