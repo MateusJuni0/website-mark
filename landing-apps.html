@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apps & IA - C&M Tecnologia</title>
+    <style>
+        :root {
+            --color-purple: #7C4DFF;
+            --color-yellow: #FFD700;
+            --color-green: #4CAF50;
+            --color-dark-bg: #0f0f1e;
+            --color-dark-card: #1a1a2e;
+            --color-light-bg: #f8f8fc;
+            --color-light-card: #ffffff;
+            --color-text-dark: #ffffff;
+            --color-text-light: #0f0f1e;
+            --color-border: rgba(124, 77, 255, 0.3);
+            --color-accent-light: #e8d7ff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0f1e 0%, #1a0f2e 50%, #0f1a2e 100%);
+            color: var(--color-text-dark);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Background com gradiente animado - SEM PRETO */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                rgba(124, 77, 255, 0.15) 0%, 
+                rgba(76, 175, 80, 0.1) 25%,
+                rgba(255, 215, 0, 0.08) 50%,
+                rgba(124, 77, 255, 0.1) 100%);
+            background-attachment: fixed;
+            z-index: -2;
+            pointer-events: none;
+        }
+
+        /* Overlay com glassmorphism */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(31, 23, 50, 0.4);
+            z-index: -1;
+            background-attachment: fixed;
+            pointer-events: none;
+        }
+
+        /* Elementos flutuantes decorativos */
+        .floating-orbs {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.3;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, var(--color-purple), var(--color-green));
+            top: -200px;
+            left: -200px;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, var(--color-yellow), var(--color-purple));
+            top: 50%;
+            right: -150px;
+            animation-delay: 5s;
+        }
+
+        .orb-3 {
+            width: 350px;
+            height: 350px;
+            background: linear-gradient(135deg, var(--color-green), var(--color-yellow));
+            bottom: -150px;
+            left: 20%;
+            animation-delay: 10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) translateX(0px); }
+            50% { transform: translateY(-50px) translateX(30px); }
+        }
+
+        /* Header */
+        header {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--color-border);
+            backdrop-filter: blur(10px);
+            background: rgba(31, 23, 50, 0.7);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--color-purple);
+            text-decoration: none;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--color-text-dark);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-yellow), var(--color-green));
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--color-yellow);
+        }
+
+        .theme-toggle {
+            background: linear-gradient(135deg, var(--color-purple), var(--color-green));
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(124, 77, 255, 0.4);
+        }
+
+        /* Menu Hamburger */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--color-yellow);
+            font-size: 28px;
+            cursor: pointer;
+            z-index: 101;
+        }
+
+        .menu-toggle.active {
+            color: var(--color-purple);
+        }
+
+        /* Container principal */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            margin-bottom: 100px;
+            animation: fadeInDown 0.8s ease;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, var(--color-purple), var(--color-yellow), var(--color-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--color-yellow);
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-weight: 500;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--color-accent-light);
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            border: 2px solid var(--color-purple);
+            background: transparent;
+            color: var(--color-yellow);
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--color-purple), var(--color-green));
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            left: 0;
+        }
+
+        .btn:hover {
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(124, 77, 255, 0.4);
+        }
+
+        .btn.primary {
+            background: linear-gradient(135deg, var(--color-purple), var(--color-green));
+            color: white;
+            border-color: transparent;
+        }
+
+        .btn.primary:hover {
+            background: linear-gradient(135deg, var(--color-green), var(--color-yellow));
+        }
+
+        /* Stats Section */
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 100px;
+        }
+
+        .stat-card {
+            background: rgba(124, 77, 255, 0.1);
+            border: 1px solid var(--color-border);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--color-yellow);
+            box-shadow: 0 20px 50px rgba(124, 77, 255, 0.2);
+        }
+
+        .stat-card .number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--color-yellow), var(--color-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .stat-card .label {
+            color: var(--color-yellow);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* Apps Grid */
+        .apps-section {
+            margin-bottom: 100px;
+        }
+
+        .apps-section h2 {
+            font-size: 3rem;
+            margin-bottom: 60px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--color-yellow), var(--color-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .app-card {
+            background: linear-gradient(135deg, rgba(124, 77, 255, 0.2), rgba(76, 175, 80, 0.1));
+            border: 2px solid var(--color-border);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            position: relative;
+            group: card;
+        }
+
+        .app-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(124, 77, 255, 0.3));
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: 0;
+        }
+
+        .app-card:hover::before {
+            opacity: 1;
+            top: 0;
+            right: 0;
+        }
+
+        .app-card:hover {
+            border-color: var(--color-yellow);
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(124, 77, 255, 0.4);
+        }
+
+        .app-card-content {
+            padding: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .app-icon {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+        }
+
+        .app-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: var(--color-yellow);
+            font-weight: 700;
+        }
+
+        .app-card p {
+            color: var(--color-accent-light);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .app-features {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .app-feature {
+            color: var(--color-green);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+
+        .app-feature::before {
+            content: '✓';
+            color: var(--color-yellow);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .app-cta {
+            background: linear-gradient(135deg, var(--color-purple), var(--color-green));
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .app-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(124, 77, 255, 0.4);
+        }
+
+        /* Modal para App */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            position: relative;
+            width: 90%;
+            height: 90vh;
+            max-width: 800px;
+            background: linear-gradient(135deg, var(--color-dark-card), #1f1735);
+            border: 2px solid var(--color-border);
+            border-radius: 20px;
+            overflow: hidden;
+            animation: slideUp 0.3s ease;
+            box-shadow: 0 50px 150px rgba(124, 77, 255, 0.5);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            background: linear-gradient(135deg, var(--color-purple), var(--color-green));
+            border-bottom: 2px solid var(--color-yellow);
+        }
+
+        .modal-header h2 {
+            color: white;
+            font-size: 1.6rem;
+            margin: 0;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .modal-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid white;
+            padding: 10px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 0.9rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-btn:hover {
+            background: white;
+            color: var(--color-purple);
+        }
+
+        .modal-body {
+            width: 100%;
+            height: calc(90vh - 75px);
+            overflow: hidden;
+            position: relative;
+        }
+
+        #app-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: linear-gradient(135deg, var(--color-light-bg), #ffffff);
+        }
+
+        .iframe-error {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 200, 100, 0.1);
+            border: 2px solid var(--color-yellow);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            color: var(--color-yellow);
+            z-index: 100;
+            width: 85%;
+            max-width: 400px;
+            backdrop-filter: blur(10px);
+        }
+
+        .iframe-error h3 {
+            margin-bottom: 15px;
+            color: var(--color-yellow);
+            font-size: 1.2rem;
+        }
+
+        .iframe-error p {
+            margin-bottom: 25px;
+            color: var(--color-accent-light);
+            font-size: 0.95rem;
+        }
+
+        .iframe-error button {
+            background: linear-gradient(135deg, var(--color-yellow), var(--color-green));
+            color: var(--color-dark-bg);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .iframe-error button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        /* Features Section */
+        .features-section {
+            margin-bottom: 100px;
+        }
+
+        .features-section h2 {
+            font-size: 3rem;
+            margin-bottom: 60px;
+            text-align: center;
+            color: var(--color-yellow);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: rgba(76, 175, 80, 0.1);
+            border: 1px solid var(--color-border);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--color-green);
+            box-shadow: 0 20px 50px rgba(76, 175, 80, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            color: var(--color-green);
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+
+        .feature-card p {
+            color: var(--color-accent-light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* CTA Final */
+        .cta-section {
+            text-align: center;
+            padding: 60px 30px;
+            background: linear-gradient(135deg, rgba(124, 77, 255, 0.2), rgba(76, 175, 80, 0.1));
+            border: 2px solid var(--color-border);
+            border-radius: 20px;
+            margin-bottom: 60px;
+            backdrop-filter: blur(10px);
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--color-yellow);
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            color: var(--color-accent-light);
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                gap: 10px;
+                background: rgba(31, 23, 50, 0.95);
+                padding: 20px;
+                border-bottom: 2px solid var(--color-border);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                z-index: 99;
+            }
+
+            nav.active {
+                max-height: 300px;
+            }
+
+            nav a {
+                display: block;
+                padding: 10px;
+                color: var(--color-yellow);
+                font-weight: 600;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+
+            .apps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .app-card {
+                height: 100%;
+            }
+
+            .modal-content {
+                width: 95%;
+                height: 95vh;
+            }
+
+            .container {
+                padding: 40px 15px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .hero {
+                margin-bottom: 60px;
+            }
+
+            .apps-section h2 {
+                font-size: 2rem;
+            }
+
+            .features-section h2 {
+                font-size: 2rem;
+            }
+
+            .cta-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .stat-card .number {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animações */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Light Mode */
+        body.light-mode {
+            --color-dark-bg: #f5f5f5;
+            --color-dark-card: #ffffff;
+            --color-text-dark: #0f0f1e;
+            --color-accent-light: #1a1a2e;
+        }
+
+        body.light-mode nav {
+            background: rgba(245, 245, 245, 0.95);
+        }
+
+        body.light-mode .modal-body {
+            background: #ffffff;
+        }
+
+        body.light-mode #app-iframe {
+            background: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <a href="/" class="logo">
+            <img src="logoc.jpeg" alt="C&M Tecnologia">
+            <span>C&M Tecnologia</span>
+        </a>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <nav>
+            <a href="landing-websites.html">Websites</a>
+            <a href="landing-cartoes.html">Cartões</a>
+            <a href="landing-apps.html" class="active">Apps</a>
+            <a href="/">Voltar</a>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
+        </nav>
+    </header>
+
+    <!-- Container Principal -->
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Apps & Inteligência Artificial</h1>
+            <p class="hero-subtitle">Soluções inovadoras que transformam ideias em realidade</p>
+            <p>Desenvolva aplicações poderosas com tecnologia de ponta. De jogos interativos a sistemas inteligentes, criamos experiências que conquistam usuários.</p>
+            <div class="hero-buttons">
+                <button class="btn primary" onclick="document.querySelector('.apps-section').scrollIntoView({ behavior: 'smooth' })">Explorar Apps</button>
+                <a href="/" class="btn">Solicitar Projeto</a>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="stat-card">
+                <div class="number">50+</div>
+                <div class="label">Aplicações Desenvolvidas</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">2M+</div>
+                <div class="label">Usuários Ativos</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">98%</div>
+                <div class="label">Taxa de Satisfação</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">24/7</div>
+                <div class="label">Suporte Técnico</div>
+            </div>
+        </section>
+
+        <!-- Apps Section -->
+        <section class="apps-section">
+            <h2>Nossos Aplicativos</h2>
+            <div class="apps-grid" id="apps-grid">
+                <!-- Apps carregados aqui via JavaScript -->
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <h2>Por que escolher nossa IA?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Performance</h3>
+                    <p>Aplicações ultra-rápidas otimizadas para máximo desempenho em qualquer dispositivo</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Segurança</h3>
+                    <p>Proteção máxima com criptografia avançada e conformidade com padrões internacionais</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Inteligência</h3>
+                    <p>Algoritmos avançados que aprendem e se adaptam ao comportamento do usuário</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Multi-Plataforma</h3>
+                    <p>Funciona perfeitamente em iOS, Android, Web e Desktop</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Escalável</h3>
+                    <p>Infraestrutura preparada para crescer com seu negócio</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>Inovação</h3>
+                    <p>Sempre na vanguarda da tecnologia e tendências do mercado</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <section class="cta-section">
+            <h2>Pronto para o Futuro?</h2>
+            <p>Transforme sua visão em uma aplicação revolucionária. Nossa equipe especializada está pronta para criar algo extraordinário com você.</p>
+            <button class="btn primary" onclick="document.querySelector('.apps-section').scrollIntoView({ behavior: 'smooth' })">Começar Agora</button>
+        </section>
+    </div>
+
+    <!-- Modal para App -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">App</h2>
+                <div class="modal-buttons">
+                    <button class="modal-btn" onclick="abrirFullscreen()">🖥️ Tela Cheia</button>
+                    <button class="modal-btn" onclick="fecharModal()" title="Fechar">✕</button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <iframe id="app-iframe" onload="onIframeLoad()" onerror="onIframeError()"></iframe>
+                <div class="iframe-error" id="iframe-error">
+                    <h3>⚠️ App Bloqueado</h3>
+                    <p>Este app não pode ser visualizado em um iframe. Clique abaixo para abrir em tela cheia e jogar!</p>
+                    <button onclick="abrirFullscreen()">🎮 Jogar em Tela Cheia</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dados dos apps
+        const apps = [
+            {
+    id: 1,
+    titulo: "Game - Impostor",
+    descricao: "Jogo multiplayer eletrizante com estratégia e ação",
+    icon: "🎮",
+    features: [
+        "Jogabilidade Imersiva",
+        "Gráficos HD",
+        "Multijogador Online"
+    ],
+    url: "https://appetize.io/app/b_bgdpn6gccqxdaaotlh7q5eyhjm",
+    isEmulator: false,
+    cliente: "Gamer Studio",
+    resultado: "500K+ Downloads"
+},
+
+            {
+                id: 2,
+                titulo: "IA Assistente",
+                descricao: "Assistente inteligente com machine learning avançado",
+                icon: "🤖",
+                features: [
+                    "Processamento Natural",
+                    "Aprendizado Contínuo",
+                    "API Integrada"
+                ],
+                url: "https://appetize.io/embed/b_bgdpn6gccqxdaaotlh7q5eyhjm?device=pixel4&osVersion=11.0&scale=75",
+apkUrl: "https://github.com/MateusJuni0/App-game/releases/download/v1.0/app-release.apk",
+isEmulator: true,
+
+                cliente: "Tech Corp",
+                resultado: "Implementado em 50+ empresas"
+            },
+            {
+                id: 3,
+                titulo: "Fitness Tracker",
+                descricao: "Monitore sua saúde com IA personalizada",
+                icon: "💪",
+                features: [
+                    "Análise de Dados",
+                    "Planos Personalizados",
+                    "Sincronização Cloud"
+                ],
+                url: "https://seu-app-fitness.netlify.app",
+                cliente: "Health Plus",
+                resultado: "Usuários Muito Satisfeitos"
+            },
+            {
+                id: 4,
+                titulo: "Criador de Arte IA",
+                descricao: "Gere arte única com inteligência artificial",
+                icon: "🎨",
+                features: [
+                    "Geração Automática",
+                    "Estilos Múltiplos",
+                    "Alta Resolução"
+                ],
+                url: "https://seu-app-art.netlify.app",
+                cliente: "Creative Labs",
+                resultado: "Milhões de Criações"
+            }
+        ];
+
+        let currentAppUrl = '';
+
+        // Carregar apps
+        function carregarApps() {
+            const grid = document.getElementById('apps-grid');
+            grid.innerHTML = '';
+
+            apps.forEach(app => {
+                const card = document.createElement('div');
+                card.className = 'app-card';
+                card.innerHTML = `
+                    <div class="app-card-content">
+                        <div class="app-icon">${app.icon}</div>
+                        <h3>${app.titulo}</h3>
+                        <p>${app.descricao}</p>
+                        <div class="app-features">
+                            ${app.features.map(feature => `<div class="app-feature">${feature}</div>`).join('')}
+                        </div>
+                        <button class="app-cta" onclick="abrirModal(${app.id})">
+                            🚀 Experimentar Agora
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Abrir modal
+        function abrirModal(appId) {
+            const app = apps.find(a => a.id === appId);
+            if (!app) return;
+
+            currentAppUrl = app.url;
+            document.getElementById('modal').classList.add('show');
+            document.getElementById('modal-title').textContent = app.titulo;
+            document.getElementById('app-iframe').src = app.url;
+            document.getElementById('iframe-error').style.display = 'none';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Fechar modal
+        function fecharModal() {
+            document.getElementById('modal').classList.remove('show');
+            document.getElementById('app-iframe').src = '';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Abrir em tela cheia
+        function abrirFullscreen() {
+            window.open(currentAppUrl, '_blank', 'width=1200,height=800');
+        }
+
+        // Eventos iframe
+        function onIframeLoad() {
+            console.log('App carregado com sucesso');
+            document.getElementById('iframe-error').style.display = 'none';
+        }
+
+        function onIframeError() {
+            console.log('Erro ao carregar app');
+            document.getElementById('iframe-error').style.display = 'flex';
+        }
+
+        // Toggle Menu Mobile
+        function toggleMenu() {
+            const nav = document.querySelector('nav');
+            const toggle = document.querySelector('.menu-toggle');
+            nav.classList.toggle('active');
+            toggle.classList.toggle('active');
+        }
+
+        // Fechar menu ao clicar em link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('nav').classList.remove('active');
+                document.querySelector('.menu-toggle').classList.remove('active');
+            });
+        });
+
+        // Toggle Dark/Light Mode
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            const btn = document.querySelector('.theme-toggle');
+            if (document.body.classList.contains('light-mode')) {
+                btn.textContent = '☀️ Light';
+            } else {
+                btn.textContent = '🌙 Dark';
+            }
+            localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+        }
+
+        // Carregar tema salvo
+        function loadTheme() {
+            const theme = localStorage.getItem('theme') || 'dark';
+            if (theme === 'light') {
+                document.body.classList.add('light-mode');
+                document.querySelector('.theme-toggle').textContent = '☀️ Light';
+            }
+        }
+
+        // Fechar modal com ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                fecharModal();
+            }
+        });
+
+        // Fechar modal ao clicar fora
+        document.addEventListener('click', function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target === modal) {
+                fecharModal();
+            }
+        });
+
+        // Inicializar
+        loadTheme();
+        carregarApps();
+    </script>
+</body>
+</html>
