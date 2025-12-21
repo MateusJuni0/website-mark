@@ -260,18 +260,19 @@ console.log('✅ Main.js loaded successfully');
 
 
 
-const formulario = document.getElementById('seu-id-do-formulario'); // Ajusta o ID
+// Form Submission with Fetch API
+const formulario = document.getElementById('contactForm');
 
 if (formulario) {
   formulario.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const formData = {
-      nomeCompleto: document.querySelector('input[name="nomeCompleto"]').value,
+      nomeCompleto: document.querySelector('input[name="name"]').value,
       email: document.querySelector('input[name="email"]').value,
-      telefone: document.querySelector('input[name="telefone"]').value,
-      servicoInteresse: document.querySelector('select[name="servicoInteresse"]').value,
-      mensagem: document.querySelector('textarea[name="mensagem"]').value,
+      telefone: document.querySelector('input[name="phone"]').value,
+      servicoInteresse: document.querySelector('select[name="service"]').value,
+      mensagem: document.querySelector('textarea[name="message"]').value,
     };
 
     const btnEnviar = formulario.querySelector('button[type="submit"]');
@@ -297,7 +298,8 @@ if (formulario) {
       alert('❌ Erro ao enviar: ' + error.message);
     } finally {
       btnEnviar.disabled = false;
-      btnEnviar.textContent = 'Enviar';
+      btnEnviar.textContent = 'Enviar Mensagem';
     }
   });
 }
+// ===== END OF MAIN.JS =====
