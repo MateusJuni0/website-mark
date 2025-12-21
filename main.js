@@ -260,46 +260,47 @@ console.log('✅ Main.js loaded successfully');
 
 
 
-// Form Submission with Fetch API
-const formulario = document.getElementById('contactForm');
+    // Form Submission with Fetch API
+    const formulario = document.getElementById('contactForm');
 
-if (formulario) {
-  formulario.addEventListener('submit', async (e) => {
-    e.preventDefault();
+    if (formulario) {
+    formulario.addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-    const formData = {
-      nomeCompleto: document.querySelector('input[name="name"]').value,
-      email: document.querySelector('input[name="email"]').value,
-      telefone: document.querySelector('input[name="phone"]').value,
-      servicoInteresse: document.querySelector('select[name="service"]').value,
-      mensagem: document.querySelector('textarea[name="message"]').value,
-    };
+        const formData = {
+  name: document.querySelector('input[name="name"]').value,
+  email: document.querySelector('input[name="email"]').value,
+  phone: document.querySelector('input[name="phone"]').value,
+  service: document.querySelector('select[name="service"]').value,
+  message: document.querySelector('textarea[name="message"]').value,
+};
 
-    const btnEnviar = formulario.querySelector('button[type="submit"]');
-    btnEnviar.disabled = true;
-    btnEnviar.textContent = 'Enviando...';
 
-    try {
-      const response = await fetch('/api/enviar-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
+        const btnEnviar = formulario.querySelector('button[type="submit"]');
+        btnEnviar.disabled = true;
+        btnEnviar.textContent = 'Enviando...';
 
-      const data = await response.json();
+        try {
+        const response = await fetch('/api/enviar-email', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData),
+        });
 
-      if (data.success) {
-        alert('✅ Email enviado com sucesso!');
-        formulario.reset();
-      } else {
-        alert('❌ Erro: ' + data.error);
-      }
-    } catch (error) {
-      alert('❌ Erro ao enviar: ' + error.message);
-    } finally {
-      btnEnviar.disabled = false;
-      btnEnviar.textContent = 'Enviar Mensagem';
+        const data = await response.json();
+
+        if (data.success) {
+            alert('✅ Email enviado com sucesso!');
+            formulario.reset();
+        } else {
+            alert('❌ Erro: ' + data.error);
+        }
+        } catch (error) {
+        alert('❌ Erro ao enviar: ' + error.message);
+        } finally {
+        btnEnviar.disabled = false;
+        btnEnviar.textContent = 'Enviar Mensagem';
+        }
+    });
     }
-  });
-}
-// ===== END OF MAIN.JS =====
+    // ===== END OF MAIN.JS =====
