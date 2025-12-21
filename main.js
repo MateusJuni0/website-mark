@@ -260,3 +260,44 @@ console.log('✅ Main.js loaded successfully');
 
 
 
+const formulario = document.getElementById('seu-id-do-formulario'); // Ajusta o ID
+
+if (formulario) {
+  formulario.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = {
+      nomeCompleto: document.querySelector('input[name="nomeCompleto"]').value,
+      email: document.querySelector('input[name="email"]').value,
+      telefone: document.querySelector('input[name="telefone"]').value,
+      servicoInteresse: document.querySelector('select[name="servicoInteresse"]').value,
+      mensagem: document.querySelector('textarea[name="mensagem"]').value,
+    };
+
+    const btnEnviar = formulario.querySelector('button[type="submit"]');
+    btnEnviar.disabled = true;
+    btnEnviar.textContent = 'Enviando...';
+
+    try {
+      const response = await fetch('/api/enviar-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        alert('✅ Email enviado com sucesso!');
+        formulario.reset();
+      } else {
+        alert('❌ Erro: ' + data.error);
+      }
+    } catch (error) {
+      alert('❌ Erro ao enviar: ' + error.message);
+    } finally {
+      btnEnviar.disabled = false;
+      btnEnviar.textContent = 'Enviar';
+    }
+  });
+}
