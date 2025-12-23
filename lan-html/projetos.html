@@ -125,6 +125,50 @@
             background: var(--color-green);
         }
 
+
+        /* Hamburger Menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+}
+
+.menu-toggle span {
+    width: 24px;
+    height: 2px;
+    background-color: var(--color-text-dark);
+    border-radius: 1px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+
+
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
         /* Container principal */
         .container {
             max-width: 1200px;
@@ -554,7 +598,7 @@
         /* Responsividade */
         @media (max-width: 768px) {
             header {
-                flex-direction: column;
+                
                 gap: 20px;
                 padding: 15px 20px;
             }
@@ -603,6 +647,69 @@
                 border-left: 2px solid var(--color-purple);
             }
         }
+
+        .header-actions {
+    gap: 5px;
+}
+
+.theme-toggle {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+}
+
+.menu-toggle {
+    width: 28px;
+    height: 28px;
+}
+
+
+.menu-toggle {
+    display: flex; /* Mostra hamburger em mobile */
+}
+
+nav {
+    display: none; /* Esconde nav por padrão em mobile */
+    position: absolute;
+    top: 100%; /* Abaixo do header */
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    gap: 20px;
+    background: var(--color-dark-bg);
+    padding: 20px;
+    border-bottom: 2px solid var(--color-border);
+    z-index: 99;
+}
+
+nav.mobile-open {
+    display: flex; /* Mostra quando toggle */
+}
+
+.logo span {
+    font-size: 20px; /* Reduz texto logo */
+}
+
+.header-actions {
+    gap: 8px; /* Ajusta espaço entre dark e hamburger */
+}
+
+.theme-toggle {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+}
+
+.menu-toggle {
+    width: 28px;
+    height: 28px;
+}
+
+
+
+
+
+
+
+
 
         /* Animações */
         @keyframes fadeIn {
@@ -669,18 +776,25 @@
 <body>
     <!-- Header -->
     <header>
-        <a href="/" class="logo">
-            <img src="../img/logoc.jpeg" alt="C&M Tecnologia">
-            <span>C&M Tecnologia</span>
-        </a>
-        <nav>
-            <a href="../lan-html/projetos.html">Websites</a>
-            <a href="../lan-html/Landingcartõesvisita.html" class="nav-link">Cartões</a>
-            <a href="../lan-html/landing-apps.html" class="nav-link">Apps</a>
-            <a href="../index.html">Voltar</a>
-            <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
-        </nav>
-    </header>
+    <a href="../index.html" class="logo">
+        <img src="../img/logoc.jpeg" alt="C&M Tecnologia">
+        <span>C&M Tecnologia</span>
+    </a>
+    <nav>
+        <a href="projetos.html">Websites</a>
+        <a href="Landingcartõesvisita.html" class="nav-link">Cartões</a>
+        <a href="landing-apps.html" class="nav-link">Apps</a>
+        <a href="../index.html">Voltar</a>
+    </nav>
+    <div class="header-actions">
+        <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
+        <button class="menu-toggle" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>
 
     <!-- Container Principal -->
     <div class="container">
@@ -923,6 +1037,31 @@ function carregarProjetos() {
         // Inicializar
         loadTheme();
         carregarProjetos();
+
+
+        // Novo: Toggle Menu Mobile
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+
+    if (menuToggle && nav) {
+        menuToggle.addEventListener('click', function() {
+            nav.classList.toggle('mobile-open');
+            menuToggle.classList.toggle('open');
+        });
+    }
+
+    // Fecha menu ao clicar em link (em mobile)
+    nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('mobile-open');
+            menuToggle.classList.remove('open');
+        });
+    });
+});
+
+
+
     </script>
     
 </body>
