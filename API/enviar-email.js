@@ -22,7 +22,7 @@ export default async (req, res) => {
       },
     });
 
-    // Email para ti (recepção)
+    // Email para ti (recepção) semore faça
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: 'cmtecnologia12@gmail.com',
