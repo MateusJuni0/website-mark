@@ -261,46 +261,111 @@ console.log('✅ Main.js loaded successfully');
 
 
     // Form Submission with Fetch API
-    const formulario = document.getElementById('contactForm');
+  
+  
+// Form Submission with Fetch API - Versão Corrigida e Robusta
+const formulario = document.getElementById('contactForm');
 
-    if (formulario) {
-    formulario.addEventListener('submit', async (e) => {
-        e.preventDefault();
+if (formulario) {
+  formulario.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-        const formData = {
-  name: document.querySelector('input[name="name"]').value,
-  email: document.querySelector('input[name="email"]').value,
-  phone: document.querySelector('input[name="phone"]').value,
-  service: document.querySelector('select[name="service"]').value,
-  message: document.querySelector('textarea[name="message"]').value,
-};
+    // Extrai os valores dos campos
+    const name = document.querySelector('input[name="name"]')?.value?.trim() || '';
+    const email = document.querySelector('input[name="email"]')?.value?.trim() || '';
+    const phone = document.querySelector('input[name="phone"]')?.value?.trim() || '';
+    const service = document.querySelector('select[name="service"]')?.value?.trim() || '';
+    const message = document.querySelector('textarea[name="message"]')?.value?.trim() || '';
 
-
-        const btnEnviar = formulario.querySelector('button[type="submit"]');
-        btnEnviar.disabled = true;
-        btnEnviar.textContent = 'Enviando...';
-
-        try {
-        const response = await fetch('/api/enviar-email', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData),
-        });
-
-        const data = await response.json();
-
-        if (data.success) {
-            alert('✅ Email enviado com sucesso!');
-            formulario.reset();
-        } else {
-            alert('❌ Erro: ' + data.error);
-        }
-        } catch (error) {
-        alert('❌ Erro ao enviar: ' + error.message);
-        } finally {
-        btnEnviar.disabled = false;
-        btnEnviar.textContent = 'Enviar Mensagem';
-        }
-    });
+    // Validação 1: Campos Obrigatórios
+    if (!name || !email || !message) {
+      alert('❌ Por favor, preenche os campos obrigatórios:\n- Nome Completo\n- Email\n- Mensagem');
+      return;
     }
-    // ===== END OF MAIN.JS =====
+
+    // Validação 2: Email válido
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert('❌ Email inválido. Por favor, insere um email correto.');
+      return;
+    }
+
+    // Validação 3: Comprimento mínimo da mensagem
+    if (message.length < 10) {
+      alert('❌ A mensagem deve ter pelo menos 10 caracteres.');
+      return;
+    }
+
+    // Prepara os dados para enviar
+    const formData = {
+      name,
+      email,
+      phone,
+      service,
+      message,
+    };
+
+    // Desativa o botão durante o envio
+    const btnEnviar = formulario.querySelector('button[type="submit"]');
+    const textOriginal = btnEnviar.textContent;
+    btnEnviar.disabled = true;
+    btnEnviar.textContent = 'Enviando...';
+
+    try {
+      // Log para debug
+      console.log('📤 Enviando formulário:', formData);
+
+      // Faz o fetch
+      const response = await fetch('/api/enviar-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      // Log do status
+      console.log('📊 Status da resposta:', response.status);
+      console.log('📋 Content-Type:', response.headers.get('content-type'));
+
+      // Lê a resposta como texto primeiro
+      const text = await response.text();
+      console.log('📨 Resposta bruta:', text);
+
+      // Verifica se a resposta está vazia
+      if (!text) {
+        throw new Error('Resposta vazia do servidor');
+      }
+
+      // Tenta fazer parse do JSON
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch (parseError) {
+        console.error('❌ Erro ao fazer parse do JSON:', parseError);
+        console.error('Texto recebido:', text.slice(0, 200));
+        throw new Error(`Resposta não é JSON válido: ${text.slice(0, 100)}`);
+      }
+
+      // Log do objeto parsado
+      console.log('✅ Dados recebidos:', data);
+
+      // Verifica se o envio foi bem-sucedido
+      if (response.ok && data.success) {
+        alert('✅ Email enviado com sucesso!\n\nEntraremos em contacto em breve.');
+        formulario.reset();
+      } else if (response.ok && !data.success) {
+        alert('⚠️ ' + (data.message || data.error || 'Erro desconhecido ao enviar'));
+      } else {
+        alert('❌ Erro ' + response.status + ': ' + (data.error || data.message || 'Falha ao enviar'));
+      }
+    } catch (error) {
+      console.error('🔴 Erro geral:', error);
+      alert('❌ Erro ao enviar:\n' + error.message);
+    } finally {
+      btnEnviar.disabled = false;
+      btnEnviar.textContent = textOriginal;
+    }
+  });
+} 
+

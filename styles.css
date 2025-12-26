@@ -65,8 +65,8 @@
     /* LIGHT MODE (Default) */
     --bg-primary: #7C3AED;
     --bg-secondary: #6D28D9;
-    --text-primary: #FFFFFF;
-    --text-secondary: #E9D5FF;
+    --text-primary: #010000;
+    --text-secondary: #020202;
     --border-color: #A78BFA;
 }
 
@@ -169,12 +169,12 @@ a:hover {
 }
 
 .btn-primary {
-    background-color: var(--primary);
-    color: var(--white);
+    background-color: var(--secondary);
+    color: white;
 }
 
 .btn-primary:hover {
-    background-color: var(--primary-dark);
+    background-color: var(--secondary);
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
 }
@@ -1628,7 +1628,7 @@ grid-column: 2;
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--primary);
+    border-color: black;
     box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
 }
 
@@ -1640,7 +1640,7 @@ grid-column: 2;
 .form-submit {
     width: 100%;
     padding: 1rem;
-    background-color: var(--primary);
+    background-color: black;
     color: var(--white);
     border: none;
     border-radius: var(--radius-lg);
@@ -1652,7 +1652,7 @@ grid-column: 2;
 }
 
 .form-submit:hover {
-    background-color: var(--primary-dark);
+    background-color: green;
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
 }
