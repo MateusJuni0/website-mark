@@ -93,19 +93,8 @@
             border-radius: 8px;
         }
 
-        nav {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-        }
-
-        nav a {
-            color: var(--color-text-dark);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-weight: 500;
-        }
-
+        
+        
         nav a:hover,
         nav a.active {
             color: var(--color-yellow);
@@ -127,17 +116,29 @@
 
 
         /* Hamburger Menu */
+/* Menu Hamburger */
+.menu-toggle {
+    display: flex;
+    flex-direction: column; /* 🔥 ISSO resolve as linhas lado a lado */
+    justify-content: center;
+    gap: 5px;
+}
+
+
 .menu-toggle {
     display: none;
-    flex-direction: column;
-    gap: 5px;
     background: none;
     border: none;
+    color: var(--color-yellow);
+    font-size: 28px;
     cursor: pointer;
-    width: 30px;
-    height: 30px;
-    justify-content: center;
+    z-index: 101;
 }
+
+.menu-toggle.active {
+    color: var(--color-purple);
+}
+
 
 .menu-toggle span {
     width: 24px;
@@ -595,24 +596,49 @@
             font-size: 0.9rem;
         }
 
+
+
+
+
+
+
+
         /* Responsividade */
         @media (max-width: 768px) {
-            header {
-                
-                gap: 20px;
-                padding: 15px 20px;
-            }
+             .menu-toggle {
+        display: flex;
+    }
+         nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 18px;
+        background: linear-gradient(
+        180deg,
+        #0f0f0f 0%,
+        #141414 100%
+                        );
+             padding: 30px 20px;
+             align-items: center;
+            text-align: center;
+        z-index: 99;
+    }
 
-            nav {
-                flex-direction: column;
-                gap: 10px;
-                width: 100%;
-            }
+nav.active {
+        display: flex;
+    }
 
-            nav a {
-                display: block;
-            }
-
+    nav a {
+        
+        padding: 10px;
+        color: var(--color-yellow);
+        font-weight: 600;
+         font-size: 1.05rem;
+    }
+}
             .hero h1 {
                 font-size: 2rem;
             }
@@ -646,7 +672,7 @@
             .timeline-content {
                 border-left: 2px solid var(--color-purple);
             }
-        }
+        
 
         .header-actions {
     gap: 5px;
@@ -667,23 +693,8 @@
     display: flex; /* Mostra hamburger em mobile */
 }
 
-nav {
-    display: none; /* Esconde nav por padrão em mobile */
-    position: absolute;
-    top: 100%; /* Abaixo do header */
-    left: 0;
-    width: 100%;
-    flex-direction: column;
-    gap: 20px;
-    background: var(--color-dark-bg);
-    padding: 20px;
-    border-bottom: 2px solid var(--color-border);
-    z-index: 99;
-}
 
-nav.mobile-open {
-    display: flex; /* Mostra quando toggle */
-}
+
 
 .logo span {
     font-size: 20px; /* Reduz texto logo */
@@ -788,7 +799,7 @@ nav.mobile-open {
     </nav>
     <div class="header-actions">
         <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
-        <button class="menu-toggle" aria-label="Menu">
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">
             <span></span>
             <span></span>
             <span></span>
@@ -998,6 +1009,24 @@ function carregarProjetos() {
 }
 
 
+// Toggle Menu Mobile
+function toggleMenu() {
+    const nav = document.querySelector('nav');
+    const toggle = document.querySelector('.menu-toggle');
+    nav.classList.toggle('active');
+    toggle.classList.toggle('active');
+}
+
+// Fechar menu ao clicar em link
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.querySelector('nav').classList.remove('active');
+        document.querySelector('.menu-toggle').classList.remove('active');
+    });
+});
+
+
+
         // Toggle Dark/Light Mode
         function toggleTheme() {
             document.body.classList.toggle('light-mode');
@@ -1039,26 +1068,7 @@ function carregarProjetos() {
         carregarProjetos();
 
 
-        // Novo: Toggle Menu Mobile
-document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('nav');
-
-    if (menuToggle && nav) {
-        menuToggle.addEventListener('click', function() {
-            nav.classList.toggle('mobile-open');
-            menuToggle.classList.toggle('open');
-        });
-    }
-
-    // Fecha menu ao clicar em link (em mobile)
-    nav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            nav.classList.remove('mobile-open');
-            menuToggle.classList.remove('open');
-        });
-    });
-});
+       
 
 
 

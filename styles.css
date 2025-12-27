@@ -1163,6 +1163,28 @@ section {
 
 
 
+@media (max-width: 768px) {
+    .about {
+        text-align: center;
+    }
+
+    .about .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about p,
+    .about h2 {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+
+
 
 
 .about-text {
