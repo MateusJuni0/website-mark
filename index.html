@@ -28,12 +28,61 @@
     <title>C&M Tecnologia -- Agência Digital Profissional</title>
 </head>
 <body>
+
+
+    <!-- Contextual Suggestion -->
+<div id="contextSuggestion" class="context-suggestion" data-micro="context" hidden>
+  <button class="micro-close" aria-label="Fechar">×</button>
+
+  <div class="context-content">
+    <p>
+      <span data-lang="pt">Antes de sair, já viu nossos</span>
+      <span data-lang="en" hidden>Before you go, have you seen our</span>
+      <span data-lang="es" hidden>Antes de salir, ¿ya viste nuestros</span>
+      <strong id="contextTopic">ebooks</strong>?
+    </p>
+
+    <a href="#ebooks" id="contextLink" class="context-link">
+      <span data-lang="pt">Explorar agora →</span>
+      <span data-lang="en" hidden>Explore now →</span>
+      <span data-lang="es" hidden>Explorar ahora →</span>
+    </a>
+  </div>
+</div>
+
+
+
+
+<!-- Page Progress Indicator -->
+<div id="pageProgress">
+  <div id="pageProgressBar"></div>
+</div>
+
+<!-- Progress Hint -->
+<div id="progressHint" data-micro="progress" hidden>
+ 
+
+  <span data-lang="pt">Você já viu</span>
+  <span data-lang="en" hidden>You have seen</span>
+  <span data-lang="es" hidden>Ya has visto</span>
+
+  <strong id="progressCount">0</strong>
+
+  <span data-lang="pt">de</span>
+  <span data-lang="en" hidden>of</span>
+  <span data-lang="es" hidden>de</span>
+
+  <strong id="progressTotal">0</strong>
+</div>
+
+
+
     <!-- Header/Navegação -->
     <header class="header" id="header">
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-<img src="img/logoc.jpeg" alt="C&M Tecnologia Logo" style="height: 80px; width: auto; object-fit: contain;">
+<img src="img/logom.png" alt="C&M Tecnologia Logo" style="height: 80px; width: auto; object-fit: contain;">
 
     <span class="logo-text">
   <span data-lang="pt">C&amp;M Tecnologia</span>
@@ -295,9 +344,34 @@
                   </span>
             </p>
 
-            <div class="services-grid">
-                <div class="service-card">
 
+
+            <!-- Progressive Services Highlight -->
+<div id="servicesProgressive" class="services-progressive" hidden>
+  <p>
+    <span data-lang="pt">
+      💡 Empresas que investem em serviços digitais integrados crescem até 3x mais rápido.
+    </span>
+    <span data-lang="en" hidden>
+      💡 Companies that invest in integrated digital services grow up to 3x faster.
+    </span>
+    <span data-lang="es" hidden>
+      💡 Las empresas que invierten en servicios digitales integrados crecen hasta 3x más rápido.
+    </span>
+  </p>
+</div>
+
+
+
+
+
+            <div class="services-grid">
+            <div class="service-card signature-glow"></div>
+<div class="service-tap-hint">
+  <span data-lang="pt">Toque novamente para saber mais</span>
+  <span data-lang="en" hidden>Tap again to learn more</span>
+  <span data-lang="es" hidden>Toca de nuevo para saber más</span>
+</div>
 
     <div class="service-icon">
         <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
@@ -351,6 +425,11 @@
 
                 <!-- Websites -->
                 <div class="service-card">
+                    <div class="service-tap-hint">
+  <span data-lang="pt">Toque novamente para saber mais</span>
+  <span data-lang="en" hidden>Tap again to learn more</span>
+  <span data-lang="es" hidden>Toca de nuevo para saber más</span>
+</div>
                     <div class="service-icon">
                         <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
                             <rect x="8" y="12" width="44" height="36" rx="2" stroke="#7C3AED" stroke-width="2"/>
@@ -399,6 +478,11 @@
 
                 <!-- Apps Móveis -->
                 <div class="service-card">
+                    <div class="service-tap-hint">
+  <span data-lang="pt">Toque novamente para saber mais</span>
+  <span data-lang="en" hidden>Tap again to learn more</span>
+  <span data-lang="es" hidden>Toca de nuevo para saber más</span>
+</div>
                     <div class="service-icon">
                         <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
                             <rect x="18" y="8" width="24" height="44" rx="3" stroke="#10B981" stroke-width="2"/>
@@ -444,6 +528,11 @@
 
                 <!-- E-Commerce -->
                 <div class="service-card">
+                    <div class="service-tap-hint">
+  <span data-lang="pt">Toque novamente para saber mais</span>
+  <span data-lang="en" hidden>Tap again to learn more</span>
+  <span data-lang="es" hidden>Toca de nuevo para saber más</span>
+</div>
                     <div class="service-icon">
                         <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
                             <path d="M12 18L18 8H42L48 18" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
@@ -496,6 +585,11 @@
 
                 <!-- Design de Banners -->
                 <div class="service-card">
+                    <div class="service-tap-hint">
+  <span data-lang="pt">Toque novamente para saber mais</span>
+  <span data-lang="en" hidden>Tap again to learn more</span>
+  <span data-lang="es" hidden>Toca de nuevo para saber más</span>
+</div>
                     <div class="service-icon">
                         <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
                             <rect x="8" y="12" width="44" height="36" rx="2" stroke="#7C3AED" stroke-width="2"/>
@@ -542,6 +636,11 @@
 
                 <!-- IA & Automação -->
                 <div class="service-card">
+                    <div class="service-tap-hint">
+  <span data-lang="pt">Toque novamente para saber mais</span>
+  <span data-lang="en" hidden>Tap again to learn more</span>
+  <span data-lang="es" hidden>Toca de nuevo para saber más</span>
+</div>
                     <div class="service-icon">
                         <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
                             <circle cx="30" cy="30" r="20" stroke="#10B981" stroke-width="2"/>
@@ -591,17 +690,17 @@
                 </div>
             </div>
                         
-            </div>  <!-- ← FECHE A services-grid -->
+             <!-- ← FECHE A services-grid -->
         
     
 </section>
 
     
 
+ <!-- ← ebook -->
 
 
-
-<section id="ebooks" class="ebooks">
+<section id="ebooks" class="ebooks" >
   <div class="container">
     <h2 class="section-title">
             <span data-lang="pt">Leituras estratégicas</span>
@@ -618,7 +717,8 @@
 
     <div class="ebooks-list">
 
-      <article class="ebook-item">
+      <article class="ebook-item signature-glow">
+
         <div class="ebook-thumb">
           <img src="img/bolhafundo.jpeg" alt="Ebook Estratégia Digital">
         </div>
@@ -643,7 +743,7 @@
         </div>
       </article>
 
-      <article class="ebook-item">
+      <article class="ebook-item signature-glow">
         <div class="ebook-thumb">
           <img src="img/bolhafundo.jpeg" alt="Ebook Automação e IA">
         </div>
@@ -690,7 +790,7 @@
     <div class="about-content">
 
       <div class="about-image">
-        <img src="img/logosobre.jpeg" alt="C&M Tecnologia" class="about-image-logo">
+        <img src="img/logom.png" alt="C&M Tecnologia" class="about-image-logo">
       </div>
 
                 <div class="about-text">
@@ -1146,7 +1246,7 @@
  
 
 
-<!-- Portfólio Destacado -->
+<!-- Projetos Destacado -->
 <section id="portfolio-featured" class="portfolio-featured">
     <div class="container">
         <h2 class="section-title">
@@ -1160,7 +1260,7 @@
 </p>
         
         <div class="featured-portfolio-grid">
-            <div class="featured-card">
+           <div class="featured-card signature-glow">
                 <div class="featured-image" style="background-image: url('img/fundowebsite.jpeg'); background-size: cover; background-position: center;"></div>
                 <h3>
   <span data-lang="pt">Websites</span>
@@ -1176,7 +1276,7 @@
 </a>
             </div>
             
-            <div class="featured-card">
+            <div class="featured-card signature-glow">
                 <div class="featured-image" style="background-image: url('img/fundocartaov.jpeg'); background-size: cover; background-position: center;"></div>
                 <h3>
                 <span data-lang="pt">Cartão de Visita Digital</span>
@@ -1538,6 +1638,49 @@
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.946 1.347l-.355.203-3.675-.964.984 3.202-.203.323a9.847 9.847 0 001.438 4.753c.711 1.292 1.733 2.46 2.926 3.278 1.256.845 2.779 1.645 4.649 1.645 2.621 0 5.193-.855 7.203-2.399 1.573-1.198 2.82-2.864 3.4-4.77.58-1.906.58-3.996-.173-5.92-.752-1.924-2.271-3.539-4.165-4.44-1.894-.9-4.04-1.547-6.234-1.547z"/>
         </svg>
     </a>
+
+<!-- Micro Interaction - Smart Nudge -->
+<div id="smartNudge" class="smart-nudge" data-micro="smart-nudge" hidden>
+  <button class="micro-close" aria-label="Fechar">×</button>
+  <div class="smart-nudge-content">
+    <span data-lang="pt">
+      👋 Precisa de ajuda para crescer online?
+    </span>
+    <span data-lang="en" hidden>
+      👋 Need help growing online?
+    </span>
+    <span data-lang="es" hidden>
+      👋 ¿Necesitas ayuda para crecer online?
+    </span>
+
+    <button class="smart-nudge-btn" data-action="scroll-contact">
+      <span data-lang="pt">Falar com especialista</span>
+      <span data-lang="en" hidden>Talk to a specialist</span>
+      <span data-lang="es" hidden>Hablar con un especialista</span>
+    </button>
+  </div>
+</div>
+
+
+<!-- Journey Feedback -->
+<div id="journeyFeedback" class="journey-feedback" data-micro="journey" hidden>
+  <button class="micro-close" aria-label="Fechar">×</button>
+
+  <span id="journeyText">
+    <span data-lang="pt">Você já viu nossos serviços</span>
+    <span data-lang="en" hidden>You have already seen our services</span>
+    <span data-lang="es" hidden>Ya has visto nuestros servicios</span>
+  </span>
+
+  <a id="journeyLink" href="#ebooks" class="journey-link">
+    <span data-lang="pt">Ver ebooks →</span>
+    <span data-lang="en" hidden>See ebooks →</span>
+    <span data-lang="es" hidden>Ver ebooks →</span>
+  </a>
+</div>
+
+
+
 
     <!-- Scripts -->
     <script src="/main.js"></script>

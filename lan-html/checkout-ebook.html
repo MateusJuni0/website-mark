@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Checkout — C&M Tecnologia</title>
+
+<style>
+/* =========================
+   TOKENS (ALINHADOS AO SITE)
+========================= */
+:root{
+  --bg:#0b1024;
+  --bg-soft:#111827;
+  --card:#0f172a;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --primary:#7c3aed;   /* roxo */
+  --accent:#22c55e;    /* verde */
+  --danger:#ef4444;
+  --radius:16px;
+}
+
+/* =========================
+   BASE
+========================= */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu;
+  background:
+    radial-gradient(900px 500px at 20% -10%, rgba(124,58,237,.25), transparent 60%),
+    radial-gradient(800px 500px at 90% 10%, rgba(34,197,94,.18), transparent 55%),
+    var(--bg);
+  color:var(--text);
+  min-height:100vh;
+}
+
+/* =========================
+   HEADER
+========================= */
+header{
+  position:sticky;top:0;z-index:20;
+  backdrop-filter: blur(10px);
+  background:linear-gradient(90deg, rgba(124,58,237,.25), rgba(34,197,94,.15));
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.header-inner{
+  max-width:1100px;margin:auto;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 16px;
+}
+.logo{
+  display:flex;align-items:center;gap:10px;
+  text-decoration:none;color:var(--text);
+}
+.logo img{width:38px}
+
+/* =========================
+   CONTAINER
+========================= */
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:48px 16px;
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:32px;
+}
+
+/* =========================
+   CARD
+========================= */
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:var(--radius);
+  padding:24px;
+}
+
+/* =========================
+   PRODUCT
+========================= */
+.product-title{font-size:1.4rem;margin:0 0 8px}
+.product-desc{color:var(--muted);font-size:.95rem}
+.price{
+  font-size:2rem;font-weight:700;
+  margin:16px 0;
+}
+.badge{
+  display:inline-block;
+  background:rgba(34,197,94,.15);
+  color:var(--accent);
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:.8rem;
+}
+
+/* =========================
+   FORM
+========================= */
+form{display:grid;gap:14px}
+label{font-size:.85rem;color:var(--muted)}
+input{
+  background:var(--bg-soft);
+  border:1px solid rgba(255,255,255,.12);
+  color:var(--text);
+  padding:12px;
+  border-radius:10px;
+}
+input:focus{outline:none;border-color:var(--primary)}
+
+.btn{
+  padding:14px;
+  border-radius:12px;
+  font-weight:600;
+  cursor:pointer;
+  border:none;
+}
+.btn.primary{
+  background:linear-gradient(90deg,var(--primary),#6d28d9);
+  color:white;
+}
+.btn.primary:hover{filter:brightness(1.05)}
+
+.secure{
+  display:flex;align-items:center;gap:8px;
+  color:var(--muted);
+  font-size:.8rem;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:900px){
+  .container{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="/lan-html/landing-ebooks.html">
+      <img src="/img/logom.svg" alt="C&M Tecnologia">
+      <strong>C&amp;M Tecnologia</strong>
+    </a>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- PRODUTO -->
+  <section class="card">
+    <span class="badge">Ebook Digital</span>
+    <h1 class="product-title" id="productTitle">Ebook Profissional</h1>
+    <p class="product-desc" id="productDesc">
+      Conteúdo estratégico e prático para evolução digital.
+    </p>
+
+    <div class="price" id="productPrice">€19,90</div>
+
+    <ul class="product-desc">
+      <li>✔ Acesso imediato</li>
+      <li>✔ Atualizações futuras</li>
+      <li>✔ Conteúdo prático e aplicável</li>
+    </ul>
+  </section>
+
+  <!-- PAGAMENTO -->
+  <section class="card">
+    <h2>Finalizar Compra</h2>
+
+    <form>
+      <div>
+        <label>Nome completo</label>
+        <input type="text" placeholder="Seu nome" required>
+      </div>
+
+      <div>
+        <label>Email</label>
+        <input type="email" placeholder="voce@email.com" required>
+      </div>
+
+      <button type="button" class="btn primary">
+        Pagar com Cartão
+      </button>
+
+      <div class="secure">
+        🔒 Pagamento seguro • SSL • Dados protegidos
+      </div>
+    </form>
+  </section>
+
+</main>
+
+<script>
+/* =========================
+   PRODUTOS (PLACEHOLDER)
+========================= */
+const products = {
+  ai: {
+    title: "IA para Negócios",
+    desc: "Como aplicar inteligência artificial de forma prática e estratégica.",
+    price: "€29,90"
+  },
+  automation: {
+    title: "Automação Inteligente",
+    desc: "Escala, produtividade e redução de custos operacionais.",
+    price: "€24,90"
+  },
+  marketing: {
+    title: "Marketing Digital Moderno",
+    desc: "Estratégias reais para crescer online.",
+    price: "€19,90"
+  }
+};
+
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+if(products[id]){
+  document.getElementById("productTitle").innerText = products[id].title;
+  document.getElementById("productDesc").innerText = products[id].desc;
+  document.getElementById("productPrice").innerText = products[id].price;
+}
+</script>
+
+</body>
+</html>

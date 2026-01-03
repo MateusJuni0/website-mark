@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>C&M Tecnologia — Ebooks Estratégicos</title>
+
+<style>
+/* =======================
+   TOKENS (ISOLADOS)
+======================= */
+:root{
+  /* Base */
+  --bg:#0b0b14;              /* mesmo clima do site */
+  --bg-soft:#121225;
+  --card:#16162e;
+
+  /* Texto */
+  --text:#f1f1f7;
+  --muted:#a1a1c2;
+
+  /* Brand */
+  --primary:#7C4DFF;         /* roxo principal do site */
+  --primary-soft:#9a7bff;
+  --accent:#22c55e;          /* verde destaque */
+
+  /* UI */
+  --radius:18px;
+}
+
+
+/* =======================
+   RESET BÁSICO
+======================= */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu;
+  background:
+  radial-gradient(900px 500px at 10% -10%, rgba(124,77,255,.35), transparent 60%),
+  radial-gradient(800px 500px at 90% 10%, rgba(34,197,94,.25), transparent 55%),
+  linear-gradient(180deg, #0b0b14 0%, #0f1024 100%);
+  color:var(--text);
+  min-height:100vh;
+}
+
+/* =======================
+   HEADER
+======================= */
+header{
+  position:sticky;top:0;z-index:50;
+  backdrop-filter: blur(10px);
+  background:linear-gradient(
+  90deg,
+  rgba(124,77,255,.35),
+  rgba(34,197,94,.18)
+);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.header-inner{
+  max-width:1200px;margin:auto;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 16px;
+}
+.logo{
+  display:flex;align-items:center;gap:10px;
+  text-decoration:none;color:var(--text);
+}
+.logo img{
+  width:40px;height:auto;
+  animation:logoFloat 4s ease-in-out infinite;
+}
+@keyframes logoFloat{50%{transform:translateY(-4px) rotate(1deg)}}
+.header-actions{display:flex;gap:10px}
+.header-actions button{
+  background:transparent;border:1px solid rgba(255,255,255,.2);
+  color:var(--text);border-radius:10px;padding:6px 10px;
+  cursor:pointer;
+}
+
+/* =======================
+   CONTAINER / TITLES
+======================= */
+.container{max-width:1200px;margin:auto;padding:48px 16px}
+.h1{
+  font-size:clamp(2rem,4vw,3rem);margin:0 0 8px;
+}
+.sub{color:var(--muted);max-width:720px}
+
+/* =======================
+   GRID EBOOKS
+======================= */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:24px;margin-top:32px;
+}
+.card{
+  background:
+    linear-gradient(
+      180deg,
+      rgba(124,77,255,.08),
+      rgba(22,22,46,.9)
+    );
+  border:1px solid rgba(124,77,255,.25);
+  border-radius:var(--radius);
+  padding:14px;
+  transition:transform .2s ease, box-shadow .2s ease;
+  will-change:transform;
+}
+.card img{
+  width:100%;border-radius:12px;display:block;
+}
+.card h3{margin:12px 0 6px;font-size:1.05rem}
+.card p{margin:0;color:var(--muted);font-size:.92rem}
+.actions{display:flex;gap:8px;margin-top:12px}
+.btn{
+  flex:1;padding:10px;border-radius:10px;
+  cursor:pointer;text-align:center;text-decoration:none;
+  font-weight:600;font-size:.9rem;
+}
+.btn.outline{
+  background:transparent;border:1px solid var(--primary);
+  color:var(--primary);
+  border:1px solid var(--primary);
+  color:var(--primary);
+}
+.btn.outline:hover{
+  background:rgba(124,77,255,.12);
+}
+.btn.primary{
+  background:linear-gradient(
+    90deg,
+    var(--primary),
+    var(--primary-soft)
+    
+  );
+  color:white;border:none;
+   box-shadow:0 8px 30px rgba(124,77,255,.35);
+}
+.btn.primary {
+  position: relative;
+  overflow: hidden;
+}
+.btn.primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255,255,255,.35), transparent 60%);
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+.btn.primary:active::after {
+  opacity: 1;
+}
+
+@media (max-width:640px){
+  .card{
+    padding:16px;
+  }
+  .actions{
+    flex-direction:column;
+  }
+  .btn{
+    padding:14px;
+    font-size:1rem;
+  }
+}
+@media (prefers-reduced-motion: reduce){
+  *{
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
+
+
+/* =======================
+   MODAL PDF
+======================= */
+.modal{
+  position:fixed;inset:0;z-index:100;
+  background:rgba(0,0,0,.85);
+  display:none;
+}
+.modal.open{display:flex}
+.modal iframe{
+  width:92%;height:92%;margin:auto;border-radius:12px;
+}
+.modal .close{
+  position:absolute;top:18px;right:18px;
+  background:transparent;border:none;color:white;
+  font-size:1.4rem;cursor:pointer;
+}
+
+.pdf-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px) scale(.98);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* =======================
+   FOOTER
+======================= */
+footer{
+  border-top:1px solid rgba(255,255,255,.08);
+  padding:24px 16px;margin-top:56px;
+  color:var(--muted);
+  text-align:center;
+}
+
+/* =======================
+   MOBILE
+======================= */
+@media (max-width:640px){
+  .header-inner{gap:10px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="/">
+      <!-- AJUSTE O PATH SE NECESSÁRIO -->
+      <img src="/img/logom.png" alt="C&M Tecnologia">
+      <strong>C&amp;M Tecnologia</strong>
+    </a>
+    <div class="header-actions">
+      <button id="lang-toggle">🌐</button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <h1 class="h1">
+  <span data-lang="pt">Biblioteca Estratégica Digital</span>
+  <span data-lang="en" hidden>Strategic Digital Library</span>
+</h1>
+  <p class="sub">
+  <span data-lang="pt">
+    Ebooks profissionais sobre tecnologia, automação, marketing e crescimento digital.
+  </span>
+  <span data-lang="en" hidden>
+    Professional ebooks about technology, automation, marketing and digital growth.
+  </span>
+</p>
+
+  <section class="grid">
+    <!-- 1 -->
+    <article class="card" data-pdf="ebooks/demo.pdf">
+      <img src="https://placehold.co/300x420/7C3AED/FFFFFF?text=AI+Business">
+      <h3>
+  <span data-lang="pt">IA para Negócios</span>
+  <span data-lang="en" hidden>AI for Business</span>
+</h3>
+      <p>
+  <span data-lang="pt">Aplicações práticas de IA no dia a dia.</span>
+  <span data-lang="en" hidden>Practical AI applications for everyday business.</span>
+</p>
+      <div class="actions">
+        <button class="btn outline open">
+  <span data-lang="pt">Prévia</span>
+  <span data-lang="en" hidden>Preview</span>
+</button>
+        <a class="btn primary" href="/lan-html/checkout-ebook.html">
+  <span data-lang="pt">Comprar</span>
+  <span data-lang="en" hidden>Buy</span>
+</a>
+      </div>
+    </article>
+    <!-- 2 -->
+    <article class="card" data-pdf="ebooks/demo.pdf">
+      <img src="https://placehold.co/300x420/22C55E/FFFFFF?text=Automation">
+      <h3>Automação Inteligente</h3>
+      <p>Escala, eficiência e redução de custos.</p>
+      <div class="actions">
+        <button class="btn outline open">
+  <span data-lang="pt">Prévia</span>
+  <span data-lang="en" hidden>Preview</span>
+</button>
+        <a class="btn primary" href="/lan-html/checkout-ebook.html">
+  <span data-lang="pt">Comprar</span>
+  <span data-lang="en" hidden>Buy</span>
+</a>
+      </div>
+    </article>
+    <!-- 3 -->
+    <article class="card" data-pdf="ebooks/demo.pdf">
+      <img src="https://placehold.co/300x420/F59E0B/FFFFFF?text=Marketing">
+      <h3>Marketing Moderno</h3>
+      <p>Crescimento sustentável e conversão.</p>
+      <div class="actions">
+        <button class="btn outline open">
+  <span data-lang="pt">Prévia</span>
+  <span data-lang="en" hidden>Preview</span>
+</button>
+        <a class="btn primary" href="/lan-html/checkout-ebook.html">
+  <span data-lang="pt">Comprar</span>
+  <span data-lang="en" hidden>Buy</span>
+</a>
+      </div>
+    </article>
+    <!-- 4 -->
+    <article class="card" data-pdf="ebooks/demo.pdf">
+      <img src="https://placehold.co/300x420/0EA5E9/FFFFFF?text=Startups">
+      <h3>Startups & Tech</h3>
+      <p>Da ideia ao produto validado.</p>
+      <div class="actions">
+       <button class="btn outline open">
+  <span data-lang="pt">Prévia</span>
+  <span data-lang="en" hidden>Preview</span>
+</button>
+        <a class="btn primary" href="/lan-html/checkout-ebook.html">
+  <span data-lang="pt">Comprar</span>
+  <span data-lang="en" hidden>Buy</span>
+</a>
+      </div>
+    </article>
+    <!-- 5 -->
+    <article class="card" data-pdf="ebooks/demo.pdf">
+      <img src="https://placehold.co/300x420/EC4899/FFFFFF?text=UX+UI">
+      <h3>UX & UI Avançado</h3>
+      <p>Design que converte e retém.</p>
+      <div class="actions">
+        <button class="btn outline open">
+  <span data-lang="pt">Prévia</span>
+  <span data-lang="en" hidden>Preview</span>
+</button>
+        <a class="btn primary" href="/lan-html/checkout-ebook.html">
+  <span data-lang="pt">Comprar</span>
+  <span data-lang="en" hidden>Buy</span>
+</a>
+      </div>
+    </article>
+    <!-- 6 -->
+    <article class="card" data-pdf="ebooks/demo.pdf">
+      <img src="https://placehold.co/300x420/6366F1/FFFFFF?text=Web+Dev">
+      <h3>Web Dev Profissional</h3>
+      <p>Boas práticas modernas.</p>
+      <div class="actions">
+       <button class="btn outline open">
+  <span data-lang="pt">Prévia</span>
+  <span data-lang="en" hidden>Preview</span>
+</button>
+        <a class="btn primary" href="/lan-html/checkout-ebook.html">
+  <span data-lang="pt">Comprar</span>
+  <span data-lang="en" hidden>Buy</span>
+</a>
+      </div>
+    </article>
+    <!-- 7 -->
+    <article class="card" data-pdf="ebooks/demo.pdf">
+      <img src="https://placehold.co/300x420/22C55E/FFFFFF?text=SEO">
+      <h3>SEO Técnico</h3>
+      <p>Ranking, performance e tráfego.</p>
+      <div class="actions">
+        <button class="btn outline open">
+  <span data-lang="pt">Prévia</span>
+  <span data-lang="en" hidden>Preview</span>
+</button>
+       <a class="btn primary" href="/lan-html/checkout-ebook.html">
+  <span data-lang="pt">Comprar</span>
+  <span data-lang="en" hidden>Buy</span>
+</a>
+      </div>
+    </article>
+    <!-- 8 -->
+    <article class="card" data-pdf="ebooks/demo.pdf">
+      <img src="https://placehold.co/300x420/EF4444/FFFFFF?text=Business">
+      <h3>Negócios Digitais</h3>
+      <p>Métricas, estratégia e escala.</p>
+      <div class="actions">
+        <button class="btn outline open">
+  <span data-lang="pt">Prévia</span>
+  <span data-lang="en" hidden>Preview</span>
+</button>
+        <a class="btn primary" href="/lan-html/checkout-ebook.html">
+  <span data-lang="pt">Comprar</span>
+  <span data-lang="en" hidden>Buy</span>
+</a>
+      </div>
+    </article>
+  </section>
+</main>
+
+<footer>
+  © 2026 C&amp;M Tecnologia — Todos os direitos reservados.
+</footer>
+
+<!-- MODAL -->
+ 
+
+<div class="modal" id="modal">
+  <button class="close" id="close">✕</button>
+  <div class="pdf-loading" id="pdfLoading">Carregando…</div>
+
+  <iframe id="frame"></iframe>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded",()=>{
+  // 3D hover
+  document.querySelectorAll(".card").forEach(card=>{
+    card.addEventListener("mousemove",e=>{
+      const r=card.getBoundingClientRect();
+      const x=e.clientX-r.left;
+      const y=e.clientY-r.top;
+      const rx=(y/r.height-.5)*6;
+      const ry=(x/r.width-.5)*-6;
+      card.style.transform=`rotateX(${rx}deg) rotateY(${ry}deg) translateY(-6px)`;
+      card.style.boxShadow="0 20px 40px rgba(0,0,0,.35)";
+    });
+    card.addEventListener("mouseleave",()=>{
+      card.style.transform="";
+      card.style.boxShadow="";
+    });
+  });
+
+  // Modal PDF
+  const modal=document.getElementById("modal");
+  const frame=document.getElementById("frame");
+  document.querySelectorAll(".open").forEach(btn=>{
+    btn.onclick=e=>{
+      const pdf=e.target.closest(".card").dataset.pdf;
+      document.getElementById("pdfLoading").style.display = "flex";
+frame.onload = () => {
+  document.getElementById("pdfLoading").style.display = "none";
+};
+frame.src = pdf;
+modal.classList.add("open");
+    };
+  });
+  document.getElementById("close").onclick=()=>{
+    modal.classList.remove("open");
+    frame.src="";
+  };
+});
+</script>
+<script>
+(function(){
+  const toggle = document.getElementById("lang-toggle");
+  if(!toggle) return;
+
+  let currentLang = localStorage.getItem("lang") || "pt";
+
+  function applyLang(lang){
+    document.querySelectorAll("[data-lang]").forEach(el=>{
+      el.hidden = el.dataset.lang !== lang;
+    });
+    document.documentElement.lang = lang === "pt" ? "pt-BR" : "en";
+    localStorage.setItem("lang", lang);
+  }
+
+  toggle.addEventListener("click", ()=>{
+    currentLang = currentLang === "pt" ? "en" : "pt";
+    applyLang(currentLang);
+  });
+
+  applyLang(currentLang);
+})();
+</script>
+<script>
+/* Scroll reveal */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add("visible"), i * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

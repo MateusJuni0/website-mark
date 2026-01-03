@@ -27,6 +27,53 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
+
+// ===== GLOBAL MICRO-INTERACTION MANAGER =====
+window.MicroUX = {
+  active: null,
+  lastShown: 0,
+  cooldown: 8000, // 8s entre interações
+
+  canShow(id) {
+    const now = Date.now();
+
+    if (this.active && this.active !== id) return false;
+    if (now - this.lastShown < this.cooldown) return false;
+
+    return true;
+  },
+
+  show(id, element) {
+    if (!this.canShow(id)) return false;
+
+    this.hideCurrent();
+    element.hidden = false;
+
+    this.active = id;
+    this.lastShown = Date.now();
+    return true;
+  },
+
+  hideCurrent() {
+    if (!this.active) return;
+
+    const el = document.querySelector(`[data-micro="${this.active}"]`);
+    if (el) el.hidden = true;
+
+    this.active = null;
+  },
+
+  close(id) {
+    if (this.active === id) {
+      this.hideCurrent();
+    }
+  }
+};
+
+
+
+
+
 // CTA Button click
 document.querySelectorAll('.cta-button').forEach(btn => {
     btn.addEventListener('click', function(e) {
@@ -411,3 +458,340 @@ document.getElementById("lang-toggle").addEventListener("click", () => {
 });
 
 applyLanguage(currentLang);
+
+
+// ===== SMART NUDGE (Tempo parado) =====
+(function () {
+  const nudge = document.getElementById("smartNudge");
+  if (!nudge) return;
+
+  let lastScrollTime = Date.now();
+  let nudgeShown = false;
+
+  function showNudge() {
+    if (nudgeShown) return;
+    MicroUX.show("smart-nudge", nudge);
+    nudgeShown = true;
+
+    // some sozinho depois de 10s
+    setTimeout(() => {
+  MicroUX.close("smart-nudge");
+}, 10000);
+}
+
+  // Atualiza tempo de scroll
+  window.addEventListener("scroll", () => {
+    lastScrollTime = Date.now();
+  });
+
+  // Verifica inatividade
+  setInterval(() => {
+    const now = Date.now();
+    const idleTime = now - lastScrollTime;
+
+    // 6 segundos parado
+    if (idleTime > 6000 && !nudgeShown) {
+      showNudge();
+    }
+  }, 1000);
+})();
+
+// ===== SERVICE CARD TAP LOGIC (Mobile First) =====
+(function () {
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
+  if (!isMobile) return;
+
+  const cards = document.querySelectorAll(".service-card");
+
+  cards.forEach(card => {
+    let tappedOnce = false;
+
+    card.addEventListener("click", e => {
+      const btn = card.querySelector(".btn");
+      if (!btn) return;
+
+      if (!tappedOnce) {
+        e.preventDefault();
+
+        // Remove estado ativo dos outros cards
+        cards.forEach(c => c.classList.remove("is-active"));
+
+        card.classList.add("is-active");
+        tappedOnce = true;
+
+        // Reset automático após 4s
+        setTimeout(() => {
+          card.classList.remove("is-active");
+          tappedOnce = false;
+        }, 4000);
+      }
+    });
+  });
+})();
+// ===== PAGE PROGRESS LOGIC =====
+(function () {
+  const progressBar = document.getElementById("pageProgressBar");
+  const progressHint = document.getElementById("progressHint");
+  const progressCount = document.getElementById("progressCount");
+  const progressTotal = document.getElementById("progressTotal");
+
+  if (!progressBar || !progressHint) return;
+
+  // Seções relevantes (ajuste se quiser)
+  const sections = [
+    "#home",
+    "#services",
+    "#ebooks",
+    "#about",
+    "#portfolio-featured",
+    "#contact"
+  ].map(sel => document.querySelector(sel)).filter(Boolean);
+
+  progressTotal.textContent = sections.length;
+
+  function updateProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+
+    const progress = (scrollTop / docHeight) * 100;
+    progressBar.style.width = progress + "%";
+
+    // Quantas seções já foram vistas
+    let seen = 0;
+    sections.forEach(section => {
+      if (scrollTop + window.innerHeight * 0.6 >= section.offsetTop) {
+        seen++;
+      }
+    });
+
+    progressCount.textContent = seen;
+
+    // Mostra hint só após a primeira seção
+    if (seen > 1) {
+      progressHint.hidden = false;
+    }
+  }
+
+  window.addEventListener("scroll", updateProgress);
+})();
+// ===== CONTEXTUAL SCROLL SUGGESTION =====
+(function () {
+  const suggestion = document.getElementById("contextSuggestion");
+  const topic = document.getElementById("contextTopic");
+  const link = document.getElementById("contextLink");
+
+  if (!suggestion || !topic || !link) return;
+
+  let shown = false;
+  let toggle = false;
+
+  function handleScroll() {
+    const scrollTop = window.scrollY;
+    const docHeight =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+
+    const progress = scrollTop / docHeight;
+
+    // Mostra a partir de 70%
+    if (progress > 0.7 && !shown) {
+      shown = true;
+     MicroUX.show("context", suggestion);
+
+      // Alterna entre ebooks e projetos
+      if (toggle) {
+        topic.textContent = "projetos";
+        link.href = "#portfolio-featured";
+      } else {
+        topic.textContent = "ebooks";
+        link.href = "#ebooks";
+      }
+
+      toggle = !toggle;
+
+      // Some sozinho após 12s
+      setTimeout(() => {
+        suggestion.hidden = true;
+      }, 12000);
+    }
+  }
+
+  window.addEventListener("scroll", handleScroll);
+})();
+
+// ===== PROGRESSIVE CONTENT - SERVICES =====
+(function () {
+  const section = document.getElementById("services");
+  const progressive = document.getElementById("servicesProgressive");
+
+  if (!section || !progressive) return;
+
+  let shown = false;
+
+  function onScroll() {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    const scrollPos = window.scrollY + window.innerHeight;
+
+    // Quando o usuário já percorreu ~30% da seção
+    if (!shown && scrollPos > sectionTop + sectionHeight * 0.3) {
+      progressive.hidden = false;
+      shown = true;
+    }
+  }
+
+  window.addEventListener("scroll", onScroll);
+})();
+// ===== JOURNEY FEEDBACK LOGIC =====
+(function () {
+  const feedback = document.getElementById("journeyFeedback");
+  const text = document.getElementById("journeyText");
+  const link = document.getElementById("journeyLink");
+
+  if (!feedback || !text || !link) return;
+
+  const sections = {
+    services: document.getElementById("services"),
+    ebooks: document.getElementById("ebooks"),
+    portfolio: document.getElementById("portfolio-featured")
+  };
+
+  let shown = false;
+
+  function checkJourney() {
+    const scrollPos = window.scrollY + window.innerHeight * 0.6;
+
+    if (!shown && sections.services && scrollPos > sections.services.offsetTop) {
+      MicroUX.show("journey", feedback);
+      shown = true;
+
+      // Decide o próximo passo
+      if (sections.ebooks && scrollPos < sections.ebooks.offsetTop) {
+        text.innerHTML = `
+          <span data-lang="pt">Você já viu nossos serviços</span>
+          <span data-lang="en" hidden>You have already seen our services</span>
+          <span data-lang="es" hidden>Ya has visto nuestros servicios</span>
+        `;
+        link.href = "#ebooks";
+      } else if (sections.portfolio && scrollPos < sections.portfolio.offsetTop) {
+        text.innerHTML = `
+          <span data-lang="pt">Que tal ver nossos ebooks?</span>
+          <span data-lang="en" hidden>How about checking our ebooks?</span>
+          <span data-lang="es" hidden>¿Qué tal ver nuestros ebooks?</span>
+        `;
+        link.href = "#portfolio-featured";
+      }
+    }
+  }
+
+  window.addEventListener("scroll", checkJourney);
+})();
+
+
+// ===== BEHAVIORAL ADAPTATION (MOBILE-FIRST) =====
+(function () {
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
+  if (!isMobile) return;
+
+  let interactionCount = 0;
+  let lastInteractionTime = 0;
+
+  function registerInteraction() {
+    interactionCount++;
+    lastInteractionTime = Date.now();
+  }
+
+  // Registra interações relevantes
+  document.querySelectorAll("a, button").forEach(el => {
+    el.addEventListener("click", registerInteraction);
+  });
+
+  // Controla exibição de elementos flutuantes
+  function shouldShow() {
+    const now = Date.now();
+
+    // Se o usuário já interagiu bastante, reduz estímulos
+    if (interactionCount >= 4) return false;
+
+    // Evita estímulos muito próximos
+    if (now - lastInteractionTime < 8000) return false;
+
+    return true;
+  }
+
+  // Exemplo: controla feedback de jornada
+  const journey = document.getElementById("journeyFeedback");
+  if (journey) {
+    const originalShow = journey.hidden;
+
+    window.addEventListener("scroll", () => {
+      if (!shouldShow()) {
+        journey.hidden = true;
+      }
+    });
+  }
+
+})();
+
+document.addEventListener("click", e => {
+  if (e.target.classList.contains("micro-close")) {
+    const box = e.target.closest("[data-micro]");
+    if (!box) return;
+
+    const id = box.getAttribute("data-micro");
+    MicroUX.close(id);
+  }
+}); 
+
+
+// ===== SIGNATURE GLOW INTERACTION =====
+(function () {
+  const elements = document.querySelectorAll(".signature-glow");
+  if (!elements.length) return;
+
+  let ticking = false;
+
+  function updateGlow(e) {
+    elements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+
+      // ativa só se estiver visível
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add("is-active");
+
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+        el.style.setProperty("--glow-x", `${x}%`);
+        el.style.setProperty("--glow-y", `${y}%`);
+      } else {
+        el.classList.remove("is-active");
+      }
+    });
+
+    ticking = false;
+  }
+
+  // Desktop: mouse
+  window.addEventListener("mousemove", e => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => updateGlow(e));
+      ticking = true;
+    }
+  });
+
+  // Mobile: toque
+  window.addEventListener("touchmove", e => {
+    const touch = e.touches[0];
+    if (!touch) return;
+
+    if (!ticking) {
+      window.requestAnimationFrame(() =>
+        updateGlow({ clientX: touch.clientX, clientY: touch.clientY })
+      );
+      ticking = true;
+    }
+  });
+})();
