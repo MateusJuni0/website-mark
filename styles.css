@@ -2256,6 +2256,13 @@ grid-column: 2;
     transform: none;
   }
 }
+@media (max-width: 768px) {
+  .services-progressive {
+    margin: 0.75rem 0 1.25rem;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.75rem;
+  }
+}
 /* ===== PAGE PROGRESS INDICATOR ===== */
 
 #pageProgress {
@@ -2434,10 +2441,16 @@ grid-column: 2;
 .signature-glow {
   position: relative;
   overflow: hidden;
+  .service-card,
+.ebook-item,
+.featured-card {
+  position: relative;
+  z-index: 1;
 }
 
 .signature-glow::after {
   content: "";
+  z-index: 0;
   position: absolute;
   inset: 0;
   background: radial-gradient(
@@ -2449,7 +2462,21 @@ grid-column: 2;
   transition: opacity 0.3s ease;
   pointer-events: none;
 }
+/* Micro interações sempre acima */
+.smart-nudge,
+.context-suggestion,
+.journey-feedback {
+  z-index: 999;
+}
 
 .signature-glow.is-active::after {
   opacity: 1;
 }
+/* Garantir que glow nunca bloqueie interação */
+.signature-glow {
+  pointer-events: auto;
+}
+
+.signature-glow * {
+  pointer-events: auto;
+}}
