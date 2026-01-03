@@ -369,3 +369,45 @@ if (formulario) {
   });
 } 
 
+
+const translations = {
+    pt: {
+        nav_ebooks: "Ebooks",
+        ebooks_title: "Ebooks Gratuitos",
+        ebooks_subtitle: "Conteúdo exclusivo para impulsionar seu conhecimento digital",
+        ebook_btn: "Ler agora"
+    },
+    en: {
+        nav_ebooks: "Ebooks",
+        ebooks_title: "Free Ebooks",
+        ebooks_subtitle: "Exclusive content to boost your digital knowledge",
+        ebook_btn: "Read now"
+    },
+    es: {
+        nav_ebooks: "Ebooks",
+        ebooks_title: "Ebooks Gratuitos",
+        ebooks_subtitle: "Contenido exclusivo para potenciar tu conocimiento digital",
+        ebook_btn: "Leer ahora"
+    }
+};
+
+let currentLang = localStorage.getItem("lang") || "pt";
+
+function applyLanguage(lang) {
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (translations[lang][key]) {
+            el.textContent = translations[lang][key];
+        }
+    });
+    localStorage.setItem("lang", lang);
+}
+
+document.getElementById("lang-toggle").addEventListener("click", () => {
+    if (currentLang === "pt") currentLang = "en";
+    else if (currentLang === "en") currentLang = "es";
+    else currentLang = "pt";
+    applyLanguage(currentLang);
+});
+
+applyLanguage(currentLang);
