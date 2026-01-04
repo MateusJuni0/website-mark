@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Triplicar Vendas em 90 Dias | CM Tecnologia - Garantia ROI</title>
     <meta name="description" content="Triplicar suas vendas em 90 dias ou seu dinheiro de volta. 280% ROI comprovado. 18 clientes PT. Consulta grátis.">
-    
+    <link rel="stylesheet" href="/styles.css">
     <style>
         * {
             margin: 0;
@@ -51,7 +51,7 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.96);
+            background-image: url("/img/fundomenu.jpeg");
             backdrop-filter: blur(15px);
             border-bottom: 2px solid rgba(107, 70, 193, 0.15);
             padding: 1rem 2rem;
@@ -122,6 +122,20 @@
             .nav-links { gap: 1rem; font-size: 0.85rem; }
         }
 
+
+
+
+
+        @media (max-width: 768px) {
+  .logo span,
+  .logo p,
+  .logo small {
+    display: none;
+  }
+}
+
+
+        
         /* ========== HERO WITH PARALLAX - IMAGEM FIXA ========== */
         .hero {
             margin-top: 60px;
@@ -970,6 +984,7 @@
     </style>
 </head>
 <body>
+    
     <!-- HEADER -->
     <header>
         <nav>
@@ -1332,5 +1347,7 @@
             });
         });
     </script>
+     <script src="/main.js"></script>
 </body>
+
 </html>

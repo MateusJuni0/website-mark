@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>C&M Tecnologia — Ebooks Estratégicos</title>
+<link rel="stylesheet" href="/styles.css">
 
 <style>
 /* =======================
@@ -50,11 +51,7 @@ body{
 header{
   position:sticky;top:0;z-index:50;
   backdrop-filter: blur(10px);
-  background:linear-gradient(
-  90deg,
-  rgba(124,77,255,.35),
-  rgba(34,197,94,.18)
-);
+  background-image: url("/img/fundomenu.jpeg");
   border-bottom:1px solid rgba(255,255,255,.08);
 }
 .header-inner{
@@ -233,6 +230,253 @@ footer{
 @media (max-width:640px){
   .header-inner{gap:10px}
 }
+
+
+
+/* ===== LANDING FOOTER ===== */
+.landing-footer {
+  background: #0f0f14;
+  color: #eaeaf0;
+  padding: 3rem 1.5rem 1.5rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+/* Info */
+.footer-logo {
+  width: 140px;
+  margin-bottom: 1rem;
+}
+
+.footer-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #cfcfe6;
+}
+
+.footer-contact li {
+  list-style: none;
+  margin-bottom: 0.4rem;
+}
+
+.footer-social {
+  margin-top: 1rem;
+}
+
+.footer-social a {
+  margin-right: 1rem;
+  color: #7c4dff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Form */
+.footer-form h3 {
+  margin-bottom: 0.4rem;
+}
+
+.footer-form p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  color: #cfcfe6;
+}
+
+.footer-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footer-form input {
+  padding: 0.7rem;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+.btn-footer {
+  background: linear-gradient(135deg, #7c4dff, #ffd700);
+  color: #000;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Bottom */
+.footer-bottom {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-form {
+    margin-top: 1.5rem;
+  }
+}
+
+
+
+
+
+/* WhatsApp Floating Button - Landing */
+.whatsapp-float {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  z-index: 999;
+}
+
+.whatsapp-float img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Mobile ajuste */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    right: 14px;
+    bottom: 14px;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .logo span,
+  .logo p,
+  .logo small {
+    display: none;
+  }
+}
+
+
+/* ===== LANDING FOOTER ===== */
+.landing-footer {
+ background-image: url("/img/fundomenu.jpeg");
+  color: #eaeaf0;
+  padding: 3rem 1.5rem 1.5rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+/* Info */
+.footer-logo {
+  width: 140px;
+  margin-bottom: 1rem;
+}
+
+.footer-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #cfcfe6;
+}
+
+.footer-contact li {
+  list-style: none;
+  margin-bottom: 0.4rem;
+}
+
+.footer-social {
+  margin-top: 1rem;
+}
+
+.footer-social a {
+  margin-right: 1rem;
+  color: #7c4dff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Form */
+.footer-form h3 {
+  margin-bottom: 0.4rem;
+}
+
+.footer-form p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  color: #cfcfe6;
+}
+
+.footer-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footer-form input {
+  padding: 0.7rem;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+.btn-footer {
+  background: linear-gradient(135deg, #7c4dff, #ffd700);
+  color: #000;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Bottom */
+.footer-bottom {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-form {
+    margin-top: 1.5rem;
+  }
+}
+
+
+
+
+
+
+
 </style>
 </head>
 
@@ -242,7 +486,7 @@ footer{
   <div class="header-inner">
     <a class="logo" href="/">
       <!-- AJUSTE O PATH SE NECESSÁRIO -->
-      <img src="/img/logom.png" alt="C&M Tecnologia">
+      <img src="/img/Logo3d.png" alt="C&M Tecnologia">
       <strong>C&amp;M Tecnologia</strong>
     </a>
     <div class="header-actions">
@@ -417,6 +661,85 @@ footer{
   <iframe id="frame"></iframe>
 </div>
 
+
+
+    <!-- Footer Landing -->
+<footer class="landing-footer">
+  <div class="footer-container">
+
+    <!-- Coluna Info -->
+    <div class="footer-info">
+      <img src="/img/Logo3d.png" alt="C&M Tecnologia" class="footer-logo">
+
+      <p class="footer-text">
+        Soluções digitais completas em marketing, websites, aplicações e automação.
+        Criamos tecnologia que gera resultados reais.
+      </p>
+
+      <ul class="footer-contact">
+        <li>📞 +351 961 227 666</li>
+        <li>✉️ contato@cmtecnologia.pt</li>
+      </ul>
+
+      <div class="footer-social">
+        <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+        <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+        <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+      </div>
+    </div>
+
+    <!-- Coluna Form -->
+    <div class="footer-form">
+      <h3>Quer que entremos em contacto?</h3>
+      <p>Deixe seu email e telefone.</p>
+
+      <form action="/api/enviar-email" method="POST">
+        <input
+          type="email"
+          name="email"
+          placeholder="Seu email"
+          required
+        >
+
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Seu telefone"
+          required
+        >
+
+        <button type="submit" class="btn-footer">
+          Quero ser contactado
+        </button>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 C&M Tecnologia · Todos os direitos reservados
+  </div>
+</footer>
+
+
+
+
+<!-- WhatsApp Floating Button -->
+<a
+  href="https://wa.me/351961227666?text=Olá,%20vim%20pelo%20site%20da%20C%26M%20Tecnologia%20e%20gostaria%20de%20um%20orçamento."
+  class="whatsapp-float"
+  target="_blank"
+  rel="noopener"
+  aria-label="Falar no WhatsApp"
+>
+  <img src="/img/logo-whatsapp.jpeg" alt="WhatsApp">
+</a>
+
+
+
+
+
+
 <script>
 document.addEventListener("DOMContentLoaded",()=>{
   // 3D hover
@@ -493,5 +816,7 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 </script>
 
+<script src="/main.js"></script>
 </body>
+
 </html>

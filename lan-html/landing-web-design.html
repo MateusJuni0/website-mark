@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Design Profissional | Website-Mark</title>
     <meta name="description" content="Seu website profissional em 2 semanas. Design moderno + desenvolvimento + suporte contínuo.">
-    
+    <link rel="stylesheet" href="/styles.css">
     <!-- Google Ads Conversion Tracking -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX"></script>
     <script>
@@ -41,7 +41,7 @@
         }
 
         header {
-            background: white;
+            background-image: url("/img/fundomenu.jpeg");
             padding: 20px 0;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
             position: sticky;
@@ -374,6 +374,49 @@
                 padding: 40px 0;
             }
         }
+
+
+
+        /* WhatsApp Floating Button - Landing */
+.whatsapp-float {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  z-index: 999;
+}
+
+.whatsapp-float img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Mobile ajuste */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    right: 14px;
+    bottom: 14px;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .logo span,
+  .logo p,
+  .logo small {
+    display: none;
+  }
+}
+
+
     </style>
 </head>
 <body>
@@ -633,6 +676,19 @@
         </div>
     </footer>
 
+
+<!-- WhatsApp Floating Button -->
+<a
+  href="https://wa.me/351961227666?text=Olá,%20vim%20pelo%20site%20da%20C%26M%20Tecnologia%20e%20gostaria%20de%20um%20orçamento."
+  class="whatsapp-float"
+  target="_blank"
+  rel="noopener"
+  aria-label="Falar no WhatsApp"
+>
+  <img src="/img/logo-whatsapp.jpeg" alt="WhatsApp">
+</a>
+
+
     <script>
         // Tracking de conversão
         function trackFormSubmit() {
@@ -662,5 +718,8 @@
             event.target.reset();
         }
     </script>
+   
+
 </body>
+ 
 </html>

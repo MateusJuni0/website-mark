@@ -327,7 +327,54 @@ a:hover {
     display: flex;
     gap: var(--spacing-lg);
     align-items: center;
+
 }
+
+/* ===== MOBILE HEADER FIX (GLOBAL) ===== */
+@media (max-width: 768px) {
+
+  header,
+  nav {
+    width: 100%;
+  }
+
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* CHAVE */
+    padding: 0.8rem 1rem;
+  }
+
+  /* Logo sempre à esquerda */
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 60%;
+  }
+
+  /* Ações à direita */
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.6rem;
+  }
+
+  /* Hamburger nunca centraliza */
+  .hamburger {
+    margin-left: 0;
+  }
+
+  /* Menu principal NÃO aparece inline no mobile */
+  nav ul {
+    display: none;
+  }
+}
+
+
+
+
 
 /* Mobile menu styles */
 @media (max-width: 900px) {
@@ -2480,3 +2527,4 @@ grid-column: 2;
 .signature-glow * {
   pointer-events: auto;
 }}
+
