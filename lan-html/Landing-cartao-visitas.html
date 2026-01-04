@@ -66,17 +66,22 @@
 
         /* Header */
         header {
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid var(--color-border);
-            backdrop-filter: blur(10px);
-            background-image: url("/img/fundomenu.jpeg");
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--color-border);
+    backdrop-filter: blur(10px);
+
+    background-image: url("/img/fundomenuu.jpeg");
+    background-size: cover;        /* OCUPA TUDO */
+    background-position: center;   /* CENTRALIZA */
+    background-repeat: no-repeat;  /* NÃO REPETE */
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 .menu-toggle {
   margin-left: auto;
 }
@@ -743,10 +748,39 @@ header {
 
 /* ===== LANDING FOOTER ===== */
 .landing-footer {
-  background-image: url("/img/fundomenu.jpeg");
+  background-image: url("/img/fundo2.jpeg");
+
+  background-size: cover;        /* ocupa todo o footer */
+  background-position: center;   /* centraliza */
+  background-repeat: no-repeat;  /* não repete */
+
   color: #eaeaf0;
   padding: 3rem 1.5rem 1.5rem;
+  position: relative;
 }
+
+.landing-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 0;
+}
+
+.footer-container,
+.footer-bottom {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .landing-footer {
+    padding: 2.5rem 1rem 1.5rem;
+    background-position: center top;
+  }
+}
+
+
 
 .footer-container {
   max-width: 1200px;
@@ -847,6 +881,7 @@ header {
     <header>
         <a href="/" class="logo">
             <img src="../img/Logo3d.png" alt="C&M Tecnologia">
+        
             <span>C&M Cartoes de visita </span>
         </a>
         <button class="menu-toggle" onclick="toggleMenu()">☰</button>

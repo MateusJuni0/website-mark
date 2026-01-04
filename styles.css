@@ -269,12 +269,14 @@ a:hover {
     .header-content {
         gap: 0.25rem;
         padding: 0 var(--spacing-sm);
+        justify-content: space-between;
     }
 }
 
 @media (max-width: 350px) {
     .header-content {
         gap: 0;
+        justify-content: space-between;
     }
 }
 
@@ -330,47 +332,6 @@ a:hover {
 
 }
 
-/* ===== MOBILE HEADER FIX (GLOBAL) ===== */
-@media (max-width: 768px) {
-
-  header,
-  nav {
-    width: 100%;
-  }
-
-  .nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* CHAVE */
-    padding: 0.8rem 1rem;
-  }
-
-  /* Logo sempre à esquerda */
-  .logo {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    max-width: 60%;
-  }
-
-  /* Ações à direita */
-  .nav-actions {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 0.6rem;
-  }
-
-  /* Hamburger nunca centraliza */
-  .hamburger {
-    margin-left: 0;
-  }
-
-  /* Menu principal NÃO aparece inline no mobile */
-  nav ul {
-    display: none;
-  }
-}
 
 
 
@@ -2528,3 +2489,38 @@ grid-column: 2;
   pointer-events: auto;
 }}
 
+
+/* ===== FIX HEADER MOBILE (INDEX REAL) ===== */
+@media (max-width: 768px) {
+
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px ;
+  }
+
+  .logo {
+    margin-right: auto; /* empurra ações para a direita */
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+
+/* ===== FIX DEFINITIVO HEADER MOBILE ===== */
+@media (max-width: 768px) {
+
+  .header-content {
+    justify-content: space-between !important;
+  }
+
+  .logo {
+    margin-right: auto;
+  }
+
+}
