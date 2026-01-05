@@ -2524,3 +2524,60 @@ grid-column: 2;
   }
 
 }
+/* =========================
+   HEADER MOBILE FIX (REAL)
+   ========================= */
+@media (max-width: 768px) {
+
+  .header .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  /* LOGO sempre colada à esquerda */
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: auto;
+  }
+
+  .logo img {
+    height: 44px;
+  }
+
+  /* Esconde texto da logo no mobile */
+  .logo-text {
+    display: none;
+  }
+
+  /* NAV some no mobile (abre só via menu) */
+  .nav {
+    display: none;
+  }
+
+  /* Ações sempre no canto direito */
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+  }
+
+  /* CTA não faz sentido no header mobile */
+  .header-actions .cta-button {
+    display: none;
+  }
+
+  /* Botão menu sempre visível */
+  .menu-toggle {
+    display: flex;
+  }
+}
