@@ -2624,3 +2624,212 @@ header > * {
     animation-duration: 20s;
   }
 }
+
+
+
+/* =========================
+   SOBRE – NOVO LAYOUT MODERNO
+   ========================= */
+
+.about {
+  position: relative;
+  padding: 100px 0;
+}
+
+.about-card {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 60px;
+  border-radius: 20px;
+  background: rgba(20, 20, 30, 0.75);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(124, 77, 255, 0.25);
+}
+
+/* Conteúdo principal */
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 50px;
+}
+
+/* Logo centralizada */
+.about-image {
+  display: flex;
+  justify-content: center;
+}
+
+.about-image-logo {
+  width: 140px;
+  opacity: 0.95;
+}
+
+/* Texto */
+.about-text {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-description {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #cfcfe6;
+}
+
+/* Diferenciais */
+.about-differentials {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.differential {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: rgba(255,255,255,0.03);
+  padding: 18px;
+  border-radius: 12px;
+}
+
+/* Processo */
+.about-process {
+  margin-top: 60px;
+  text-align: center;
+}
+
+/* Stats */
+.about-stats {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.stat {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 25px 10px;
+}
+/* ===== SOBRE – MOBILE ===== */
+@media (max-width: 768px) {
+
+  .about {
+    padding: 70px 0;
+  }
+
+  .about-card {
+    padding: 40px 20px;
+    border-radius: 16px;
+  }
+
+  .about-image-logo {
+    width: 100px;
+  }
+
+  .about-text {
+    text-align: left;
+  }
+
+  .about-description {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .about-differentials {
+    grid-template-columns: 1fr;
+  }
+
+  .about-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+/* ===== SOBRE – AJUSTE DE FUNDO (MAIS CLARO) ===== */
+
+.about-card {
+  background: rgba(255, 255, 255, 0.04); /* mesma vibe do fundo */
+  border: 10px solid rgba(0, 0, 0, 0.18);
+  box-shadow: none; /* remove sensação de sombra pesada */
+}
+
+/* ===== SOBRE – CORES ===== */
+.about h2,
+.about h3,
+.about h4 {
+  color: var(--color-yellow);
+}
+
+.about p,
+.about li,
+.about span {
+  color: #000;
+}
+/* ===== SOBRE – CONTAINER PADRÃO DO SITE ===== */
+.about-card {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* ===== SOBRE – LOGO NO TOPO ===== */
+.about-image {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.about-image-logo {
+  width: 110px;
+  opacity: 0.95;
+}
+/* ===== SOBRE – CONTEÚDO CENTRAL ===== */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+}
+
+.about-text {
+  max-width: 800px;
+  margin: 0 auto;
+}
+/* ===== SOBRE – STATS / NÚMEROS ===== */
+.about-stats {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.stat {
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 14px;
+  padding: 20px 10px;
+  text-align: center;
+}
+/* ===== SOBRE – MOBILE LIMPO ===== */
+@media (max-width: 768px) {
+
+  .about-card {
+    padding: 40px 20px;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  .about-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .about-image-logo {
+    width: 90px;
+  }
+}
