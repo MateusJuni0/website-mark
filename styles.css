@@ -939,7 +939,7 @@ section {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-lg);
 }
 
@@ -947,7 +947,7 @@ section {
     background-color: var(--bg-primary);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-xl);
-    padding: var(--spacing-lg);
+    padding: 3.75rem;
     transition: all var(--transition-base);
     display: flex;
     flex-direction: column;
@@ -2861,7 +2861,7 @@ header > * {
 .channel-card span,
 .channel-card li,
 .channel-card div {
-  color: #000 !important;
+  color: yellow !important;
 }
 
 /* SOBRE */
@@ -2879,7 +2879,7 @@ header > * {
 .channel-card h3,
 .about h2,
 .about h3 {
-  color: yellow !important;
+  color: red !important;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -2888,6 +2888,121 @@ header > * {
 /* ===== TEXTO DE DESTAQUE (AMARELO) ===== */
 .highlight-text,
 .highlight-text span {
-  color: yellow;
+  color: black;
   font-weight: 600;
+}
+
+
+
+
+.services-grid {
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center; /* chave */
+}
+
+.services-grid .service-card {
+  width: 85%;
+  height: 90%;
+  max-width: 600px; /* aqui está o controle real */
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .services-grid .service-card {
+    max-width: 85%;
+    width: 85%;
+  }
+}
+
+
+
+/* =========================
+   FOOTER – C&M TECNOLOGIA
+   ========================= */
+
+.cm-footer {
+  background: linear-gradient(135deg, #2b1d4f, #4b2ea6, #6a3cff);
+  padding: 80px 20px 30px;
+  color: #e5e5e5;
+}
+
+.cm-footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+/* Logo */
+.cm-footer-logo {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+/* Texto institucional */
+.cm-footer-brand p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #d0d0d0;
+  max-width: 320px;
+}
+
+/* Colunas */
+.cm-footer-col h4 {
+  color: #FFD700;
+  font-size: 1rem;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.cm-footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cm-footer-col li {
+  margin-bottom: 10px;
+}
+
+.cm-footer-col a {
+  color: #d6d6d6;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.cm-footer-col a:hover {
+  color: #FFD700;
+}
+
+/* Base */
+.cm-footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.15);
+  margin-top: 50px;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #cfcfcf;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .cm-footer-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .cm-footer-brand p {
+    margin: 0 auto;
+  }
+
+  .cm-footer-logo {
+    margin: 0 auto 20px;
+  }
 }
