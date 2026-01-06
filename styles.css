@@ -230,7 +230,7 @@ a:hover {
     right: 0;
     z-index: 1000;
     background-color: rgba(124, 58, 237, 0.95);
-    background-image: url('img/fundomenu.jpeg');
+    
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -2579,5 +2579,48 @@ grid-column: 2;
   /* Botão menu sempre visível */
   .menu-toggle {
     display: flex;
+  }
+}
+
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  overflow: hidden; /* necessário para o pseudo-elemento */
+}
+
+/* Camada do gradiente */
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    120deg,
+    #2b1d4f,
+    #4b2ea6,
+    #6a3cff
+  );
+
+  background-size: 300% 300%;
+  animation: headerGradient 14s ease infinite;
+
+  z-index: 0;
+}
+
+/* Garante que o conteúdo fique por cima */
+header > * {
+  position: relative;
+  z-index: 1;
+}
+@keyframes headerGradient {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@media (max-width: 768px) {
+  header::before {
+    animation-duration: 20s;
   }
 }

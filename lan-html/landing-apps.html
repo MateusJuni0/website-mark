@@ -1033,14 +1033,26 @@
             <span>Desenvolvimento App</span>
         </a>
         <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-        <nav>
-            <a href="/lan-html/projetos.html">Websites</a>
-             <a href="/lan-html/Landing-cartao-visitas.html" class="active">Cartões</a>
-            <a href="/lan-html/landing-apps.html" class="active">Apps</a>
-            <a href="/lan-html/landing-ebooks.html" class="active">E-books</a>
-            <a href="/index.html">Início</a>
-            <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
-        </nav>
+        <nav class="nav">
+  <a href="/" class="nav-link">Início</a>
+  <a href="/lan-html/Landingcartõesvisita.html" class="nav-link">Cartões</a>
+  <a href="/lan-html/landing-apps.html" class="nav-link">Apps</a>
+  <a href="/lan-html/landing-ebooks.html" class="nav-link">E-books</a>
+  <a href="/lan-html/projetos.html" class="nav-link">Projetos</a>
+  <a href="#contato" class="nav-link">Contacto</a>
+</nav>
+<div class="header-actions">
+      <button id="lang-toggle">🌐</button>
+    </div>
+     <div class="header-actions">
+        <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">
+            
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
     </header>
 
     <!-- Container Principal -->

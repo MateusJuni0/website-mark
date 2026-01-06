@@ -51,7 +51,7 @@ body{
 header{
   position:sticky;top:0;z-index:50;
   backdrop-filter: blur(10px);
-  background-image: url("/img/fundomenu.jpeg");
+
   border-bottom:1px solid rgba(255,255,255,.08);
 }
 .header-inner{
@@ -409,7 +409,39 @@ footer{
 }
 
 
+/* ===== FOOTER GRADIENT LAYER ===== */
+.landing-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
 
+  background: linear-gradient(
+    135deg,
+    #1a1233,
+    #3a2496,
+    #5f3bff
+  );
+
+  background-size: 300% 300%;
+  animation: footerGradient 22s ease infinite;
+
+  z-index: 0;
+}
+.landing-footer > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes footerGradient {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@media (max-width: 768px) {
+  .landing-footer::before {
+    animation-duration: 30s;
+  }
+}
 
 
 
@@ -418,7 +450,7 @@ footer{
 </head>
 
 <body>
-
+ 
 <header>
   <div class="header-inner">
     <a class="logo" href="/">
@@ -426,10 +458,29 @@ footer{
       <img src="/img/Logo3d.png" alt="C&M Tecnologia">
       <strong>C&amp;M Tecnologia</strong>
     </a>
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <nav class="nav">
+  <a href="/" class="nav-link">Início</a>
+  <a href="/lan-html/Landingcartõesvisita.html" class="nav-link">Cartões</a>
+  <a href="/lan-html/landing-apps.html" class="nav-link">Apps</a>
+  <a href="/lan-html/landing-ebooks.html" class="nav-link">E-books</a>
+  <a href="/lan-html/projetos.html" class="nav-link">Projetos</a>
+  <a href="#contato" class="nav-link">Contacto</a>
+</nav>
+
     <div class="header-actions">
       <button id="lang-toggle">🌐</button>
     </div>
   </div>
+   <div class="header-actions">
+        <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">
+            
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
 </header>
 
 <main class="container">

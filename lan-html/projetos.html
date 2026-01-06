@@ -72,7 +72,7 @@
             align-items: center;
             border-bottom: 2px solid var(--color-border);
             backdrop-filter: blur(10px);
-          background-image: url("/img/fundomenu.jpeg");
+          
             position: sticky;
             top: 0;
             z-index: 100;
@@ -874,15 +874,14 @@ nav.active {
 
 /* ===== LANDING FOOTER ===== */
 .landing-footer {
-  background-image: url("/img/fundo2.jpeg");
-
+   position: relative;
   background-size: cover;        /* ocupa todo o footer */
   background-position: center;   /* centraliza */
   background-repeat: no-repeat;  /* não repete */
-
-  color: yellow;
+  overflow: hidden; 
+  color: #eaeaf0;
   padding: 3rem 1.5rem 1.5rem;
-  position: relative;
+  
 }
 
 .landing-footer::before {
@@ -997,6 +996,70 @@ nav.active {
     margin-top: 1.5rem;
   }
 }
+/* ===== FOOTER GRADIENT LAYER ===== */
+.landing-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    135deg,
+    #1a1233,
+    #3a2496,
+    #5f3bff
+  );
+
+  background-size: 300% 300%;
+  animation: footerGradient 22s ease infinite;
+
+  z-index: 0;
+}
+.landing-footer > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+/* ===== FOOTER GRADIENT LAYER ===== */
+.landing-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    135deg,
+    #1a1233,
+    #3a2496,
+    #5f3bff
+  );
+
+  background-size: 300% 300%;
+  animation: footerGradient 22s ease infinite;
+
+  z-index: 0;
+}
+.landing-footer > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes footerGradient {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@media (max-width: 768px) {
+  .landing-footer::before {
+    animation-duration: 30s;
+  }
+}
+
+
+
+
+
+
 
 
 
@@ -1009,20 +1072,25 @@ nav.active {
         <img src="../img/Logo3d.png" alt="C&M Tecnologia">
         <span>Websites </span>
     </a>
-    <nav>
-        <a href="/lan-html/projetos.html">Websites</a>
-         <a href="/lan-html/Landing-cartao-visitas.html" class="active">Cartões</a>
-        <a href="/lan-html/landing-apps.html" class="nav-link">Apps</a>
-         <a href="/lan-html/landing-ebooks.html" class="active">E-books</a>
-        <a href="/index.html">Início</a>
-    </nav>
+     <nav class="nav">
+  <a href="/" class="nav-link">Início</a>
+  <a href="/lan-html/Landingcartõesvisita.html" class="nav-link">Cartões</a>
+  <a href="/lan-html/landing-apps.html" class="nav-link">Apps</a>
+  <a href="/lan-html/landing-ebooks.html" class="nav-link">E-books</a>
+  <a href="/lan-html/projetos.html" class="nav-link">Projetos</a>
+  <a href="#contato" class="nav-link">Contacto</a>
+</nav>
     <div class="header-actions">
         <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
         <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">
+            
             <span></span>
             <span></span>
             <span></span>
         </button>
+    </div>
+    <div class="header-actions">
+      <button id="lang-toggle">🌐</button>
     </div>
 </header>
 
