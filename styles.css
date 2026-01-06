@@ -2833,3 +2833,61 @@ header > * {
     width: 90px;
   }
 }
+
+/* =========================================
+   REMOVER TEXTO BRANCO – MARKETING / CHANNELS
+   ========================================= */
+
+
+
+
+
+/* =====================================================
+   FIX DEFINITIVO – REMOVER TEXTO BRANCO DO CONTEÚDO
+   ===================================================== */
+
+/* MARKETING / CHANNELS */
+.marketing-section,
+.marketing-section p,
+.marketing-section span,
+.marketing-section li,
+.marketing-section div {
+  color: #000 !important;
+}
+
+/* CARDS DE MARKETING */
+.channel-card,
+.channel-card p,
+.channel-card span,
+.channel-card li,
+.channel-card div {
+  color: #000 !important;
+}
+
+/* SOBRE */
+.about,
+.about p,
+.about span,
+.about li,
+.about div {
+  color: #000 !important;
+}
+
+/* TÍTULOS (EXCEÇÃO – AMARELO) */
+.marketing-section h2,
+.marketing-section h3,
+.channel-card h3,
+.about h2,
+.about h3 {
+  color: yellow !important;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+
+/* ===== TEXTO DE DESTAQUE (AMARELO) ===== */
+.highlight-text,
+.highlight-text span {
+  color: yellow;
+  font-weight: 600;
+}
