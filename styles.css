@@ -2559,9 +2559,7 @@ grid-column: 2;
   }
 
   /* NAV some no mobile (abre só via menu) */
-  .nav {
-    display: none;
-  }
+  
 
   /* Ações sempre no canto direito */
   .header-actions {
@@ -2587,7 +2585,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  overflow: hidden; /* necessário para o pseudo-elemento */
+  overflow: visible;/* necessário para o pseudo-elemento */
 }
 
 /* Camada do gradiente */
@@ -3031,3 +3029,7 @@ header > * {
 .header .nav-link {
   transition: color 0.2s ease;
 }
+
+
+
+
