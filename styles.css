@@ -3006,3 +3006,28 @@ header > * {
     margin: 0 auto 20px;
   }
 }
+
+
+/* =========================
+   HEADER – TEXTO AMARELO + HOVER BRANCO
+   ========================= */
+
+/* Texto normal */
+.header .logo-text,
+.header .nav-link {
+  color: #FFD700;
+}
+
+/* Hover em branco */
+.header .nav-link:hover {
+  color: #FFFFFF;
+}
+
+/* Garante que ícones sigam o texto */
+.header .nav-link svg {
+  fill: currentColor;
+  stroke: currentColor;
+}
+.header .nav-link {
+  transition: color 0.2s ease;
+}
