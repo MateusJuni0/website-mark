@@ -3033,3 +3033,69 @@ header > * {
 
 
 
+/* ============================= */
+/* CTA SEO MARKETING */
+/* ============================= */
+
+.marketing-seo-cta {
+  margin-top: 3rem;
+  padding: 2.2rem 1.5rem;
+  text-align: center;
+  border-radius: 14px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 215, 0, 0.08),
+    rgba(255, 215, 0, 0.02)
+  );
+  border: 1px solid rgba(255, 215, 0, 0.25);
+}
+
+.marketing-seo-text {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin-bottom: 1.4rem;
+}
+
+.marketing-seo-text strong {
+  color: #FFD700;
+  font-weight: 700;
+}
+
+.marketing-seo-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.9rem 1.6rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #1f1f1f;
+  background: #FFD700;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 18px rgba(255, 215, 0, 0.35);
+}
+
+.marketing-seo-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(255, 215, 0, 0.45);
+}
+
+/* Mobile fine-tuning */
+@media (max-width: 768px) {
+  .marketing-seo-text {
+    font-size: 1rem;
+  }
+}
+/* Garante que o CTA fica SEMPRE abaixo da grid */
+.marketing-seo-wrapper {
+  width: 100%;
+  display: block;
+  margin-top: 3rem;
+}
+
+/* Se o pai for grid ou flex, isto força quebra */
+.marketing-seo-wrapper {
+  grid-column: 1 / -1;
+}
