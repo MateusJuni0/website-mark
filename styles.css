@@ -2877,7 +2877,7 @@ header > * {
 .channel-card h3,
 .about h2,
 .about h3 {
-  color: red !important;
+  color: rgb(254, 229, 2) !important;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -3098,4 +3098,84 @@ header > * {
 /* Se o pai for grid ou flex, isto força quebra */
 .marketing-seo-wrapper {
   grid-column: 1 / -1;
+}
+
+
+
+
+
+/* ============================= */
+/* CTA SEO WEBSITES */
+/* ============================= */
+
+.websites-seo-wrapper {
+  width: 100%;
+  display: block;
+  margin-top: 3rem;
+
+  /* força quebra mesmo em grid */
+  grid-column: 1 / -1;
+}
+
+.websites-seo-cta {
+  margin: 3rem auto 0;
+  padding: 2.2rem 1.5rem;
+  text-align: center;
+  border-radius: 14px;
+
+  max-width: 520px;   /* 👈 largura igual à sensação do marketing */
+  width: 100%;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 215, 0, 0.08),
+    rgba(255, 215, 0, 0.02)
+  );
+  border: 1px solid rgba(255, 215, 0, 0.25);
+}
+
+.websites-seo-text {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--text-color);
+  margin-bottom: 1.6rem;
+}
+
+.websites-seo-text strong {
+  color: #FFD700;
+  font-weight: 700;
+}
+
+.websites-seo-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+
+  padding: 0.95rem 1.7rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+
+  color: #1f1f1f;
+  background: #FFD700;
+  border-radius: 999px;
+  text-decoration: none;
+
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 18px rgba(255, 215, 0, 0.35);
+}
+
+.websites-seo-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(255, 215, 0, 0.45);
+}
+
+/* Mobile refinement */
+@media (max-width: 768px) {
+  .websites-seo-text {
+    font-size: 1rem;
+  }
+
+  .websites-seo-cta {
+    padding: 2rem 1.3rem;
+  }
 }
