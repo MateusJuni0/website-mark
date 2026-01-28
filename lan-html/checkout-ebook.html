@@ -1,232 +1,858 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="robots" content="noindex, follow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Checkout | C&M Tecnologia</title>
 
-<title>Checkout — C&M Tecnologia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* =========================
-   TOKENS (ALINHADOS AO SITE)
-========================= */
-:root{
-  --bg:#0b1024;
-  --bg-soft:#111827;
-  --card:#0f172a;
-  --text:#e5e7eb;
-  --muted:#9ca3af;
-  --primary:#7c3aed;   /* roxo */
-  --accent:#22c55e;    /* verde */
-  --danger:#ef4444;
-  --radius:16px;
+/* ===== VARIABLES ===== */
+:root {
+  --primary: #7C4DFF;
+  --primary-soft: #9a7bff;
+  --primary-glow: rgba(124, 77, 255, 0.4);
+  --accent: #22c55e;
+  --accent-glow: rgba(34, 197, 94, 0.3);
+  --gold: #FFD700;
+  --red: #ef4444;
+  --bg-dark: #0a0a12;
+  --bg-card: rgba(20, 20, 35, 0.8);
+  --text: #f1f1f7;
+  --text-muted: #a1a1c2;
+  --glass: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --radius: 20px;
+  --radius-sm: 12px;
 }
 
-/* =========================
-   BASE
-========================= */
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu;
-  background:
-    radial-gradient(900px 500px at 20% -10%, rgba(124,58,237,.25), transparent 60%),
-    radial-gradient(800px 500px at 90% 10%, rgba(34,197,94,.18), transparent 55%),
-    var(--bg);
-  color:var(--text);
-  min-height:100vh;
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg-dark);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-/* =========================
-   HEADER
-========================= */
-header{
-  position:sticky;top:0;z-index:20;
+/* ===== BACKGROUND ===== */
+.bg-animation {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: 
+    radial-gradient(ellipse 600px 400px at 30% 20%, var(--primary-glow), transparent 50%),
+    radial-gradient(ellipse 500px 400px at 70% 80%, var(--accent-glow), transparent 50%);
+}
+
+.grid-pattern {
+  position: fixed;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(124, 77, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 77, 255, 0.02) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: -1;
+}
+
+/* ===== HEADER ===== */
+header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--glass-border);
+  background: rgba(10, 10, 18, 0.8);
+  backdrop-filter: blur(20px);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.logo img {
+  width: 40px;
+  height: auto;
+}
+
+.logo-text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.logo-text span { color: var(--primary); }
+
+.secure-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.secure-badge::before {
+  content: '🔒';
+}
+
+/* ===== MAIN LAYOUT ===== */
+.checkout-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 48px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .checkout-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== CHECKOUT FORM ===== */
+.checkout-form {
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: 32px;
   backdrop-filter: blur(10px);
-  background:linear-gradient(90deg, rgba(124,58,237,.25), rgba(34,197,94,.15));
-  border-bottom:1px solid rgba(255,255,255,.08);
-}
-.header-inner{
-  max-width:1100px;margin:auto;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:12px 16px;
-}
-.logo{
-  display:flex;align-items:center;gap:10px;
-  text-decoration:none;color:var(--text);
-}
-.logo img{width:38px}
-
-/* =========================
-   CONTAINER
-========================= */
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:48px 16px;
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:32px;
 }
 
-/* =========================
-   CARD
-========================= */
-.card{
-  background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:var(--radius);
-  padding:24px;
+.checkout-form h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 8px;
 }
 
-/* =========================
-   PRODUCT
-========================= */
-.product-title{font-size:1.4rem;margin:0 0 8px}
-.product-desc{color:var(--muted);font-size:.95rem}
-.price{
-  font-size:2rem;font-weight:700;
-  margin:16px 0;
-}
-.badge{
-  display:inline-block;
-  background:rgba(34,197,94,.15);
-  color:var(--accent);
-  padding:4px 10px;
-  border-radius:999px;
-  font-size:.8rem;
+.checkout-form > p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 32px;
 }
 
-/* =========================
-   FORM
-========================= */
-form{display:grid;gap:14px}
-label{font-size:.85rem;color:var(--muted)}
-input{
-  background:var(--bg-soft);
-  border:1px solid rgba(255,255,255,.12);
-  color:var(--text);
-  padding:12px;
-  border-radius:10px;
-}
-input:focus{outline:none;border-color:var(--primary)}
-
-.btn{
-  padding:14px;
-  border-radius:12px;
-  font-weight:600;
-  cursor:pointer;
-  border:none;
-}
-.btn.primary{
-  background:linear-gradient(90deg,var(--primary),#6d28d9);
-  color:white;
-}
-.btn.primary:hover{filter:brightness(1.05)}
-
-.secure{
-  display:flex;align-items:center;gap:8px;
-  color:var(--muted);
-  font-size:.8rem;
+.form-section {
+  margin-bottom: 32px;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
-@media(max-width:900px){
-  .container{grid-template-columns:1fr}
+.form-section h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-section h2 .step {
+  width: 24px;
+  height: 24px;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 500px) {
+  .form-row { grid-template-columns: 1fr; }
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--text-muted);
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: rgba(124, 77, 255, 0.1);
+  box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+.form-group input::placeholder {
+  color: var(--text-muted);
+}
+
+.form-group.error input {
+  border-color: var(--red);
+}
+
+.form-group .error-msg {
+  color: var(--red);
+  font-size: 0.8rem;
+  margin-top: 6px;
+  display: none;
+}
+
+.form-group.error .error-msg {
+  display: block;
+}
+
+/* Payment Methods */
+.payment-methods {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.payment-method {
+  flex: 1;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 2px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.payment-method:hover {
+  border-color: rgba(124, 77, 255, 0.5);
+}
+
+.payment-method.active {
+  border-color: var(--primary);
+  background: rgba(124, 77, 255, 0.1);
+}
+
+.payment-method input {
+  display: none;
+}
+
+.payment-method .icon {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.payment-method .name {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Card inputs */
+.card-number-wrapper {
+  position: relative;
+}
+
+.card-number-wrapper .card-icons {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 6px;
+  font-size: 1.2rem;
+  opacity: 0.5;
+}
+
+.card-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Submit Button */
+.btn-submit {
+  width: 100%;
+  padding: 18px 32px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-soft));
+  border: none;
+  border-radius: var(--radius-sm);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px var(--primary-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px var(--primary-glow);
+}
+
+.btn-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-submit .spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: none;
+}
+
+.btn-submit.loading .spinner {
+  display: block;
+}
+
+.btn-submit.loading .btn-text {
+  display: none;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.security-note {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.security-note span {
+  color: var(--accent);
+}
+
+/* ===== ORDER SUMMARY ===== */
+.order-summary {
+  position: sticky;
+  top: 24px;
+}
+
+.summary-card {
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: 28px;
+  backdrop-filter: blur(10px);
+}
+
+.summary-card h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.summary-product {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.summary-product img {
+  width: 80px;
+  height: 107px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--glass-border);
+}
+
+.product-info h3 {
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.product-info .category {
+  font-size: 0.8rem;
+  color: var(--primary);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.product-info .format {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  font-size: 0.9rem;
+}
+
+.summary-row.subtotal {
+  color: var(--text-muted);
+}
+
+.summary-row.discount {
+  color: var(--accent);
+}
+
+.summary-row.total {
+  border-top: 1px solid var(--glass-border);
+  margin-top: 12px;
+  padding-top: 20px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.summary-row.total .price {
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--accent);
+  font-size: 1.4rem;
+}
+
+/* Guarantee */
+.guarantee {
+  margin-top: 24px;
+  padding: 16px;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
+.guarantee .icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.guarantee h4 {
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.guarantee p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Trust badges */
+.trust-badges {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--glass-border);
+}
+
+.trust-badge {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.trust-badge .icon {
+  font-size: 1.3rem;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* ===== SUCCESS STATE ===== */
+.success-message {
+  display: none;
+  text-align: center;
+  padding: 60px 40px;
+}
+
+.success-message.show {
+  display: block;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--accent), #16a34a);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  font-size: 2.5rem;
+  animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+
+.success-message h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.success-message p {
+  color: var(--text-muted);
+  margin-bottom: 32px;
+}
+
+.success-message .btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-soft));
+  color: white;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.success-message .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px var(--primary-glow);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 30px 24px;
+  border-top: 1px solid var(--glass-border);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+footer a {
+  color: var(--primary);
+  text-decoration: none;
 }
 </style>
 </head>
 
 <body>
 
+<div class="bg-animation"></div>
+<div class="grid-pattern"></div>
+
+<!-- Header -->
 <header>
   <div class="header-inner">
-    <a class="logo" href="/lan-html/landing-ebooks.html">
-      <img src="/img/logom.svg" alt="C&M Tecnologia">
-      <strong>C&amp;M Tecnologia</strong>
+    <a href="/" class="logo">
+      <img src="/img/Logo3d.png" alt="C&M Tecnologia">
+      <span class="logo-text">C&M <span>Tecnologia</span></span>
     </a>
+    <div class="secure-badge">Pagamento 100% Seguro</div>
   </div>
 </header>
 
-<main class="container">
-
-  <!-- PRODUTO -->
-  <section class="card">
-    <span class="badge">Ebook Digital</span>
-    <h1 class="product-title" id="productTitle">Ebook Profissional</h1>
-    <p class="product-desc" id="productDesc">
-      Conteúdo estratégico e prático para evolução digital.
-    </p>
-
-    <div class="price" id="productPrice">€19,90</div>
-
-    <ul class="product-desc">
-      <li>✔ Acesso imediato</li>
-      <li>✔ Atualizações futuras</li>
-      <li>✔ Conteúdo prático e aplicável</li>
-    </ul>
-  </section>
-
-  <!-- PAGAMENTO -->
-  <section class="card">
-    <h2>Finalizar Compra</h2>
-
-    <form>
-      <div>
-        <label>Nome completo</label>
-        <input type="text" placeholder="Seu nome" required>
+<!-- Checkout -->
+<div class="checkout-container">
+  
+  <!-- Form -->
+  <div class="checkout-form" id="checkoutForm">
+    <h1>Finalizar Compra</h1>
+    <p>Complete os dados abaixo para receber seu e-book instantaneamente.</p>
+    
+    <form id="paymentForm">
+      <!-- Contact Info -->
+      <div class="form-section">
+        <h2><span class="step">1</span> Seus Dados</h2>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">Nome</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Seu nome" required>
+            <span class="error-msg">Nome obrigatório</span>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Apelido</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Seu apelido" required>
+            <span class="error-msg">Apelido obrigatório</span>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+          <span class="error-msg">Email inválido</span>
+        </div>
+        
+        <div class="form-group">
+          <label for="phone">Telemóvel (opcional)</label>
+          <input type="tel" id="phone" name="phone" placeholder="+351 912 345 678">
+        </div>
       </div>
-
-      <div>
-        <label>Email</label>
-        <input type="email" placeholder="voce@email.com" required>
+      
+      <!-- Payment -->
+      <div class="form-section">
+        <h2><span class="step">2</span> Pagamento</h2>
+        
+        <div class="payment-methods">
+          <label class="payment-method active">
+            <input type="radio" name="paymentMethod" value="card" checked>
+            <div class="icon">💳</div>
+            <div class="name">Cartão</div>
+          </label>
+          <label class="payment-method">
+            <input type="radio" name="paymentMethod" value="mbway">
+            <div class="icon">📱</div>
+            <div class="name">MB WAY</div>
+          </label>
+          <label class="payment-method">
+            <input type="radio" name="paymentMethod" value="paypal">
+            <div class="icon">🅿️</div>
+            <div class="name">PayPal</div>
+          </label>
+        </div>
+        
+        <div id="cardFields">
+          <div class="form-group">
+            <label for="cardNumber">Número do Cartão</label>
+            <div class="card-number-wrapper">
+              <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" required>
+              <div class="card-icons">💳</div>
+            </div>
+            <span class="error-msg">Número de cartão inválido</span>
+          </div>
+          
+          <div class="card-row">
+            <div class="form-group">
+              <label for="expiry">Validade</label>
+              <input type="text" id="expiry" name="expiry" placeholder="MM/AA" maxlength="5" required>
+              <span class="error-msg">Data inválida</span>
+            </div>
+            <div class="form-group">
+              <label for="cvv">CVV</label>
+              <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="4" required>
+              <span class="error-msg">CVV inválido</span>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="cardName">Nome no Cartão</label>
+            <input type="text" id="cardName" name="cardName" placeholder="NOME COMO ESTÁ NO CARTÃO" required>
+            <span class="error-msg">Nome obrigatório</span>
+          </div>
+        </div>
+        
+        <div id="mbwayFields" style="display: none;">
+          <div class="form-group">
+            <label for="mbwayPhone">Telemóvel MB WAY</label>
+            <input type="tel" id="mbwayPhone" name="mbwayPhone" placeholder="+351 912 345 678">
+            <span class="error-msg">Número inválido</span>
+          </div>
+        </div>
+        
+        <div id="paypalFields" style="display: none;">
+          <p style="color: var(--text-muted); text-align: center; padding: 20px;">
+            Será redirecionado para o PayPal após confirmar.
+          </p>
+        </div>
       </div>
-
-      <button type="button" class="btn primary">
-        Pagar com Cartão
+      
+      <button type="submit" class="btn-submit" id="submitBtn">
+        <span class="spinner"></span>
+        <span class="btn-text">Confirmar Pagamento €<span id="btnPrice">0.00</span></span>
       </button>
-
-      <div class="secure">
-        🔒 Pagamento seguro • SSL • Dados protegidos
-      </div>
+      
+      <p class="security-note">
+        🔒 Dados protegidos com <span>encriptação SSL 256-bit</span>
+      </p>
     </form>
-  </section>
+    
+    <!-- Success Message -->
+    <div class="success-message" id="successMessage">
+      <div class="success-icon">✓</div>
+      <h2>Pagamento Confirmado!</h2>
+      <p>Enviámos o e-book para o seu email. Verifique também a pasta de spam.</p>
+      <a href="/lan-html/landing-ebooks.html" class="btn">Ver Mais E-books</a>
+    </div>
+  </div>
+  
+  <!-- Order Summary -->
+  <div class="order-summary">
+    <div class="summary-card">
+      <h2>Resumo do Pedido</h2>
+      
+      <div class="summary-product">
+        <img src="/img/ebooks/ebook-01.png" alt="E-book" id="productImage">
+        <div class="product-info">
+          <span class="category" id="productCategory">E-book</span>
+          <h3 id="productTitle">Carregando...</h3>
+          <span class="format">📄 PDF + 📱 ePub</span>
+        </div>
+      </div>
+      
+      <div class="summary-row subtotal">
+        <span>Subtotal</span>
+        <span id="subtotal">€0.00</span>
+      </div>
+      
+      <div class="summary-row discount">
+        <span>Desconto (50%)</span>
+        <span id="discount">-€0.00</span>
+      </div>
+      
+      <div class="summary-row total">
+        <span>Total</span>
+        <span class="price" id="total">€0.00</span>
+      </div>
+      
+      <div class="guarantee">
+        <div class="icon">🛡️</div>
+        <h4>Garantia de 7 Dias</h4>
+        <p>Se não gostar, devolvemos 100% do valor. Sem perguntas.</p>
+      </div>
+      
+      <div class="trust-badges">
+        <div class="trust-badge">
+          <span class="icon">🔒</span>
+          SSL Seguro
+        </div>
+        <div class="trust-badge">
+          <span class="icon">⚡</span>
+          Entrega Imediata
+        </div>
+        <div class="trust-badge">
+          <span class="icon">💳</span>
+          Pagamento Fácil
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
 
-</main>
+<!-- Footer -->
+<footer>
+  © 2026 C&M Tecnologia · <a href="/">Voltar ao site</a> · <a href="https://wa.me/351961227666">Precisa de ajuda?</a>
+</footer>
 
 <script>
-/* =========================
-   PRODUTOS (PLACEHOLDER)
-========================= */
+// Parse URL params
+const params = new URLSearchParams(window.location.search);
+const productId = params.get('id') || '1';
+const productTitle = params.get('title') || 'E-book Digital';
+const productPrice = parseFloat(params.get('price')) || 19.90;
+const originalPrice = productPrice * 2;
+
+// Product data mapping
 const products = {
-  ai: {
-    title: "IA para Negócios",
-    desc: "Como aplicar inteligência artificial de forma prática e estratégica.",
-    price: "€29,90"
-  },
-  automation: {
-    title: "Automação Inteligente",
-    desc: "Escala, produtividade e redução de custos operacionais.",
-    price: "€24,90"
-  },
-  marketing: {
-    title: "Marketing Digital Moderno",
-    desc: "Estratégias reais para crescer online.",
-    price: "€19,90"
-  }
+  '1': { title: 'Os 7 Erros Fatais dos Negócios Online', category: 'Negócios', img: '/img/ebooks/ebook-09.png' },
+  '2': { title: 'Automação Secreta: Trabalhe 4h e Ganhe Mais', category: 'Automação', img: '/img/ebooks/ebook-04.png' },
+  '3': { title: 'O Código do Marketing Digital', category: 'Marketing', img: '/img/ebooks/ebook-06.png' },
+  '4': { title: 'IA Para Leigos: Domine em 7 Dias', category: 'Inteligência Artificial', img: '/img/ebooks/ebook-08.png' },
+  '5': { title: 'De Zero a 10K Seguidores', category: 'Redes Sociais', img: '/img/ebooks/ebook-05.png' },
+  '6': { title: 'SEO Descomplicado', category: 'SEO', img: '/img/ebooks/ebook-07.png' },
+  '7': { title: 'Websites Que Vendem', category: 'Web Design', img: '/img/ebooks/ebook-03.png' },
+  '8': { title: 'O Futuro do Trabalho', category: 'Carreira', img: '/img/ebooks/ebook-02.png' },
+  '9': { title: 'Copywriting Magnético', category: 'Copywriting', img: '/img/ebooks/ebook-01.png' },
+  '10': { title: 'Apps Que Faturam', category: 'Desenvolvimento', img: '/img/ebooks/ebook-10.png' }
 };
 
-const params = new URLSearchParams(window.location.search);
-const id = params.get("id");
+const product = products[productId] || { title: decodeURIComponent(productTitle), category: 'E-book', img: '/img/ebooks/ebook-01.png' };
 
-if(products[id]){
-  document.getElementById("productTitle").innerText = products[id].title;
-  document.getElementById("productDesc").innerText = products[id].desc;
-  document.getElementById("productPrice").innerText = products[id].price;
-}
+// Update UI
+document.getElementById('productTitle').textContent = product.title;
+document.getElementById('productCategory').textContent = product.category;
+document.getElementById('productImage').src = product.img;
+document.getElementById('subtotal').textContent = `€${originalPrice.toFixed(2)}`;
+document.getElementById('discount').textContent = `-€${(originalPrice - productPrice).toFixed(2)}`;
+document.getElementById('total').textContent = `€${productPrice.toFixed(2)}`;
+document.getElementById('btnPrice').textContent = productPrice.toFixed(2);
+
+// Payment method switching
+const paymentMethods = document.querySelectorAll('.payment-method');
+const cardFields = document.getElementById('cardFields');
+const mbwayFields = document.getElementById('mbwayFields');
+const paypalFields = document.getElementById('paypalFields');
+
+paymentMethods.forEach(method => {
+  method.addEventListener('click', function() {
+    paymentMethods.forEach(m => m.classList.remove('active'));
+    this.classList.add('active');
+    
+    const value = this.querySelector('input').value;
+    cardFields.style.display = value === 'card' ? 'block' : 'none';
+    mbwayFields.style.display = value === 'mbway' ? 'block' : 'none';
+    paypalFields.style.display = value === 'paypal' ? 'block' : 'none';
+  });
+});
+
+// Card number formatting
+document.getElementById('cardNumber').addEventListener('input', function(e) {
+  let value = e.target.value.replace(/\s/g, '').replace(/\D/g, '');
+  let formatted = value.match(/.{1,4}/g)?.join(' ') || '';
+  e.target.value = formatted;
+});
+
+// Expiry formatting
+document.getElementById('expiry').addEventListener('input', function(e) {
+  let value = e.target.value.replace(/\D/g, '');
+  if (value.length >= 2) {
+    value = value.slice(0, 2) + '/' + value.slice(2);
+  }
+  e.target.value = value;
+});
+
+// CVV formatting
+document.getElementById('cvv').addEventListener('input', function(e) {
+  e.target.value = e.target.value.replace(/\D/g, '');
+});
+
+// Form submission
+document.getElementById('paymentForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const btn = document.getElementById('submitBtn');
+  btn.classList.add('loading');
+  btn.disabled = true;
+  
+  // Simulate payment processing
+  setTimeout(() => {
+    document.getElementById('paymentForm').style.display = 'none';
+    document.getElementById('successMessage').classList.add('show');
+    
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, 2000);
+});
 </script>
 
 </body>
