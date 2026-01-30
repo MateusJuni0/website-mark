@@ -1,0 +1,402 @@
+/**
+ * Hero CTA Section - Premium Design
+ * Seção intermediária de conversão
+ */
+
+/* ===================================
+   Hero CTA Section Container
+   =================================== */
+
+.hero-cta-section {
+  position: relative;
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+.hero-cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(ellipse at 50% 0%, rgba(124, 58, 237, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(251, 191, 36, 0.08) 0%, transparent 40%),
+    radial-gradient(ellipse at 80% 80%, rgba(0, 212, 255, 0.05) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+/* Linha decorativa no topo */
+.hero-cta-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 600px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.4), transparent);
+}
+
+.hero-cta-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ===================================
+   Badge Premium
+   =================================== */
+
+.hero-cta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.15) 0%, rgba(251, 191, 36, 0.05) 100%);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  border-radius: 50px;
+  padding: 10px 24px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 32px;
+  backdrop-filter: blur(10px);
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: dotPulse 2s infinite;
+}
+
+@keyframes dotPulse {
+  0%, 100% { 
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.7);
+  }
+  50% { 
+    transform: scale(1.1);
+    box-shadow: 0 0 0 8px rgba(251, 191, 36, 0);
+  }
+}
+
+/* ===================================
+   Título Premium
+   =================================== */
+
+.hero-cta-title {
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.title-highlight {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 50%, #00D4FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 4s ease infinite;
+  background-size: 200% auto;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+  100% { background-position: 0% center; }
+}
+
+/* ===================================
+   Descrição
+   =================================== */
+
+.hero-cta-description {
+  font-size: clamp(1.0625rem, 2vw, 1.25rem);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-cta-description strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ===================================
+   Services Pills
+   =================================== */
+
+.hero-cta-services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 48px;
+}
+
+.service-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(124, 58, 237, 0.1);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.service-pill:hover {
+  background: rgba(124, 58, 237, 0.2);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.pill-icon {
+  font-size: 1rem;
+}
+
+/* ===================================
+   CTA Buttons
+   =================================== */
+
+.hero-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 60px;
+}
+
+.btn-hero-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  color: var(--gray-900);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  padding: 18px 36px;
+  border-radius: 14px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 6px 30px rgba(251, 191, 36, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-hero-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.btn-hero-primary:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 
+    0 10px 40px rgba(251, 191, 36, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.btn-hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  padding: 18px 36px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.btn-hero-secondary:hover {
+  background: rgba(124, 58, 237, 0.15);
+  border-color: var(--primary);
+  transform: translateY(-4px);
+}
+
+/* ===================================
+   Social Proof Premium
+   =================================== */
+
+.hero-cta-proof {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  padding: 32px 48px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.proof-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 32px;
+}
+
+.proof-value {
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: var(--font-display);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--primary-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.proof-star {
+  font-size: 1.25rem;
+}
+
+.proof-label {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.proof-divider {
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+}
+
+/* ===================================
+   Responsive
+   =================================== */
+
+@media (max-width: 768px) {
+  .hero-cta-section {
+    padding: 80px 0;
+  }
+  
+  .hero-cta-badge {
+    padding: 8px 18px;
+    font-size: 0.8rem;
+  }
+  
+  .hero-cta-title {
+    font-size: 1.875rem;
+  }
+  
+  .hero-cta-description {
+    font-size: 1rem;
+    margin-bottom: 32px;
+  }
+  
+  .hero-cta-services {
+    gap: 10px;
+    margin-bottom: 36px;
+  }
+  
+  .service-pill {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+  
+  .hero-cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+    padding: 16px 28px;
+    font-size: 1rem;
+  }
+  
+  .hero-cta-proof {
+    flex-direction: column;
+    gap: 24px;
+    padding: 28px 24px;
+  }
+  
+  .proof-item {
+    padding: 0;
+  }
+  
+  .proof-divider {
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  }
+  
+  .proof-value {
+    font-size: 1.75rem;
+  }
+}
+
+/* ===================================
+   Animation Classes
+   =================================== */
+
+.hero-cta-content {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.hero-cta-content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-cta-badge,
+.hero-cta-title,
+.hero-cta-description,
+.hero-cta-services,
+.hero-cta-buttons,
+.hero-cta-proof {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hero-cta-section.visible .hero-cta-badge { opacity: 1; transform: translateY(0); transition-delay: 0.1s; }
+.hero-cta-section.visible .hero-cta-title { opacity: 1; transform: translateY(0); transition-delay: 0.2s; }
+.hero-cta-section.visible .hero-cta-description { opacity: 1; transform: translateY(0); transition-delay: 0.3s; }
+.hero-cta-section.visible .hero-cta-services { opacity: 1; transform: translateY(0); transition-delay: 0.4s; }
+.hero-cta-section.visible .hero-cta-buttons { opacity: 1; transform: translateY(0); transition-delay: 0.5s; }
+.hero-cta-section.visible .hero-cta-proof { opacity: 1; transform: translateY(0); transition-delay: 0.6s; }

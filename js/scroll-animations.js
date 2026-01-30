@@ -21,7 +21,9 @@ class ScrollAnimations {
       '.hero-automation__content',
       '.hero-automation__animation',
       '.hero-automation__metrics',
-      '.hero-automation__usecases'
+      '.hero-automation__usecases',
+      '.hero-cta-section',
+      '.hero-cta-content'
     ], {
       threshold: 0.2
     });
