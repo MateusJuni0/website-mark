@@ -42,7 +42,13 @@ class ScrollAnimations {
       '.ebook-item',
       '.faq-item',
       '.marketing-seo-cta',
-      '.websites-seo-cta'
+      '.websites-seo-cta',
+      '.about-card',
+      '.differential',
+      '.process-step',
+      '.stat',
+      '.service-pill',
+      '.proof-item'
     ], {
       threshold: 0.1,
       rootMargin: '0px 0px -30px 0px'

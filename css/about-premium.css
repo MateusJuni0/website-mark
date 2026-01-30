@@ -1,0 +1,399 @@
+/**
+ * About Section - Premium Design v2.0
+ * Seção institucional com design $80k
+ */
+
+/* ===================================
+   About Section Container
+   =================================== */
+
+.about {
+  position: relative;
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(ellipse at 70% 20%, rgba(124, 58, 237, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 30% 80%, rgba(16, 185, 129, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Linha decorativa */
+.about::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 600px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.4), transparent);
+}
+
+.about .container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+}
+
+/* ===================================
+   About Content Card
+   =================================== */
+
+.about-content {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.about-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 32px;
+  padding: 48px;
+  transition: all 0.4s ease;
+}
+
+.about-card:hover {
+  border-color: rgba(124, 58, 237, 0.3);
+  box-shadow: 0 16px 60px rgba(124, 58, 237, 0.1);
+}
+
+@media (max-width: 900px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .about-card {
+    padding: 32px;
+  }
+}
+
+/* ===================================
+   About Image/Logo
+   =================================== */
+
+.about-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-image-logo {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  filter: drop-shadow(0 8px 30px rgba(124, 58, 237, 0.3));
+  transition: transform 0.4s ease;
+}
+
+.about-card:hover .about-image-logo {
+  transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+  .about-image {
+    justify-content: center;
+  }
+  
+  .about-image-logo {
+    max-width: 150px;
+  }
+}
+
+/* ===================================
+   About Text Content
+   =================================== */
+
+.about-text .section-title {
+  text-align: left;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.about-text .section-title::after {
+  margin: 16px 0 0;
+  margin-left: 0;
+}
+
+.about-description {
+  font-size: 1.0625rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 36px;
+}
+
+@media (max-width: 900px) {
+  .about-text .section-title {
+    text-align: center;
+  }
+  
+  .about-text .section-title::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ===================================
+   Differentials Grid
+   =================================== */
+
+.about-differentials {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 700px) {
+  .about-differentials {
+    grid-template-columns: 1fr;
+  }
+}
+
+.differential {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  background: rgba(124, 58, 237, 0.05);
+  border: 1px solid rgba(124, 58, 237, 0.1);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.differential:hover {
+  background: rgba(124, 58, 237, 0.1);
+  border-color: var(--primary);
+  transform: translateX(4px);
+}
+
+.differential-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.differential h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.differential p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ===================================
+   Process Steps
+   =================================== */
+
+.about-process {
+  margin-bottom: 40px;
+  padding: 28px;
+  background: rgba(251, 191, 36, 0.05);
+  border: 1px solid rgba(251, 191, 36, 0.15);
+  border-radius: 20px;
+}
+
+.about-process h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.process-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.process-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  transition: all 0.3s ease;
+  min-width: 110px;
+}
+
+.process-step:hover {
+  background: rgba(124, 58, 237, 0.15);
+  border-color: var(--primary);
+  transform: translateY(-4px);
+}
+
+.process-number {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border-radius: 50%;
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+}
+
+.process-step p {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  text-align: center;
+}
+
+.process-arrow {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 600px) {
+  .process-steps {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .process-arrow {
+    transform: rotate(90deg);
+  }
+  
+  .process-step {
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 16px;
+  }
+}
+
+/* ===================================
+   About Stats
+   =================================== */
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 28px;
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.08) 0%, rgba(251, 191, 36, 0.03) 100%);
+  border: 1px solid rgba(251, 191, 36, 0.2);
+  border-radius: 20px;
+}
+
+@media (max-width: 700px) {
+  .about-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.stat {
+  text-align: center;
+  padding: 16px 8px;
+  transition: transform 0.3s ease;
+}
+
+.stat:hover {
+  transform: scale(1.05);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  font-family: var(--font-display);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--primary-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat p {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* ===================================
+   Animation Classes
+   =================================== */
+
+.about-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease, border-color 0.3s ease, box-shadow 0.4s ease;
+}
+
+.about-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.differential {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.5s ease, transform 0.5s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.differential.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.differential:nth-child(1) { transition-delay: 0.1s; }
+.differential:nth-child(2) { transition-delay: 0.15s; }
+.differential:nth-child(3) { transition-delay: 0.2s; }
+.differential:nth-child(4) { transition-delay: 0.25s; }
+
+.process-step {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.process-step.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stat {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.stat.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.stat:nth-child(1) { transition-delay: 0.1s; }
+.stat:nth-child(2) { transition-delay: 0.2s; }
+.stat:nth-child(3) { transition-delay: 0.3s; }
+.stat:nth-child(4) { transition-delay: 0.4s; }
