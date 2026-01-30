@@ -172,10 +172,36 @@
 - landing-pages.css
 - mobile-fixes.css
 
-**JS (6 arquivos):**
-- galaxy-background.js
-- robot-animation.js
-- scroll-animations.js
-- micro-interactions.js
-- preloader.js
-- back-to-top.js
+**JS (6 arquivos novos):**
+- galaxy-background.js (12KB)
+- robot-animation.js (22KB)
+- scroll-animations.js (10KB)
+- micro-interactions.js (8KB)
+- preloader.js (3KB)
+- back-to-top.js (2KB)
+
+---
+
+## 📝 Lista Completa de Commits (21)
+
+1. `c1c1a37` - feat: atualiza landing pages com novo design system
+2. `cf0898e` - feat: adiciona overrides CSS para consistência visual
+3. `dfc3134` - feat: footer premium + correções PT-PT
+4. `f38330a` - feat: micro-interações avançadas + correções PT-PT
+5. `f9f47aa` - feat: efeitos visuais premium
+6. `8c8ba74` - docs: adiciona PROGRESSO.md
+7. `08afa2a` - feat: correções de responsividade mobile completas
+8. `939cf96` - feat: adiciona CSS mobile em landing pages
+9. `abf8c69` - docs: atualiza PROGRESSO.md
+10. `ccacfda` - feat: efeitos adicionais + correções PT-PT
+11. `26d7420` - feat: preloader premium com animação
+12. `3d784dc` - feat: botão back-to-top elegante
+13. `10a3ed7` - feat: tooltips, badges e toast notifications
+14. `eceab6d` - docs: atualiza PROGRESSO.md
+15. `1b4deda` - feat: melhora acessibilidade
+16. `fdd1b05` - feat: adiciona Twitter Cards e SEO
+17. `f1bdb45` - feat: adiciona Schema.org structured data
+18. `6c63304` - feat: adiciona Service schema
+19. `2c81d9a` - feat: animações de entrada premium
+20. `f193d02` - fix: corrige referências de favicon
+21. `d415f44` - feat: adiciona copy-to-clipboard
