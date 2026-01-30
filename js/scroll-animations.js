@@ -48,7 +48,9 @@ class ScrollAnimations {
       '.process-step',
       '.stat',
       '.service-pill',
-      '.proof-item'
+      '.proof-item',
+      '.contact-form-wrapper',
+      '.contact-item'
     ], {
       threshold: 0.1,
       rootMargin: '0px 0px -30px 0px'

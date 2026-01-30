@@ -1,0 +1,483 @@
+/**
+ * Contact Section - Premium Design v2.0
+ * Seção de contato e formulário
+ */
+
+/* ===================================
+   Contact Section Container
+   =================================== */
+
+.contact {
+  position: relative;
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(ellipse at 30% 30%, rgba(124, 58, 237, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+/* Linha decorativa */
+.contact::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 600px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.4), transparent);
+}
+
+.contact .container {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+}
+
+/* ===================================
+   Section Header
+   =================================== */
+
+.contact .section-title {
+  text-align: center;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.contact .section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  margin: 20px auto 0;
+  border-radius: 2px;
+}
+
+.contact .section-subtitle {
+  text-align: center;
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  max-width: 500px;
+  margin: 0 auto 60px;
+  line-height: 1.7;
+}
+
+/* ===================================
+   Contact Content Grid
+   =================================== */
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 50px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* ===================================
+   Contact Form Premium
+   =================================== */
+
+.contact-form-wrapper {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 28px;
+  padding: 40px;
+  transition: all 0.4s ease;
+}
+
+.contact-form-wrapper:hover {
+  border-color: rgba(124, 58, 237, 0.3);
+  box-shadow: 0 16px 60px rgba(124, 58, 237, 0.1);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Form Groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Inputs & Textarea */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 16px 20px;
+  background: rgba(124, 58, 237, 0.06);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  border-radius: 14px;
+  font-size: 1rem;
+  color: var(--text-primary);
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(251, 191, 36, 0.08);
+  box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.1);
+}
+
+.form-group textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.form-group select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23A855F7' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 20px;
+  padding-right: 50px;
+}
+
+/* Submit Button */
+.form-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  color: var(--gray-900);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  padding: 18px 32px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 6px 25px rgba(251, 191, 36, 0.35);
+  position: relative;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.form-submit::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.form-submit:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 35px rgba(251, 191, 36, 0.45);
+}
+
+.form-submit:active {
+  transform: translateY(-2px);
+}
+
+/* ===================================
+   Contact Info Premium
+   =================================== */
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contact-item {
+  background: linear-gradient(180deg, rgba(124, 58, 237, 0.08) 0%, rgba(124, 58, 237, 0.03) 100%);
+  border: 1px solid rgba(124, 58, 237, 0.15);
+  border-radius: 20px;
+  padding: 24px 28px;
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  border-color: var(--primary);
+  transform: translateX(4px);
+  box-shadow: 0 8px 30px rgba(124, 58, 237, 0.12);
+}
+
+.contact-item h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.contact-item p,
+.contact-item a {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: var(--accent);
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.social-links a {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(124, 58, 237, 0.15);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  border-radius: 12px;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
+}
+
+.social-links a svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ===================================
+   Pricing CTA Section
+   =================================== */
+
+.pricing-cta {
+  position: relative;
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.pricing-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 800px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.4), transparent);
+}
+
+.pricing-cta .container {
+  max-width: 1100px;
+}
+
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 800px) {
+  .pricing-cards {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+.pricing-card {
+  background: linear-gradient(180deg, rgba(124, 58, 237, 0.08) 0%, rgba(124, 58, 237, 0.02) 100%);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  border-radius: 24px;
+  padding: 36px 28px;
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.pricing-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 50px rgba(124, 58, 237, 0.2);
+}
+
+.pricing-card:hover::before {
+  opacity: 1;
+}
+
+.pricing-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  display: block;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.pricing-card h3 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.pricing-card p {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.pricing-card .btn {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  color: var(--gray-900);
+  font-weight: 700;
+  padding: 14px 24px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+}
+
+.pricing-card .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(251, 191, 36, 0.4);
+}
+
+/* ===================================
+   Animation Classes
+   =================================== */
+
+.contact-form-wrapper {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease, border-color 0.3s ease, box-shadow 0.4s ease;
+}
+
+.contact-form-wrapper.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-item {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-item.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.contact-item:nth-child(1) { transition-delay: 0.1s; }
+.contact-item:nth-child(2) { transition-delay: 0.2s; }
+.contact-item:nth-child(3) { transition-delay: 0.3s; }
+
+/* ===================================
+   Responsive
+   =================================== */
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 80px 0;
+  }
+  
+  .contact .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .contact .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 40px;
+  }
+  
+  .contact-form-wrapper {
+    padding: 28px 24px;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 14px 16px;
+  }
+  
+  .form-submit {
+    width: 100%;
+    padding: 16px 24px;
+  }
+  
+  .contact-item {
+    padding: 20px 22px;
+  }
+  
+  .pricing-cta {
+    padding: 70px 0;
+  }
+}
