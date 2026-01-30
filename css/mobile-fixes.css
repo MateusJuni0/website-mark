@@ -1,0 +1,492 @@
+/**
+ * Mobile Responsive Fixes
+ * CM Tecnologia - Correções específicas para mobile
+ */
+
+/* ===================================
+   Global Mobile Fixes
+   =================================== */
+
+@media (max-width: 768px) {
+  /* Prevent horizontal scroll */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  /* Better touch targets */
+  button, a, input, select, textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Reduce padding on mobile */
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  section {
+    padding: 3rem 0 !important;
+  }
+}
+
+/* ===================================
+   Hero Automation Mobile
+   =================================== */
+
+@media (max-width: 768px) {
+  .hero-automation {
+    min-height: auto;
+    padding: 100px 0 60px;
+  }
+  
+  .hero-automation__badge {
+    font-size: 0.75rem;
+    padding: 6px 14px;
+  }
+  
+  .hero-automation__title {
+    font-size: 1.75rem !important;
+    line-height: 1.2;
+  }
+  
+  .hero-automation__title-gradient {
+    display: inline;
+  }
+  
+  .hero-automation__subtitle {
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+  
+  .hero-automation__ctas {
+    flex-direction: column !important;
+    gap: 12px;
+    width: 100%;
+  }
+  
+  .hero-automation__cta-primary,
+  .hero-automation__cta-secondary {
+    width: 100%;
+    justify-content: center;
+    padding: 16px 24px;
+    font-size: 1rem;
+  }
+  
+  .hero-automation__animation {
+    margin: 30px auto;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  #robot-animation-container {
+    transform: scale(0.85);
+    transform-origin: center;
+  }
+  
+  .hero-automation__metrics {
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+  
+  .hero-automation__metric {
+    flex: 1 1 45%;
+    max-width: 150px;
+    padding: 16px 12px;
+  }
+  
+  .hero-automation__metric-value {
+    font-size: 1.75rem;
+  }
+  
+  .hero-automation__metric-label {
+    font-size: 0.7rem;
+  }
+  
+  .hero-automation__usecases-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+  }
+  
+  .hero-automation__usecase {
+    padding: 20px;
+  }
+  
+  .hero-automation__usecase-icon {
+    font-size: 1.5rem;
+  }
+  
+  .hero-automation__slogan {
+    margin-top: 40px;
+    padding-top: 30px;
+  }
+  
+  .hero-automation__slogan-text {
+    font-size: 0.9375rem;
+  }
+}
+
+/* ===================================
+   Marketing Section Mobile
+   =================================== */
+
+@media (max-width: 768px) {
+  .marketing-hero {
+    padding: 60px 0;
+  }
+  
+  .marketing-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .marketing-header .highlight-text {
+    font-size: 0.9375rem;
+  }
+  
+  .channels-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+  }
+  
+  .channel-card {
+    padding: 1.25rem !important;
+  }
+  
+  .channel-icon {
+    font-size: 1.5rem;
+  }
+  
+  .channel-title {
+    font-size: 0.9375rem;
+  }
+  
+  .channel-description {
+    font-size: 0.8125rem;
+  }
+  
+  .marketing-seo-cta,
+  .websites-seo-cta {
+    padding: 1.5rem !important;
+    margin-top: 1rem;
+  }
+  
+  .marketing-seo-btn,
+  .websites-seo-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ===================================
+   Services Section Mobile
+   =================================== */
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+  }
+  
+  .service-card {
+    padding: 1.5rem !important;
+  }
+  
+  .service-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 1.5rem;
+  }
+  
+  .service-title {
+    font-size: 1.125rem;
+  }
+  
+  .service-description {
+    font-size: 0.875rem;
+  }
+}
+
+/* ===================================
+   Header Mobile
+   =================================== */
+
+@media (max-width: 768px) {
+  .header,
+  header {
+    padding: 12px 0 !important;
+  }
+  
+  .header-content {
+    padding: 0 1rem;
+  }
+  
+  .logo img {
+    height: 36px;
+  }
+  
+  /* Mobile menu fixes */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(10, 10, 15, 0.98);
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    transition: left 0.3s ease;
+    z-index: 100;
+  }
+  
+  .nav-links.active {
+    left: 0;
+  }
+  
+  .nav-links a {
+    font-size: 1.25rem;
+    padding: 12px 24px;
+  }
+  
+  .menu-toggle {
+    display: flex !important;
+    z-index: 101;
+  }
+}
+
+/* ===================================
+   Footer Mobile
+   =================================== */
+
+@media (max-width: 768px) {
+  .cm-footer {
+    padding: 60px 0 0;
+  }
+  
+  .cm-footer-container {
+    grid-template-columns: 1fr !important;
+    gap: 32px;
+    text-align: center;
+  }
+  
+  .cm-footer-brand {
+    padding-right: 0;
+  }
+  
+  .cm-footer-col h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .cm-footer-col ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cm-footer-col a::before {
+    display: none;
+  }
+  
+  .cm-footer-social {
+    justify-content: center;
+  }
+}
+
+/* ===================================
+   Typography Mobile
+   =================================== */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem !important;
+  }
+  
+  h2, .section-title {
+    font-size: 1.5rem !important;
+  }
+  
+  h3 {
+    font-size: 1.25rem !important;
+  }
+  
+  p, .section-subtitle {
+    font-size: 0.9375rem;
+  }
+}
+
+/* ===================================
+   Buttons Mobile
+   =================================== */
+
+@media (max-width: 768px) {
+  .btn,
+  .cta-button,
+  .btn-primary,
+  .btn-cta {
+    width: 100%;
+    max-width: 300px;
+    padding: 14px 24px !important;
+    font-size: 1rem !important;
+    justify-content: center;
+  }
+  
+  /* Stack buttons on mobile */
+  .cta-buttons,
+  .btn-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+}
+
+/* ===================================
+   Cards Mobile
+   =================================== */
+
+@media (max-width: 768px) {
+  .card,
+  .card-glass,
+  .feature-card,
+  .testimonial-card,
+  .ebook-card {
+    padding: 1.25rem !important;
+    border-radius: 12px !important;
+  }
+}
+
+/* ===================================
+   Forms Mobile
+   =================================== */
+
+@media (max-width: 768px) {
+  .form-group {
+    margin-bottom: 16px;
+  }
+  
+  input,
+  textarea,
+  select {
+    padding: 14px 16px !important;
+    font-size: 16px !important; /* Prevents iOS zoom */
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+/* ===================================
+   WhatsApp Button Mobile
+   =================================== */
+
+@media (max-width: 768px) {
+  .whatsapp-button,
+  .whatsapp-float,
+  #whatsappButton {
+    width: 56px !important;
+    height: 56px !important;
+    bottom: 16px !important;
+    right: 16px !important;
+  }
+}
+
+/* ===================================
+   Disable Heavy Animations on Mobile
+   =================================== */
+
+@media (max-width: 768px) {
+  /* Reduce motion for performance */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  
+  /* Disable cursor glow on touch devices */
+  .cursor-glow {
+    display: none !important;
+  }
+  
+  /* Simpler hover effects */
+  .hover-lift:hover,
+  .hover-scale:hover {
+    transform: none;
+  }
+  
+  /* Disable tilt effect */
+  [data-tilt] {
+    transform: none !important;
+  }
+}
+
+/* ===================================
+   Small Mobile (< 480px)
+   =================================== */
+
+@media (max-width: 480px) {
+  .hero-automation__title {
+    font-size: 1.5rem !important;
+  }
+  
+  .hero-automation__metrics {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-automation__metric {
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  .channels-grid {
+    gap: 10px;
+  }
+  
+  .channel-card {
+    padding: 1rem !important;
+  }
+}
+
+/* ===================================
+   Landscape Mobile
+   =================================== */
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero-automation {
+    min-height: auto;
+    padding: 80px 0 40px;
+  }
+  
+  .hero-automation__animation {
+    display: none;
+  }
+  
+  .hero-automation__metrics {
+    flex-wrap: nowrap;
+  }
+}
+
+/* ===================================
+   Safe Area (iPhone X+)
+   =================================== */
+
+@supports (padding: max(0px)) {
+  .cm-footer-bottom {
+    padding-bottom: max(24px, env(safe-area-inset-bottom));
+  }
+  
+  .whatsapp-button,
+  .whatsapp-float {
+    bottom: max(16px, calc(env(safe-area-inset-bottom) + 16px)) !important;
+    right: max(16px, env(safe-area-inset-right)) !important;
+  }
+}
