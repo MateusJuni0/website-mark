@@ -9,10 +9,11 @@
 
 .cm-footer {
   position: relative;
-  background: linear-gradient(180deg, rgba(10, 10, 15, 0.95) 0%, rgba(5, 5, 10, 1) 100%);
-  border-top: 1px solid rgba(124, 58, 237, 0.2);
+  background: linear-gradient(180deg, #0a0a12 0%, #050508 100%) !important;
+  border-top: 1px solid rgba(124, 58, 237, 0.3);
   padding: 80px 0 0;
-  overflow: hidden;
+  overflow: visible;
+  z-index: 10;
 }
 
 /* Background Glow Effect */
@@ -108,7 +109,7 @@
 
 .cm-footer-brand p {
   font-size: 0.9375rem;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.7) !important;
   line-height: 1.7;
   max-width: 320px;
 }
@@ -170,7 +171,7 @@
 .cm-footer-col h4 {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--text-primary);
+  color: #ffffff !important;
   position: relative;
   padding-bottom: 12px;
 }
@@ -202,9 +203,10 @@
   gap: 12px;
 }
 
-.cm-footer-col ul li a {
+.cm-footer-col ul li a,
+.cm-footer-col ul li span {
   font-size: 0.9375rem;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.65) !important;
   text-decoration: none;
   transition: all 0.3s ease;
   display: inline-flex;
@@ -249,8 +251,12 @@
 
 .cm-footer-bottom p {
   font-size: 0.875rem;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.5) !important;
   margin: 0;
+}
+
+.cm-footer-bottom strong {
+  color: #ffffff !important;
 }
 
 .cm-footer-bottom a {
