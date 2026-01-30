@@ -33,7 +33,14 @@ class ScrollAnimations {
       '.card',
       '.card-glass',
       '.channel-card',
-      '.service-card'
+      '.service-card',
+      '.featured-card',
+      '.pricing-card',
+      '.testimonial-card',
+      '.ebook-item',
+      '.faq-item',
+      '.marketing-seo-cta',
+      '.websites-seo-cta'
     ], {
       threshold: 0.1,
       rootMargin: '0px 0px -30px 0px'
