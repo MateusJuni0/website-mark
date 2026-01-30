@@ -292,3 +292,35 @@ headerStyles.textContent = `
 document.head.appendChild(headerStyles);
 
 console.log('✨ Micro interactions initialized');
+
+/**
+ * Copy to Clipboard
+ * Permite copiar texto com feedback visual
+ */
+function copyToClipboard(text, element) {
+  navigator.clipboard.writeText(text).then(() => {
+    // Feedback visual
+    const originalText = element.textContent;
+    element.textContent = '✓ Copiado!';
+    element.style.color = '#10B981';
+    
+    setTimeout(() => {
+      element.textContent = originalText;
+      element.style.color = '';
+    }, 2000);
+  }).catch(err => {
+    console.error('Erro ao copiar:', err);
+  });
+}
+
+// Adicionar funcionalidade a elementos com data-copy
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('[data-copy]').forEach(el => {
+    el.style.cursor = 'pointer';
+    el.title = 'Clique para copiar';
+    
+    el.addEventListener('click', () => {
+      copyToClipboard(el.dataset.copy || el.textContent, el);
+    });
+  });
+});
