@@ -1,0 +1,466 @@
+/**
+ * Hero Automação IA - Seção Principal
+ * CM Tecnologia - Premium Hero Section
+ */
+
+/* ===================================
+   Hero Automação Container
+   =================================== */
+
+.hero-automation {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 0 80px;
+  overflow: hidden;
+}
+
+.hero-automation::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    ellipse at 50% 30%,
+    rgba(124, 58, 237, 0.15) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.hero-automation .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===================================
+   Hero Content
+   =================================== */
+
+.hero-automation__content {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-automation__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(124, 58, 237, 0.15);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  border-radius: 50px;
+  padding: 8px 20px;
+  margin-bottom: 24px;
+  font-size: 0.875rem;
+  color: var(--primary-light);
+  backdrop-filter: blur(10px);
+}
+
+.hero-automation__badge-icon {
+  font-size: 1rem;
+  animation: pulse 2s infinite;
+}
+
+.hero-automation__title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.hero-automation__title-gradient {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 50%, var(--primary-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-automation__subtitle {
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+/* ===================================
+   CTA Buttons
+   =================================== */
+
+.hero-automation__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 60px;
+}
+
+.hero-automation__cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  color: var(--gray-900);
+  font-size: 1.125rem;
+  font-weight: 700;
+  padding: 18px 36px;
+  border-radius: 12px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 4px 20px rgba(251, 191, 36, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.hero-automation__cta-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shimmer 2.5s infinite;
+}
+
+.hero-automation__cta-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 8px 30px rgba(251, 191, 36, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.hero-automation__cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  font-size: 1.125rem;
+  font-weight: 600;
+  padding: 18px 36px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.hero-automation__cta-secondary:hover {
+  background: rgba(124, 58, 237, 0.15);
+  border-color: var(--primary);
+  transform: translateY(-3px);
+}
+
+/* ===================================
+   Robot Animation Container
+   =================================== */
+
+.hero-automation__animation {
+  position: relative;
+  margin: 0 auto 60px;
+  max-width: 600px;
+}
+
+.hero-automation__animation-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 200px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(124, 58, 237, 0.2) 0%,
+    transparent 70%
+  );
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+#robot-animation-container {
+  position: relative;
+  z-index: 1;
+  min-height: 200px;
+}
+
+/* ===================================
+   Metrics Grid
+   =================================== */
+
+.hero-automation__metrics {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 80px;
+}
+
+.hero-automation__metric {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 24px 32px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  min-width: 140px;
+}
+
+.hero-automation__metric:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(251, 191, 36, 0.15);
+}
+
+.hero-automation__metric-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  font-family: var(--font-display);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.hero-automation__metric-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ===================================
+   Use Cases Grid
+   =================================== */
+
+.hero-automation__usecases {
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.hero-automation__usecases-title {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 32px;
+}
+
+.hero-automation__usecases-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-automation__usecase {
+  background: rgba(124, 58, 237, 0.06);
+  border: 1px solid rgba(124, 58, 237, 0.15);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.hero-automation__usecase:hover {
+  background: rgba(124, 58, 237, 0.12);
+  border-color: var(--primary);
+  transform: translateY(-4px);
+}
+
+.hero-automation__usecase-icon {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.hero-automation__usecase-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.hero-automation__usecase-desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ===================================
+   Slogan
+   =================================== */
+
+.hero-automation__slogan {
+  text-align: center;
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.hero-automation__slogan-text {
+  font-size: 1.125rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  position: relative;
+}
+
+.hero-automation__slogan-text::before,
+.hero-automation__slogan-text::after {
+  content: '"';
+  color: var(--primary-light);
+  font-size: 1.5rem;
+}
+
+/* ===================================
+   Responsive
+   =================================== */
+
+@media (max-width: 1024px) {
+  .hero-automation__usecases-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-automation {
+    padding: 100px 0 60px;
+    min-height: auto;
+  }
+  
+  .hero-automation__title {
+    font-size: 2rem;
+  }
+  
+  .hero-automation__subtitle {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+  
+  .hero-automation__ctas {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-automation__cta-primary,
+  .hero-automation__cta-secondary {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+  
+  .hero-automation__metrics {
+    gap: 12px;
+  }
+  
+  .hero-automation__metric {
+    padding: 16px 20px;
+    min-width: 100px;
+  }
+  
+  .hero-automation__metric-value {
+    font-size: 1.75rem;
+  }
+  
+  .hero-automation__usecases-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .hero-automation__usecase {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-automation__metrics {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-automation__metric {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+/* ===================================
+   Animations
+   =================================== */
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Scroll-triggered animations */
+.hero-automation__content,
+.hero-automation__animation,
+.hero-automation__metrics,
+.hero-automation__usecases {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.hero-automation__content.visible,
+.hero-automation__animation.visible,
+.hero-automation__metrics.visible,
+.hero-automation__usecases.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-automation__metric,
+.hero-automation__usecase {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.hero-automation__metric.visible,
+.hero-automation__usecase.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delay para animação em cascata */
+.hero-automation__metric:nth-child(1) { transition-delay: 0.1s; }
+.hero-automation__metric:nth-child(2) { transition-delay: 0.2s; }
+.hero-automation__metric:nth-child(3) { transition-delay: 0.3s; }
+.hero-automation__metric:nth-child(4) { transition-delay: 0.4s; }
+
+.hero-automation__usecase:nth-child(1) { transition-delay: 0.1s; }
+.hero-automation__usecase:nth-child(2) { transition-delay: 0.2s; }
+.hero-automation__usecase:nth-child(3) { transition-delay: 0.3s; }
+.hero-automation__usecase:nth-child(4) { transition-delay: 0.4s; }
+.hero-automation__usecase:nth-child(5) { transition-delay: 0.5s; }
+.hero-automation__usecase:nth-child(6) { transition-delay: 0.6s; }

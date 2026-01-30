@@ -1,0 +1,484 @@
+/**
+ * Marketing Section Redesign
+ * Atualização visual da seção de marketing para combinar com novo design
+ */
+
+/* ===================================
+   Marketing Hero Redesign
+   =================================== */
+
+.marketing-hero {
+  position: relative;
+  min-height: auto;
+  padding: 80px 0;
+  background: transparent !important;
+  overflow: hidden;
+}
+
+.marketing-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(124, 58, 237, 0.05) 0%,
+    transparent 50%,
+    rgba(124, 58, 237, 0.03) 100%
+  );
+  pointer-events: none;
+}
+
+.marketing-hero::after {
+  display: none; /* Remove overlay antigo */
+}
+
+.marketing-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.marketing-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.marketing-header h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.marketing-header .highlight-text {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ===================================
+   Channel Cards Grid
+   =================================== */
+
+.channels-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .channels-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .channels-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.channel-card {
+  background: rgba(124, 58, 237, 0.06) !important;
+  border: 1px solid rgba(124, 58, 237, 0.15) !important;
+  border-radius: 16px !important;
+  padding: 1.5rem !important;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease !important;
+}
+
+.channel-card:hover {
+  background: rgba(124, 58, 237, 0.12) !important;
+  border-color: var(--accent) !important;
+  transform: translateY(-4px) !important;
+  box-shadow: 0 8px 30px rgba(251, 191, 36, 0.15) !important;
+}
+
+.channel-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.channel-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.channel-description {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ===================================
+   Marketing SEO CTAs
+   =================================== */
+
+.marketing-seo-cta,
+.websites-seo-cta {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 16px !important;
+  padding: 2rem !important;
+  margin-top: 2rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.marketing-seo-text,
+.websites-seo-text {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.marketing-seo-text strong,
+.websites-seo-text strong {
+  color: var(--text-primary);
+}
+
+.marketing-seo-btn,
+.websites-seo-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%) !important;
+  color: var(--gray-900) !important;
+  font-weight: 600;
+  padding: 0.875rem 1.5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+}
+
+.marketing-seo-btn:hover,
+.websites-seo-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(251, 191, 36, 0.4);
+}
+
+.websites-seo-wrapper {
+  margin-top: 1rem;
+}
+
+/* ===================================
+   Services Section Redesign
+   =================================== */
+
+.services {
+  background: transparent !important;
+  position: relative;
+}
+
+.services::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(124, 58, 237, 0.3),
+    transparent
+  );
+}
+
+.service-card {
+  background: rgba(124, 58, 237, 0.06) !important;
+  border: 1px solid rgba(124, 58, 237, 0.15) !important;
+  border-radius: 20px !important;
+  padding: 2rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.service-card:hover {
+  background: rgba(124, 58, 237, 0.12) !important;
+  border-color: var(--primary) !important;
+  transform: translateY(-8px) !important;
+  box-shadow: var(--shadow-glow-primary) !important;
+}
+
+.service-icon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-primary) !important;
+  border-radius: 16px;
+  font-size: 1.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.service-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.service-description {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ===================================
+   About Section Redesign
+   =================================== */
+
+.about {
+  background: transparent !important;
+}
+
+.about-card {
+  background: rgba(124, 58, 237, 0.06) !important;
+  border: 1px solid rgba(124, 58, 237, 0.15) !important;
+  border-radius: 16px !important;
+}
+
+.about-stats {
+  background: rgba(251, 191, 36, 0.08) !important;
+  border: 1px solid rgba(251, 191, 36, 0.2) !important;
+}
+
+/* ===================================
+   Testimonials Redesign
+   =================================== */
+
+.testimonials {
+  background: transparent !important;
+}
+
+.testimonial-card {
+  background: rgba(124, 58, 237, 0.06) !important;
+  border: 1px solid rgba(124, 58, 237, 0.15) !important;
+  border-radius: 20px !important;
+  padding: 2rem !important;
+}
+
+.testimonial-card:hover {
+  border-color: var(--accent) !important;
+}
+
+/* ===================================
+   FAQ Redesign
+   =================================== */
+
+.faq {
+  background: transparent !important;
+}
+
+.faq-item {
+  background: rgba(124, 58, 237, 0.04) !important;
+  border: 1px solid rgba(124, 58, 237, 0.1) !important;
+  border-radius: 12px !important;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+
+.faq-question {
+  background: transparent !important;
+  color: var(--text-primary) !important;
+  padding: 1.25rem 1.5rem !important;
+  font-weight: 600;
+}
+
+.faq-question:hover {
+  background: rgba(124, 58, 237, 0.08) !important;
+}
+
+.faq-answer {
+  padding: 0 1.5rem 1.25rem !important;
+  color: var(--text-secondary);
+}
+
+/* ===================================
+   Footer Redesign
+   =================================== */
+
+.footer {
+  background: rgba(0, 0, 0, 0.5) !important;
+  border-top: 1px solid rgba(124, 58, 237, 0.2);
+  backdrop-filter: blur(20px);
+}
+
+.footer a {
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: var(--accent);
+}
+
+.social-links a {
+  background: rgba(124, 58, 237, 0.15) !important;
+  border: 1px solid rgba(124, 58, 237, 0.2) !important;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: var(--primary) !important;
+  border-color: var(--primary) !important;
+  transform: translateY(-3px);
+}
+
+/* ===================================
+   CTAs Globais
+   =================================== */
+
+.cta-button,
+.btn-cta {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%) !important;
+  color: var(--gray-900) !important;
+  border: none !important;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::before,
+.btn-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shimmer 2.5s infinite;
+}
+
+.cta-button:hover,
+.btn-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(251, 191, 36, 0.4);
+}
+
+/* ===================================
+   Hero Section Adjustments
+   =================================== */
+
+.hero {
+  background: transparent !important;
+  min-height: auto;
+  padding: 60px 0;
+}
+
+.hero::before,
+.hero::after {
+  display: none;
+}
+
+.hero-title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+/* ===================================
+   Ebooks Section
+   =================================== */
+
+.ebooks {
+  background: transparent !important;
+}
+
+.ebook-card {
+  background: rgba(124, 58, 237, 0.06) !important;
+  border: 1px solid rgba(124, 58, 237, 0.15) !important;
+  border-radius: 20px !important;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.ebook-card:hover {
+  border-color: var(--accent) !important;
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(124, 58, 237, 0.2);
+}
+
+/* ===================================
+   WhatsApp Button
+   =================================== */
+
+.whatsapp-button {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4) !important;
+  border-radius: 50% !important;
+  width: 60px !important;
+  height: 60px !important;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1) !important;
+  box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5) !important;
+}
+
+/* ===================================
+   Section Titles
+   =================================== */
+
+.section-title {
+  color: var(--text-primary);
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  color: var(--text-secondary);
+}
+
+/* ===================================
+   Global Adjustments
+   =================================== */
+
+/* Remove backgrounds de imagem antigos */
+[style*="background: url"],
+[style*="background-image"] {
+  background-image: none !important;
+}
+
+/* Garante que o canvas do galaxy fica atrás de tudo */
+#galaxyCanvas {
+  z-index: -10 !important;
+}
+
+/* Melhora contraste do texto */
+p, span, li {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}

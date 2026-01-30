@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-PT">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO PRINCIPAL -->
-  <title>
-    C&M Tecnologia | Marketing Digital, Websites, Automação com IA e Ebooks
-  </title>
+  <title>C&M Tecnologia | Automação com IA, Marketing Digital e Websites em Portugal</title>
 
-  <meta name="description" content="Agência de marketing e tecnologia em Portugal. Criamos websites profissionais, estratégias de marketing digital, automação com inteligência artificial e ebooks para empresas que querem crescer online.">
+  <meta name="description" content="Agência de tecnologia e marketing digital em Portugal. Especialistas em automação com inteligência artificial, criação de websites profissionais, estratégias de marketing digital e ebooks para empresas que querem crescer online.">
 
-  <meta name="keywords" content="marketing digital, tecnologia, criação de websites, automação com IA, inteligência artificial, ebooks de marketing, ebooks de tecnologia, agência digital, Portugal">
+  <meta name="keywords" content="automação com IA, inteligência artificial, marketing digital, tecnologia, criação de websites, agência digital, Portugal, chatbot, automação de processos">
 
   <meta name="author" content="C&M Tecnologia">
   <meta name="theme-color" content="#7C3AED">
@@ -20,8 +18,8 @@
   <link rel="canonical" href="https://cmtecnologia.pt/">
 
   <!-- OPEN GRAPH (REDES SOCIAIS + GOOGLE) -->
-  <meta property="og:title" content="C&M Tecnologia | Marketing, Websites, Automação com IA">
-  <meta property="og:description" content="Transformamos ideias digitais em resultados reais com marketing digital, websites profissionais, automação inteligente e conteúdos estratégicos.">
+  <meta property="og:title" content="C&M Tecnologia | Automação com IA, Marketing e Websites">
+  <meta property="og:description" content="Transformamos processos manuais em sistemas inteligentes. Automação com IA, marketing digital, websites profissionais e conteúdos estratégicos.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://cmtecnologia.pt/">
   <meta property="og:image" content="https://cmtecnologia.pt/img/Logo3d.png">
@@ -38,9 +36,14 @@
   <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
+  <!-- CSS - Design System -->
+  <link rel="stylesheet" href="/css/design-system.css">
+  <link rel="stylesheet" href="/css/hero-automation.css">
+  <link rel="stylesheet" href="/css/marketing-redesign.css">
+  
+  <!-- CSS - Main Styles -->
   <link rel="stylesheet" href="/styles.css">
 </head>
 
@@ -162,10 +165,182 @@
         </div>
     </header>
 
+    <!-- ============================================
+         HERO AUTOMAÇÃO IA - SEÇÃO PRINCIPAL
+         ============================================ -->
+    <section class="hero-automation" id="automacao">
+      <div class="container">
+        
+        <div class="hero-automation__content">
+          <!-- Badge -->
+          <div class="hero-automation__badge">
+            <span class="hero-automation__badge-icon">🤖</span>
+            <span>Inteligência Artificial ao seu serviço</span>
+          </div>
+          
+          <!-- Título Principal -->
+          <h1 class="hero-automation__title">
+            <span data-lang="pt">Automação Inteligente</span>
+            <span data-lang="en" hidden>Intelligent Automation</span>
+            <br>
+            <span class="hero-automation__title-gradient" data-lang="pt">com IA</span>
+            <span class="hero-automation__title-gradient" data-lang="en" hidden>with AI</span>
+          </h1>
+          
+          <!-- Subtítulo -->
+          <p class="hero-automation__subtitle">
+            <span data-lang="pt">
+              Liberte a sua equipa para o que realmente importa. 
+              A Inteligência Artificial trata do resto — 24 horas por dia, 7 dias por semana.
+            </span>
+            <span data-lang="en" hidden>
+              Free your team for what really matters. 
+              AI handles the rest — 24/7, without breaks.
+            </span>
+          </p>
+          
+          <!-- CTAs -->
+          <div class="hero-automation__ctas">
+            <a href="https://wa.me/351964977047?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20automação%20com%20IA." 
+               class="hero-automation__cta-primary" target="_blank" rel="noopener">
+              <span data-lang="pt">Agendar Demonstração</span>
+              <span data-lang="en" hidden>Schedule Demo</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a href="#services" class="hero-automation__cta-secondary">
+              <span data-lang="pt">Ver Serviços</span>
+              <span data-lang="en" hidden>View Services</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Animação do Robô -->
+        <div class="hero-automation__animation">
+          <div class="hero-automation__animation-bg"></div>
+          <div id="robot-animation-container"></div>
+        </div>
+        
+        <!-- Métricas -->
+        <div class="hero-automation__metrics">
+          <div class="hero-automation__metric">
+            <div class="hero-automation__metric-value">-80%</div>
+            <div class="hero-automation__metric-label">Tempo</div>
+          </div>
+          <div class="hero-automation__metric">
+            <div class="hero-automation__metric-value">24/7</div>
+            <div class="hero-automation__metric-label">Ativo</div>
+          </div>
+          <div class="hero-automation__metric">
+            <div class="hero-automation__metric-value">+200%</div>
+            <div class="hero-automation__metric-label">Eficiência</div>
+          </div>
+          <div class="hero-automation__metric">
+            <div class="hero-automation__metric-value">0</div>
+            <div class="hero-automation__metric-label">Erros</div>
+          </div>
+        </div>
+        
+        <!-- Casos de Uso -->
+        <div class="hero-automation__usecases">
+          <h3 class="hero-automation__usecases-title">
+            <span data-lang="pt">O que a IA pode automatizar para si</span>
+            <span data-lang="en" hidden>What AI can automate for you</span>
+          </h3>
+          
+          <div class="hero-automation__usecases-grid">
+            <div class="hero-automation__usecase">
+              <span class="hero-automation__usecase-icon">📧</span>
+              <h4 class="hero-automation__usecase-title">
+                <span data-lang="pt">Atendimento Automático</span>
+                <span data-lang="en" hidden>Automatic Support</span>
+              </h4>
+              <p class="hero-automation__usecase-desc">
+                <span data-lang="pt">Respostas 24/7 sem intervenção humana</span>
+                <span data-lang="en" hidden>24/7 responses without human intervention</span>
+              </p>
+            </div>
+            
+            <div class="hero-automation__usecase">
+              <span class="hero-automation__usecase-icon">💬</span>
+              <h4 class="hero-automation__usecase-title">
+                <span data-lang="pt">WhatsApp Inteligente</span>
+                <span data-lang="en" hidden>Smart WhatsApp</span>
+              </h4>
+              <p class="hero-automation__usecase-desc">
+                <span data-lang="pt">Chatbot que vende e atende clientes</span>
+                <span data-lang="en" hidden>Chatbot that sells and serves customers</span>
+              </p>
+            </div>
+            
+            <div class="hero-automation__usecase">
+              <span class="hero-automation__usecase-icon">📊</span>
+              <h4 class="hero-automation__usecase-title">
+                <span data-lang="pt">Relatórios Automáticos</span>
+                <span data-lang="en" hidden>Automatic Reports</span>
+              </h4>
+              <p class="hero-automation__usecase-desc">
+                <span data-lang="pt">Dados em tempo real sem esforço</span>
+                <span data-lang="en" hidden>Real-time data without effort</span>
+              </p>
+            </div>
+            
+            <div class="hero-automation__usecase">
+              <span class="hero-automation__usecase-icon">📅</span>
+              <h4 class="hero-automation__usecase-title">
+                <span data-lang="pt">Agendamentos</span>
+                <span data-lang="en" hidden>Scheduling</span>
+              </h4>
+              <p class="hero-automation__usecase-desc">
+                <span data-lang="pt">Calendário que se organiza sozinho</span>
+                <span data-lang="en" hidden>Self-organizing calendar</span>
+              </p>
+            </div>
+            
+            <div class="hero-automation__usecase">
+              <span class="hero-automation__usecase-icon">🎯</span>
+              <h4 class="hero-automation__usecase-title">
+                <span data-lang="pt">Qualificação de Leads</span>
+                <span data-lang="en" hidden>Lead Qualification</span>
+              </h4>
+              <p class="hero-automation__usecase-desc">
+                <span data-lang="pt">IA separa leads quentes dos frios</span>
+                <span data-lang="en" hidden>AI separates hot from cold leads</span>
+              </p>
+            </div>
+            
+            <div class="hero-automation__usecase">
+              <span class="hero-automation__usecase-icon">📱</span>
+              <h4 class="hero-automation__usecase-title">
+                <span data-lang="pt">Social Media</span>
+                <span data-lang="en" hidden>Social Media</span>
+              </h4>
+              <p class="hero-automation__usecase-desc">
+                <span data-lang="pt">Posts e respostas programados</span>
+                <span data-lang="en" hidden>Scheduled posts and responses</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Slogan -->
+        <div class="hero-automation__slogan">
+          <p class="hero-automation__slogan-text">
+            <span data-lang="pt">Conexão acima de vendas, estratégia acima de sorte</span>
+            <span data-lang="en" hidden>Connection over sales, strategy over luck</span>
+          </p>
+        </div>
+        
+      </div>
+    </section>
 
-
-
-    <!-- MARKETING HERO SECTION -->
+    <!-- ============================================
+         MARKETING HERO SECTION (Redesigned)
+         ============================================ -->
 <section class="marketing-hero">
     <div class="marketing-content">
         <div class="marketing-header">
@@ -336,8 +511,8 @@
             <div class="container">
                 <h1 class="hero-title">
                 <span data-lang="pt">
-                    Tá precisando de clientes? Quer vender mais? <br>
-                    Estamos aqui para te ajudar neste processo.
+                    Está a precisar de clientes? Quer vender mais? <br>
+                    Estamos aqui para ajudá-lo neste processo.
                 </span>
                 <span data-lang="en" hidden>
                     Need more clients? Want to sell more? <br>
@@ -1563,7 +1738,7 @@
   <span data-lang="en" hidden>📱 Phone</span>
 </h3>
 
-                    <p><a href="tel:+351961227666">+351 961 227 666</a></p>
+                    <p><a href="tel:+351964977047">+351 964 977 047</a></p>
                 </div>
                 
                 <div class="contact-item">
@@ -1583,7 +1758,7 @@
                                 <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.68v12.7a2.85 2.85 0 1 1-5.92-2.86 2.87 2.87 0 0 1 2.31 1.23V9.4a6.26 6.26 0 1 0 10.58 3.57V8.38a8.23 8.23 0 0 0 3.48 1.31v-3.6a4.94 4.94 0 0 1-.6-.05z"/>
                             </svg>
                         </a>
-                        <a href="https://wa.me/351961227666" aria-label="WhatsApp" title="WhatsApp">
+                        <a href="https://wa.me/351964977047" aria-label="WhatsApp" title="WhatsApp">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.255.949c-1.238.503-2.35 1.116-3.226 1.993-2.329 2.329-3.033 5.205-1.995 8.141.581 1.635 1.738 3.035 3.326 4.002 2.423 1.487 5.582 1.247 7.953-.682 1.926-1.673 3.6-4.042 4.329-6.574.464-1.533.523-2.98.273-4.26-.501-2.505-2.193-4.583-4.479-5.592a9.871 9.871 0 00-1.926-.381zM12 0C5.383 0 0 5.383 0 12s5.383 12 12 12 12-5.383 12-12S18.617 0 12 0z"/>
                             </svg>
@@ -1636,7 +1811,7 @@
       <h4>Contato</h4>
       <ul>
         <li><a href="mailto:cmtecnologia12@gmail.com">cmtecnologia12@gmail.com</a></li>
-        <li><a href="tel:+351961227666">+351 961 227 666</a></li>
+        <li><a href="tel:+351964977047">+351 964 977 047</a></li>
         <li><a href="#contact">Fale Conosco</a></li>
       </ul>
     </div>
@@ -1651,7 +1826,7 @@
 
 
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/351961227666" class="whatsapp-button" id="whatsappButton" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco no WhatsApp" title="Fale Conosco no WhatsApp">
+    <a href="https://wa.me/351964977047" class="whatsapp-button" id="whatsappButton" target="_blank" rel="noopener noreferrer" aria-label="Fale connosco no WhatsApp" title="Fale Conosco no WhatsApp">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.946 1.347l-.355.203-3.675-.964.984 3.202-.203.323a9.847 9.847 0 001.438 4.753c.711 1.292 1.733 2.46 2.926 3.278 1.256.845 2.779 1.645 4.649 1.645 2.621 0 5.193-.855 7.203-2.399 1.573-1.198 2.82-2.864 3.4-4.77.58-1.906.58-3.996-.173-5.92-.752-1.924-2.271-3.539-4.165-4.44-1.894-.9-4.04-1.547-6.234-1.547z"/>
         </svg>
@@ -1707,6 +1882,11 @@
     <script src="js/form.js"></script>
     <script src="js/lang.js"></script>
     <script src="js/ebooks.js"></script>
+    
+    <!-- New Premium Scripts -->
+    <script src="js/galaxy-background.js"></script>
+    <script src="js/robot-animation.js"></script>
+    <script src="js/scroll-animations.js"></script>
 
 </body>
 </html>
