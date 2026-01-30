@@ -3180,3 +3180,172 @@ header > * {
   }
 }
 
+
+/* ===================================
+   DESIGN SYSTEM OVERRIDES
+   Premium Styling - CM Tecnologia
+   =================================== */
+
+/* Force Galaxy Background */
+body {
+  background: #0a0a0f !important;
+}
+
+/* Ensure text is readable */
+body, p, span, li, a {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff;
+}
+
+/* Primary CTA Buttons */
+.cta-button,
+.btn-primary,
+.btn-cta,
+[class*="cta"] a[href*="wa.me"],
+a.btn-primary {
+  background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%) !important;
+  color: #0f0f0f !important;
+  font-weight: 600 !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3) !important;
+}
+
+.cta-button:hover,
+.btn-primary:hover,
+.btn-cta:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 25px rgba(251, 191, 36, 0.4) !important;
+}
+
+/* Glass Cards */
+.card,
+.channel-card,
+.service-card,
+.ebook-card,
+.testimonial-card,
+.faq-item {
+  background: rgba(124, 58, 237, 0.06) !important;
+  border: 1px solid rgba(124, 58, 237, 0.15) !important;
+  backdrop-filter: blur(10px);
+}
+
+.card:hover,
+.channel-card:hover,
+.service-card:hover {
+  background: rgba(124, 58, 237, 0.12) !important;
+  border-color: #7C3AED !important;
+}
+
+/* Remove old background images */
+.marketing-hero,
+.hero,
+.services,
+.about,
+.testimonials,
+.faq,
+.ebooks,
+section {
+  background-image: none !important;
+}
+
+/* Section padding consistency */
+section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Accent color for highlights */
+.highlight,
+.accent,
+.gradient-text {
+  background: linear-gradient(135deg, #A855F7 0%, #FBBF24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* WhatsApp Button */
+.whatsapp-button,
+.whatsapp-float,
+#whatsappButton {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4) !important;
+}
+
+.whatsapp-button:hover,
+.whatsapp-float:hover,
+#whatsappButton:hover {
+  transform: scale(1.1) !important;
+  box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5) !important;
+}
+
+/* Header Transparency */
+.header,
+header {
+  background: rgba(10, 10, 15, 0.85) !important;
+  backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(124, 58, 237, 0.2) !important;
+}
+
+/* Footer */
+.footer,
+footer {
+  background: rgba(0, 0, 0, 0.7) !important;
+  border-top: 1px solid rgba(124, 58, 237, 0.2) !important;
+}
+
+/* Input Fields */
+input, textarea, select {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #7C3AED !important;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15) !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Links */
+a {
+  color: #A855F7;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #FBBF24;
+}
+
+/* Mobile Responsiveness Fixes */
+@media (max-width: 768px) {
+  .hero-automation__title {
+    font-size: 2rem !important;
+  }
+  
+  .hero-automation__ctas {
+    flex-direction: column !important;
+  }
+  
+  .hero-automation__metrics {
+    flex-wrap: wrap;
+  }
+  
+  .hero-automation__metric {
+    flex: 1 1 40%;
+  }
+  
+  .channels-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .container {
+    padding: 0 1rem !important;
+  }
+}
