@@ -1,0 +1,212 @@
+/**
+ * EBOOKS - Nova Versão Premium
+ */
+
+.ebooks-new {
+  padding: 80px 0;
+  background: linear-gradient(180deg, 
+    rgba(15, 15, 35, 0.95) 0%,
+    rgba(20, 20, 50, 0.98) 100%
+  );
+  position: relative;
+}
+
+.ebooks-new::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(124, 58, 237, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 58, 237, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+}
+
+.ebooks-new .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Header */
+.ebooks-new__header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.ebooks-new__badge {
+  display: inline-block;
+  padding: 8px 20px;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #10b981;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+}
+
+.ebooks-new__title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.ebooks-new__title span {
+  background: linear-gradient(135deg, #10b981, #00d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ebooks-new__subtitle {
+  color: rgba(255,255,255,0.7);
+  font-size: 1.05rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Grid 2 ebooks */
+.ebooks-new__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+@media (max-width: 768px) {
+  .ebooks-new__grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+/* Card do Ebook */
+.ebook-card-new {
+  background: linear-gradient(145deg, rgba(30, 30, 60, 0.7), rgba(20, 20, 45, 0.9));
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.ebook-card-new:hover {
+  transform: translateY(-8px);
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.4), 0 0 30px rgba(16, 185, 129, 0.1);
+}
+
+/* Imagem do Ebook */
+.ebook-card-new__image {
+  position: relative;
+  height: 320px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(20,20,40,0.8), rgba(30,30,60,0.6));
+}
+
+.ebook-card-new__image img {
+  height: 90%;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+}
+
+.ebook-card-new:hover .ebook-card-new__image img {
+  transform: scale(1.05) rotate(-2deg);
+}
+
+/* Badge de preço */
+.ebook-card-new__price-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+}
+
+/* Conteúdo */
+.ebook-card-new__content {
+  padding: 28px;
+}
+
+.ebook-card-new__category {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #a78bfa;
+  margin-bottom: 10px;
+}
+
+.ebook-card-new__title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.ebook-card-new__description {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Features */
+.ebook-card-new__features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.ebook-card-new__feature {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.05);
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+.ebook-card-new__feature svg {
+  width: 14px;
+  height: 14px;
+  color: #10b981;
+}
+
+/* CTA */
+.ebook-card-new__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #7c3aed, #5b21b6);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.ebook-card-new__cta:hover {
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
+}
