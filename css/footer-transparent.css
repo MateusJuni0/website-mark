@@ -1,0 +1,248 @@
+/**
+ * Footer Transparente - Inspirado na Landing Apps
+ * Design transparente com overlay e background da bolha
+ */
+
+/* ===================================
+   Footer Container Transparente
+   =================================== */
+
+.cm-footer {
+  position: relative;
+  /* Background da bolha como na landing apps */
+  background: url('../img/bolhafundo.jpeg') center/cover no-repeat;
+  color: #FBBF24; /* Amarelo como na landing */
+  padding: 3rem 1.5rem 1.5rem;
+  border: none;
+  overflow: hidden;
+}
+
+/* Overlay transparente escuro */
+.cm-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Todos os elementos do footer ficam acima do overlay */
+.cm-footer-container,
+.cm-footer-bottom {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===================================
+   Container Layout
+   =================================== */
+
+.cm-footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+/* ===================================
+   Brand Section
+   =================================== */
+
+.cm-footer-brand {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cm-footer-logo {
+  width: 140px;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.cm-footer-brand p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #cfcfe6;
+}
+
+/* ===================================
+   Social Links
+   =================================== */
+
+.cm-footer-social {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.cm-footer-social a {
+  color: #7c3aed;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 12px;
+  background: rgba(124, 58, 237, 0.1);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.cm-footer-social a:hover {
+  background: rgba(124, 58, 237, 0.2);
+  transform: translateY(-2px);
+}
+
+/* ===================================
+   Footer Columns
+   =================================== */
+
+.cm-footer-col {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cm-footer-col h4 {
+  color: #FBBF24;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.cm-footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cm-footer-col li {
+  margin-bottom: 0.5rem;
+}
+
+.cm-footer-col a {
+  color: #cfcfe6;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cm-footer-col a:hover {
+  color: #FBBF24;
+}
+
+/* ===================================
+   Contact Column Special
+   =================================== */
+
+.contact-col .icon {
+  font-size: 1rem;
+  width: 20px;
+}
+
+.contact-col span:not(.icon) {
+  color: #cfcfe6;
+  font-size: 0.9rem;
+}
+
+/* ===================================
+   Footer Bottom
+   =================================== */
+
+.cm-footer-bottom {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(251, 191, 36, 0.2);
+  text-align: center;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+/* ===================================
+   Responsive Design
+   =================================== */
+
+@media (max-width: 768px) {
+  .cm-footer {
+    padding: 2.5rem 1rem 1.5rem;
+    background-position: center top;
+  }
+  
+  .cm-footer-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .cm-footer-social {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .cm-footer-col h4 {
+    text-align: center;
+    margin-bottom: 0.8rem;
+  }
+  
+  .cm-footer-col {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .cm-footer-logo {
+    width: 120px;
+  }
+  
+  .cm-footer-brand p {
+    font-size: 0.9rem;
+  }
+  
+  .cm-footer-social a {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+}
+
+/* ===================================
+   Back to Top Button (manter visível)
+   =================================== */
+
+.back-to-top {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(124, 58, 237, 0.9);
+  border: 1px solid rgba(124, 58, 237, 0.5);
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: rgba(124, 58, 237, 1);
+  transform: translateY(-2px);
+}
+
+.back-to-top svg {
+  width: 24px;
+  height: 24px;
+}
