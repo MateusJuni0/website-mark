@@ -50,7 +50,9 @@ class ScrollAnimations {
       '.service-pill',
       '.proof-item',
       '.contact-form-wrapper',
-      '.contact-item'
+      '.contact-item',
+      '.cm-footer-brand',
+      '.cm-footer-col'
     ], {
       threshold: 0.1,
       rootMargin: '0px 0px -30px 0px'
