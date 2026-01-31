@@ -1,220 +1,120 @@
 /* ===========================================
-   COSMIC BACKGROUNDS - Ultra Realistic Space
+   COSMIC BACKGROUNDS v2.0 - Clean Version
    Website: C&M Tecnologia
-   Generated: 2026-01-31
    =========================================== */
 
-/* Hero Section - Nebula JWST Style */
-.hero-automation,
-#home {
-    position: relative;
-    background: 
-        linear-gradient(180deg, 
-            rgba(0, 0, 0, 0.7) 0%, 
-            rgba(15, 5, 25, 0.6) 50%, 
-            rgba(0, 0, 0, 0.8) 100%),
-        url('../img/nebula-jwst-ultra.png') center center / cover no-repeat fixed;
-    background-color: #0a0a12;
+/* Hero Section */
+.hero-automation {
+    background-image: 
+        linear-gradient(180deg, rgba(10, 10, 20, 0.85) 0%, rgba(15, 5, 30, 0.7) 50%, rgba(10, 10, 20, 0.9) 100%),
+        url('../img/nebula-jwst-ultra.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-/* Services Section - Galaxy Spiral */
+/* Marketing Section (Robô) */
+#marketing,
+.marketing-section {
+    background-image: 
+        linear-gradient(180deg, rgba(10, 10, 20, 0.88) 0%, rgba(20, 10, 40, 0.75) 50%, rgba(10, 10, 20, 0.9) 100%),
+        url('../img/galaxy-spiral-4k.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Services Section */
 #services,
-.services-section {
-    position: relative;
-    background: 
-        linear-gradient(180deg, 
-            rgba(0, 0, 0, 0.85) 0%, 
-            rgba(10, 5, 20, 0.75) 50%, 
-            rgba(0, 0, 0, 0.9) 100%),
-        url('../img/galaxy-spiral-4k.png') center center / cover no-repeat;
-    background-color: #0a0a12;
+.services {
+    background-image: 
+        linear-gradient(180deg, rgba(10, 10, 20, 0.9) 0%, rgba(15, 5, 30, 0.8) 50%, rgba(10, 10, 20, 0.92) 100%),
+        url('../img/galaxy-vibrant-4k.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-/* Ebooks Section - Dark Subtle */
+/* Ebooks Section */
 #ebooks,
-.ebooks-section {
-    position: relative;
-    background: 
-        linear-gradient(180deg, 
-            rgba(0, 0, 0, 0.8) 0%, 
-            rgba(15, 10, 25, 0.7) 50%, 
-            rgba(0, 0, 0, 0.85) 100%),
-        url('../img/galaxy-dark-subtle.png') center center / cover no-repeat;
-    background-color: #0a0a12;
+.ebooks {
+    background-image: 
+        linear-gradient(180deg, rgba(10, 10, 20, 0.88) 0%, rgba(20, 10, 35, 0.78) 50%, rgba(10, 10, 20, 0.9) 100%),
+        url('../img/pillars-creation-4k.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-/* About Section - Pillars of Creation */
+/* About Section */
 #about,
-.about-section {
-    position: relative;
-    background: 
-        linear-gradient(180deg, 
-            rgba(0, 0, 0, 0.85) 0%, 
-            rgba(10, 5, 20, 0.8) 50%, 
-            rgba(0, 0, 0, 0.9) 100%),
-        url('../img/pillars-creation-4k.png') center center / cover no-repeat;
-    background-color: #0a0a12;
+.about {
+    background-image: 
+        linear-gradient(180deg, rgba(10, 10, 20, 0.9) 0%, rgba(15, 8, 30, 0.8) 50%, rgba(10, 10, 20, 0.92) 100%),
+        url('../img/galaxy-dark-subtle.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-/* FAQ Section - Galaxy Vibrant */
+/* Testimonials Section */
+#testimonials,
+.testimonials {
+    background-image: 
+        linear-gradient(180deg, rgba(10, 10, 20, 0.9) 0%, rgba(18, 8, 35, 0.82) 50%, rgba(10, 10, 20, 0.92) 100%),
+        url('../img/galaxy-bg-nebula.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* FAQ Section */
 #faq,
-.faq-section {
-    position: relative;
-    background: 
-        linear-gradient(180deg, 
-            rgba(0, 0, 0, 0.88) 0%, 
-            rgba(10, 5, 25, 0.82) 50%, 
-            rgba(0, 0, 0, 0.9) 100%),
-        url('../img/galaxy-vibrant-4k.png') center center / cover no-repeat;
-    background-color: #0a0a12;
+.faq {
+    background-image: 
+        linear-gradient(180deg, rgba(10, 10, 20, 0.9) 0%, rgba(15, 5, 30, 0.8) 50%, rgba(10, 10, 20, 0.92) 100%),
+        url('../img/galaxy-background-4k.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-/* Contact Section - Nebula Subtle */
+/* Contact Section */
 #contact,
-.contact-section {
-    position: relative;
-    background: 
-        linear-gradient(180deg, 
-            rgba(0, 0, 0, 0.85) 0%, 
-            rgba(15, 10, 30, 0.75) 50%, 
-            rgba(0, 0, 0, 0.9) 100%),
-        url('../img/galaxy-bg-nebula.png') center center / cover no-repeat;
-    background-color: #0a0a12;
+.contact {
+    background-image: 
+        linear-gradient(180deg, rgba(10, 10, 20, 0.88) 0%, rgba(20, 10, 40, 0.78) 50%, rgba(10, 10, 20, 0.9) 100%),
+        url('../img/galaxy-bg-1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-/* Footer - Galaxy Spiral (darker) */
+/* Footer */
 .footer,
 footer {
-    position: relative;
-    background: 
-        linear-gradient(180deg, 
-            rgba(0, 0, 0, 0.92) 0%, 
-            rgba(5, 2, 15, 0.88) 50%, 
-            rgba(0, 0, 0, 0.95) 100%),
-        url('../img/galaxy-bg-1.png') center bottom / cover no-repeat;
-    background-color: #050510;
+    background-image: 
+        linear-gradient(180deg, rgba(5, 5, 15, 0.95) 0%, rgba(10, 5, 20, 0.9) 50%, rgba(5, 5, 15, 0.98) 100%),
+        url('../img/galaxy-spiral-4k.png');
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
 }
 
-/* =========================================== 
-   PERFORMANCE OPTIMIZATIONS
+/* ===========================================
+   MOBILE OPTIMIZATION
    =========================================== */
-
-/* Lazy load backgrounds for mobile */
 @media (max-width: 768px) {
     .hero-automation,
-    #home {
-        background-attachment: scroll; /* Better mobile performance */
-    }
-    
-    /* Reduce overlay density on mobile for faster rendering */
+    #marketing,
     #services,
     #ebooks,
     #about,
-    #faq,
-    #contact {
-        background-attachment: scroll;
-    }
-}
-
-/* High-DPI screens - ensure crisp backgrounds */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .hero-automation,
-    #home,
-    #services,
-    #ebooks,
-    #about,
+    #testimonials,
     #faq,
     #contact,
     .footer,
     footer {
-        image-rendering: -webkit-optimize-contrast;
-        image-rendering: crisp-edges;
+        background-attachment: scroll;
     }
-}
-
-/* =========================================== 
-   TEXT READABILITY ENHANCEMENTS
-   =========================================== */
-
-/* Ensure all text is readable over cosmic backgrounds */
-.hero-automation *,
-#home *,
-#services *,
-#ebooks *,
-#about *,
-#faq *,
-#contact *,
-.footer *,
-footer * {
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-/* Headings get stronger shadow */
-.hero-automation h1,
-.hero-automation h2,
-#services h1,
-#services h2,
-#ebooks h1,
-#ebooks h2,
-#about h1,
-#about h2,
-#faq h1,
-#faq h2,
-#contact h1,
-#contact h2 {
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
-}
-
-/* Cards and containers - subtle glass effect */
-.service-card,
-.ebook-card,
-.faq-item,
-.contact-card {
-    background: rgba(15, 15, 25, 0.85) !important;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(124, 58, 237, 0.2);
-}
-
-/* =========================================== 
-   SMOOTH TRANSITIONS BETWEEN SECTIONS
-   =========================================== */
-
-section {
-    position: relative;
-}
-
-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100px;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, transparent 100%);
-    pointer-events: none;
-    z-index: 1;
-}
-
-section::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100px;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, transparent 100%);
-    pointer-events: none;
-    z-index: 1;
-}
-
-/* First and last sections don't need double fades */
-section:first-of-type::before,
-.hero-automation::before {
-    display: none;
-}
-
-footer::after,
-.footer::after {
-    display: none;
 }
