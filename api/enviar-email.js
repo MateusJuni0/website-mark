@@ -73,7 +73,7 @@ export default async (req, res) => {
 
           <div style="background: #ede9fe; padding: 15px; border-radius: 5px; margin: 15px 0;">
             <p><strong>📞 C&M Tecnologia</strong><br>
-            Telefone: +351 961 227 666<br>
+            Telefone: +351 964 977 047<br>
             Email: cmtecnologia12@gmail.com</p>
           </div>
 

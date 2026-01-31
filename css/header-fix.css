@@ -75,3 +75,8 @@
   background-size: 50px 50px;
   pointer-events: none;
 }
+
+/* Garantir que elementos hidden fiquem ocultos */
+[hidden] {
+  display: none !important;
+}
