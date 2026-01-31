@@ -1,0 +1,55 @@
+/**
+ * HEADER FIX - Remove violeta, usa verde/neutro
+ */
+
+/* Header background mais escuro */
+.header {
+  background: rgba(10, 10, 20, 0.95) !important;
+}
+
+.header::before {
+  background: none !important;
+}
+
+/* Menu mobile - fundo escuro sem violeta */
+@media (max-width: 900px) {
+  .nav {
+    background: rgba(10, 10, 20, 0.98) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+  }
+  
+  .nav-link {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 4px;
+  }
+  
+  .nav-link:hover,
+  .nav-link.active {
+    background: rgba(16, 185, 129, 0.1) !important;
+    border-color: rgba(16, 185, 129, 0.2) !important;
+    color: #10b981 !important;
+  }
+}
+
+/* CTA button verde em vez de violeta */
+.header .cta-button {
+  background: linear-gradient(135deg, #10b981, #059669) !important;
+}
+
+.header .cta-button:hover {
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3) !important;
+}
+
+/* Menu toggle limpo */
+.menu-toggle {
+  background: rgba(255,255,255,0.05) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  border-radius: 8px;
+}
+
+.menu-toggle span {
+  background: #fff !important;
+}
