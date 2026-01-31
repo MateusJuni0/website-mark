@@ -35,43 +35,13 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-           background: url('../img/bolhafundo.jpeg') center/cover no-repeat;
+           /* background via cosmic-backgrounds.css */
             color: var(--color-text-dark);
             overflow-x: hidden;
             position: relative;
         }
 
-        /* Background com gradiente animado - SEM PRETO */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, 
-                rgba(124, 77, 255, 0.15) 0%, 
-                rgba(76, 175, 80, 0.1) 25%,
-                rgba(255, 215, 0, 0.08) 50%,
-                rgba(124, 77, 255, 0.1) 100%);
-            background-attachment: fixed;
-            z-index: -2;
-            pointer-events: none;
-        }
-
-        /* Overlay com glassmorphism */
-        body::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(31, 23, 50, 0.4);
-            z-index: -1;
-            background-attachment: fixed;
-            pointer-events: none;
-        }
+        /* Background via cosmic-backgrounds.css */
 
         /* Elementos flutuantes decorativos */
         .floating-orbs {
