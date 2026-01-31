@@ -253,13 +253,25 @@ header {
   text-align: center;
 }
 
-.payment-method:hover {
+.payment-method:hover:not(.disabled) {
   border-color: rgba(124, 77, 255, 0.5);
 }
 
 .payment-method.active {
   border-color: var(--primary);
   background: rgba(124, 77, 255, 0.1);
+}
+
+.payment-method.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.payment-method.disabled .name::after {
+  content: ' (em breve)';
+  font-size: 0.7rem;
+  color: var(--text-muted);
 }
 
 .payment-method input {
@@ -626,28 +638,28 @@ footer a {
         <h2><span class="step">2</span> Pagamento</h2>
         
         <div class="payment-methods">
-          <label class="payment-method active">
-            <input type="radio" name="paymentMethod" value="card" checked>
+          <label class="payment-method disabled">
+            <input type="radio" name="paymentMethod" value="card" disabled>
             <div class="icon">💳</div>
             <div class="name">Cartão</div>
           </label>
-          <label class="payment-method">
-            <input type="radio" name="paymentMethod" value="mbway">
+          <label class="payment-method active">
+            <input type="radio" name="paymentMethod" value="mbway" checked>
             <div class="icon">📱</div>
             <div class="name">MB WAY</div>
           </label>
-          <label class="payment-method">
-            <input type="radio" name="paymentMethod" value="paypal">
+          <label class="payment-method disabled">
+            <input type="radio" name="paymentMethod" value="paypal" disabled>
             <div class="icon">🅿️</div>
             <div class="name">PayPal</div>
           </label>
         </div>
         
-        <div id="cardFields">
+        <div id="cardFields" style="display: none;">
           <div class="form-group">
             <label for="cardNumber">Número do Cartão</label>
             <div class="card-number-wrapper">
-              <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" required>
+              <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
               <div class="card-icons">💳</div>
             </div>
             <span class="error-msg">Número de cartão inválido</span>
@@ -656,29 +668,32 @@ footer a {
           <div class="card-row">
             <div class="form-group">
               <label for="expiry">Validade</label>
-              <input type="text" id="expiry" name="expiry" placeholder="MM/AA" maxlength="5" required>
+              <input type="text" id="expiry" name="expiry" placeholder="MM/AA" maxlength="5">
               <span class="error-msg">Data inválida</span>
             </div>
             <div class="form-group">
               <label for="cvv">CVV</label>
-              <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="4" required>
+              <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="4">
               <span class="error-msg">CVV inválido</span>
             </div>
           </div>
           
           <div class="form-group">
             <label for="cardName">Nome no Cartão</label>
-            <input type="text" id="cardName" name="cardName" placeholder="NOME COMO ESTÁ NO CARTÃO" required>
+            <input type="text" id="cardName" name="cardName" placeholder="NOME COMO ESTÁ NO CARTÃO">
             <span class="error-msg">Nome obrigatório</span>
           </div>
         </div>
         
-        <div id="mbwayFields" style="display: none;">
+        <div id="mbwayFields">
           <div class="form-group">
             <label for="mbwayPhone">Telemóvel MB WAY</label>
-            <input type="tel" id="mbwayPhone" name="mbwayPhone" placeholder="+351 912 345 678">
+            <input type="tel" id="mbwayPhone" name="mbwayPhone" placeholder="+351 912 345 678" required>
             <span class="error-msg">Número inválido</span>
           </div>
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 12px;">
+            📱 Receberá uma notificação no seu telemóvel para aprovar o pagamento.
+          </p>
         </div>
         
         <div id="paypalFields" style="display: none;">
