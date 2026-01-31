@@ -60,7 +60,7 @@
   <link rel="stylesheet" href="/css/hero-cta-premium.css">
   <link rel="stylesheet" href="/css/services-renovated.css">
   <link rel="stylesheet" href="/css/ebooks-premium-v2.css">
-  <link rel="stylesheet" href="/css/about-premium.css">
+  <link rel="stylesheet" href="/css/about-mobile-v2.css">
   <link rel="stylesheet" href="/css/testimonials-faq-premium.css">
   <link rel="stylesheet" href="/css/portfolio-premium.css">
   <link rel="stylesheet" href="/css/contact-premium.css">
@@ -269,1357 +269,170 @@
     </header>
 
     <!-- ============================================
-         HERO AUTOMAÇÃO IA - SEÇÃO PRINCIPAL
-         ============================================ -->
-    <section class="hero-automation" role="banner" aria-label="Automação com Inteligência Artificial" id="automacao">
-      <div class="container">
-
-        <div class="hero-automation__content">
-          <!-- Badge -->
-          <div class="hero-automation__badge">
-            <span class="hero-automation__badge-icon">🤖</span>
-            <span>Inteligência Artificial ao seu serviço</span>
-          </div>
-
-          <!-- Título Principal -->
-          <h1 class="hero-automation__title">
-            <span data-lang="pt">Automação Inteligente</span>
-            <span data-lang="en" hidden>Intelligent Automation</span>
-            <br>
-            <span class="hero-automation__title-gradient" data-lang="pt">com IA</span>
-            <span class="hero-automation__title-gradient" data-lang="en" hidden>with AI</span>
-          </h1>
-
-          <!-- Subtítulo -->
-          <p class="hero-automation__subtitle">
-            <span data-lang="pt">
-              Liberte a sua equipa para o que realmente importa.
-              A Inteligência Artificial trata do resto - 24 horas por dia, 7 dias por semana.
-            </span>
-            <span data-lang="en" hidden>
-              Free your team for what really matters.
-              AI handles the rest - 24/7, without breaks.
-            </span>
-          </p>
-
-          <!-- CTAs -->
-          <div class="hero-automation__ctas">
-            <a target="_blank" rel="noopener noreferrer" href="https://wa.me/351964977047?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20automação%20com%20IA."
-               class="hero-automation__cta-primary" target="_blank" rel="noopener">
-              <span data-lang="pt">Agendar Demonstração</span>
-              <span data-lang="en" hidden>Schedule Demo</span>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </a>
-            <a href="#services" class="hero-automation__cta-secondary">
-              <span data-lang="pt">Ver Serviços</span>
-              <span data-lang="en" hidden>View Services</span>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Animação do Robô -->
-        <div class="hero-automation__animation">
-          <div class="hero-automation__animation-bg"></div>
-          <div id="robot-animation-container"></div>
-        </div>
-
-        <!-- Métricas -->
-        <div class="hero-automation__metrics">
-          <div class="hero-automation__metric">
-            <div class="hero-automation__metric-value">-80%</div>
-            <div class="hero-automation__metric-label">Tempo</div>
-          </div>
-          <div class="hero-automation__metric">
-            <div class="hero-automation__metric-value">24/7</div>
-            <div class="hero-automation__metric-label">Ativo</div>
-          </div>
-          <div class="hero-automation__metric">
-            <div class="hero-automation__metric-value">+200%</div>
-            <div class="hero-automation__metric-label">Eficiência</div>
-          </div>
-          <div class="hero-automation__metric">
-            <div class="hero-automation__metric-value">0</div>
-            <div class="hero-automation__metric-label">Erros</div>
-          </div>
-        </div>
-
-        <!-- Casos de Uso -->
-        <div class="hero-automation__usecases">
-          <h3 class="hero-automation__usecases-title">
-            <span data-lang="pt">O que a IA pode automatizar para si</span>
-            <span data-lang="en" hidden>What AI can automate for you</span>
-          </h3>
-
-          <div class="hero-automation__usecases-grid">
-            <div class="hero-automation__usecase">
-              <span class="hero-automation__usecase-icon">📧</span>
-              <h4 class="hero-automation__usecase-title">
-                <span data-lang="pt">Atendimento Automático</span>
-                <span data-lang="en" hidden>Automatic Support</span>
-              </h4>
-              <p class="hero-automation__usecase-desc">
-                <span data-lang="pt">Respostas 24/7 sem intervenção humana</span>
-                <span data-lang="en" hidden>24/7 responses without human intervention</span>
-              </p>
-            </div>
-
-            <div class="hero-automation__usecase">
-              <span class="hero-automation__usecase-icon">💬</span>
-              <h4 class="hero-automation__usecase-title">
-                <span data-lang="pt">WhatsApp Inteligente</span>
-                <span data-lang="en" hidden>Smart WhatsApp</span>
-              </h4>
-              <p class="hero-automation__usecase-desc">
-                <span data-lang="pt">Chatbot que vende e atende clientes</span>
-                <span data-lang="en" hidden>Chatbot that sells and serves customers</span>
-              </p>
-            </div>
-
-            <div class="hero-automation__usecase">
-              <span class="hero-automation__usecase-icon">📊</span>
-              <h4 class="hero-automation__usecase-title">
-                <span data-lang="pt">Relatórios Automáticos</span>
-                <span data-lang="en" hidden>Automatic Reports</span>
-              </h4>
-              <p class="hero-automation__usecase-desc">
-                <span data-lang="pt">Dados em tempo real sem esforço</span>
-                <span data-lang="en" hidden>Real-time data without effort</span>
-              </p>
-            </div>
-
-            <div class="hero-automation__usecase">
-              <span class="hero-automation__usecase-icon">📅</span>
-              <h4 class="hero-automation__usecase-title">
-                <span data-lang="pt">Agendamentos</span>
-                <span data-lang="en" hidden>Scheduling</span>
-              </h4>
-              <p class="hero-automation__usecase-desc">
-                <span data-lang="pt">Calendário que se organiza sozinho</span>
-                <span data-lang="en" hidden>Self-organizing calendar</span>
-              </p>
-            </div>
-
-            <div class="hero-automation__usecase">
-              <span class="hero-automation__usecase-icon">🎯</span>
-              <h4 class="hero-automation__usecase-title">
-                <span data-lang="pt">Qualificação de Leads</span>
-                <span data-lang="en" hidden>Lead Qualification</span>
-              </h4>
-              <p class="hero-automation__usecase-desc">
-                <span data-lang="pt">IA separa leads quentes dos frios</span>
-                <span data-lang="en" hidden>AI separates hot from cold leads</span>
-              </p>
-            </div>
-
-            <div class="hero-automation__usecase">
-              <span class="hero-automation__usecase-icon">📱</span>
-              <h4 class="hero-automation__usecase-title">
-                <span data-lang="pt">Social Media</span>
-                <span data-lang="en" hidden>Social Media</span>
-              </h4>
-              <p class="hero-automation__usecase-desc">
-                <span data-lang="pt">Posts e respostas programados</span>
-                <span data-lang="en" hidden>Scheduled posts and responses</span>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slogan -->
-        <div class="hero-automation__slogan">
-          <p class="hero-automation__slogan-text">
-            <span data-lang="pt">Conexão acima de vendas, estratégia acima de sorte</span>
-            <span data-lang="en" hidden>Connection over sales, strategy over luck</span>
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ============================================
-         MARKETING PREMIUM V3 - COM ROBÔ MASCOTE
-         ============================================ -->
-    <section class="marketing-premium" role="region" aria-label="Marketing e Automação" id="marketing">
-      <div class="marketing-premium__container">
-
-        <!-- Hero: Robô + Conteúdo -->
-        <div class="marketing-premium__hero">
-          <div class="marketing-premium__content">
-            <!-- Badge -->
-            <div class="marketing-premium__badge">
-              <span class="marketing-premium__badge-icon">⚡</span>
-              <span data-lang="pt">Marketing + Automação = Resultados</span>
-              <span data-lang="en" hidden>Marketing + Automation = Results</span>
-            </div>
-
-            <!-- Título -->
-            <h2 class="marketing-premium__title">
-              <span class="marketing-premium__title-white" data-lang="pt">Seu Negócio no</span>
-              <span class="marketing-premium__title-white" data-lang="en" hidden>Your Business on</span>
-              <span class="marketing-premium__title-gradient" data-lang="pt">Piloto Automático</span>
-              <span class="marketing-premium__title-gradient" data-lang="en" hidden>Autopilot</span>
-            </h2>
-
-            <!-- Subtítulo -->
-            <p class="marketing-premium__subtitle">
-              <span data-lang="pt">
-                Combinamos estratégias de marketing digital com automação inteligente. 
-                Enquanto você foca no que importa, nossa IA trabalha 24/7 para atrair, converter e fidelizar clientes.
-              </span>
-              <span data-lang="en" hidden>
-                We combine digital marketing strategies with intelligent automation.
-                While you focus on what matters, our AI works 24/7 to attract, convert, and retain customers.
-              </span>
-            </p>
-
-            <!-- CTAs -->
-            <div class="marketing-premium__ctas">
-              <a href="https://wa.me/351964977047?text=Olá!%20Quero%20saber%20mais%20sobre%20marketing%20e%20automação." 
-                 class="marketing-premium__cta-primary" target="_blank" rel="noopener">
-                <span data-lang="pt">Quero Automatizar</span>
-                <span data-lang="en" hidden>I Want to Automate</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-              </a>
-              <a href="#services" class="marketing-premium__cta-secondary">
-                <span data-lang="pt">Ver Como Funciona</span>
-                <span data-lang="en" hidden>See How It Works</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Robô Mascote -->
-          <div class="marketing-premium__robot">
-            <img src="img/robot-mascot.png" alt="Robô de Automação C&M Tecnologia" class="marketing-premium__robot-img">
-          </div>
-        </div>
-
-        <!-- Features Grid -->
-        <div class="marketing-premium__features">
-          <div class="marketing-premium__feature">
-            <span class="marketing-premium__feature-icon">🎯</span>
-            <h3 class="marketing-premium__feature-title">Google & Meta Ads</h3>
-            <p class="marketing-premium__feature-desc">
-              <span data-lang="pt">Campanhas otimizadas por IA com ROI médio de +312% em 90 dias.</span>
-              <span data-lang="en" hidden>AI-optimized campaigns with average +312% ROI in 90 days.</span>
-            </p>
-          </div>
-
-          <div class="marketing-premium__feature">
-            <span class="marketing-premium__feature-icon">🤖</span>
-            <h3 class="marketing-premium__feature-title">Chatbots Inteligentes</h3>
-            <p class="marketing-premium__feature-desc">
-              <span data-lang="pt">Atendimento 24/7 que qualifica leads e fecha vendas automaticamente.</span>
-              <span data-lang="en" hidden>24/7 support that qualifies leads and closes sales automatically.</span>
-            </p>
-          </div>
-
-          <div class="marketing-premium__feature">
-            <span class="marketing-premium__feature-icon">📧</span>
-            <h3 class="marketing-premium__feature-title">Email Automation</h3>
-            <p class="marketing-premium__feature-desc">
-              <span data-lang="pt">Sequências automatizadas com 35%+ de abertura e ROI de 40x.</span>
-              <span data-lang="en" hidden>Automated sequences with 35%+ open rate and 40x ROI.</span>
-            </p>
-          </div>
-
-          <div class="marketing-premium__feature">
-            <span class="marketing-premium__feature-icon">📊</span>
-            <h3 class="marketing-premium__feature-title">Analytics em Tempo Real</h3>
-            <p class="marketing-premium__feature-desc">
-              <span data-lang="pt">Dashboards que mostram exatamente de onde vêm suas vendas.</span>
-              <span data-lang="en" hidden>Dashboards that show exactly where your sales come from.</span>
-            </p>
-          </div>
-        </div>
-
-        <!-- Stats -->
-        <div class="marketing-premium__stats">
-          <div class="marketing-premium__stat">
-            <span class="marketing-premium__stat-value">-80%</span>
-            <span class="marketing-premium__stat-label">
-              <span data-lang="pt">Tempo Manual</span>
-              <span data-lang="en" hidden>Manual Time</span>
-            </span>
-          </div>
-          <div class="marketing-premium__stat">
-            <span class="marketing-premium__stat-value">+312%</span>
-            <span class="marketing-premium__stat-label">
-              <span data-lang="pt">ROI Médio</span>
-              <span data-lang="en" hidden>Average ROI</span>
-            </span>
-          </div>
-          <div class="marketing-premium__stat">
-            <span class="marketing-premium__stat-value">24/7</span>
-            <span class="marketing-premium__stat-label">
-              <span data-lang="pt">Sempre Ativo</span>
-              <span data-lang="en" hidden>Always Active</span>
-            </span>
-          </div>
-          <div class="marketing-premium__stat">
-            <span class="marketing-premium__stat-value">0</span>
-            <span class="marketing-premium__stat-label">
-              <span data-lang="pt">Erros Humanos</span>
-              <span data-lang="en" hidden>Human Errors</span>
-            </span>
-          </div>
-        </div>
-
-        <!-- Bottom CTA -->
-        <div class="marketing-premium__bottom-cta">
-          <p class="marketing-premium__bottom-text">
-            <span data-lang="pt">Pronto para colocar seu marketing no piloto automático?</span>
-            <span data-lang="en" hidden>Ready to put your marketing on autopilot?</span>
-          </p>
-          <p class="marketing-premium__bottom-subtext">
-            <span data-lang="pt">Diagnóstico gratuito da sua presença digital em 48h</span>
-            <span data-lang="en" hidden>Free diagnosis of your digital presence in 48h</span>
-          </p>
-          <a href="#contact" class="marketing-premium__bottom-btn">
-            <span data-lang="pt">Solicitar Diagnóstico Grátis</span>
-            <span data-lang="en" hidden>Request Free Diagnosis</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ============================================
-     SERVIÇOS - RENOVAÇÃO TOTAL v3.0
+     ABOUT SECTION - MOBILE-FRIENDLY v2.0
      ============================================ -->
-<section class="services" role="region" aria-label="Nossos Serviços" id="services">
+<section id="about" class="about">
   <div class="container">
-    <!-- Header da Seção -->
-    <div class="services-header">
-      <h2 class="section-title">
-        <span data-lang="pt">Serviços que Transformam Negócios</span>
-        <span data-lang="en" hidden>Services that Transform Businesses</span>
-      </h2>
-
-      <p class="section-subtitle">
-        <span data-lang="pt">
-          Soluções digitais premium que elevam a sua marca e geram resultados mensuráveis no mercado português.
-        </span>
-        <span data-lang="en" hidden>
-          Premium digital solutions that elevate your brand and generate measurable results in the Portuguese market.
-        </span>
-      </p>
-
-      <!-- Stats -->
-      <div class="services-stats">
-        <div class="services-stat">
-          <span class="services-stat-number">150+</span>
-          <span class="services-stat-label">Projetos Entregues</span>
-        </div>
-        <div class="services-stat">
-          <span class="services-stat-number">98%</span>
-          <span class="services-stat-label">Clientes Satisfeitos</span>
-        </div>
-        <div class="services-stat">
-          <span class="services-stat-number">3.5x</span>
-          <span class="services-stat-label">ROI Médio</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Grid de Serviços -->
-    <div class="services-grid">
-
-      <!-- 1. DESIGN DE MARCA -->
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 40 40" fill="none">
-            <path d="M20 2L25.5 12H35L27.5 18L31 28L20 22L9 28L12.5 18L5 12H14.5L20 2Z" 
-                  fill="url(#brandGradient)" stroke="#7c3aed" stroke-width="1.5"/>
-            <defs>
-              <linearGradient id="brandGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#7c3aed"/>
-                <stop offset="100%" stop-color="#10b981"/>
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-        
-        <h3 class="service-title">
-          <span data-lang="pt">Design de Marca</span>
-          <span data-lang="en" hidden>Brand Design</span>
-        </h3>
-        
-        <p class="service-description">
-          <span data-lang="pt">
-            Identidades visuais memoráveis que posicionam a sua marca como líder no mercado e geram confiança imediata.
-          </span>
-          <span data-lang="en" hidden>
-            Memorable visual identities that position your brand as a market leader and generate immediate trust.
-          </span>
-        </p>
-        
-        <div class="service-highlight">
-          <p class="service-highlight-text">
-            <span data-lang="pt">🎯 Marca 10x mais reconhecível em 30 dias</span>
-            <span data-lang="en" hidden>🎯 Brand 10x more recognizable in 30 days</span>
-          </p>
-        </div>
-        
-        <ul class="service-features">
-          <li>
-            <span data-lang="pt">Logotipo profissional único</span>
-            <span data-lang="en" hidden>Unique professional logo</span>
-          </li>
-          <li>
-            <span data-lang="pt">Manual de identidade visual</span>
-            <span data-lang="en" hidden>Visual identity manual</span>
-          </li>
-          <li>
-            <span data-lang="pt">Material gráfico completo</span>
-            <span data-lang="en" hidden>Complete graphic materials</span>
-          </li>
-        </ul>
-        
-        <a href="/lan-html/Landing-cartao-visitas.html" class="service-cta">
-          <span data-lang="pt">Ver Projetos</span>
-          <span data-lang="en" hidden>View Projects</span>
-          <svg viewBox="0 0 16 16" fill="currentColor">
-            <path d="M8.5 2.5a.5.5 0 0 0-1 0v5.793L5.354 6.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 8.293V2.5z"/>
-          </svg>
-        </a>
-      </div>
-
-      <!-- 2. CRIAÇÃO DE WEBSITES -->
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 40 40" fill="none">
-            <rect x="4" y="8" width="32" height="24" rx="3" fill="none" stroke="url(#webGradient)" stroke-width="2"/>
-            <line x1="4" y1="14" x2="36" y2="14" stroke="url(#webGradient)" stroke-width="1.5"/>
-            <circle cx="8" cy="11" r="1.5" fill="#7c3aed"/>
-            <circle cx="12" cy="11" r="1.5" fill="#10b981"/>
-            <circle cx="16" cy="11" r="1.5" fill="#f59e0b"/>
-            <rect x="8" y="18" width="16" height="2" rx="1" fill="#7c3aed" opacity="0.6"/>
-            <rect x="8" y="22" width="12" height="2" rx="1" fill="#10b981" opacity="0.6"/>
-            <rect x="8" y="26" width="20" height="2" rx="1" fill="#f59e0b" opacity="0.6"/>
-            <defs>
-              <linearGradient id="webGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#7c3aed"/>
-                <stop offset="100%" stop-color="#10b981"/>
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-        
-        <h3 class="service-title">
-          <span data-lang="pt">Websites Premium</span>
-          <span data-lang="en" hidden>Premium Websites</span>
-        </h3>
-        
-        <p class="service-description">
-          <span data-lang="pt">
-            Websites que convertem visitantes em clientes. Design premium, performance otimizada e SEO integrado.
-          </span>
-          <span data-lang="en" hidden">
-            Websites that convert visitors into customers. Premium design, optimized performance and integrated SEO.
-          </span>
-        </p>
-        
-        <div class="service-highlight">
-          <p class="service-highlight-text">
-            <span data-lang="pt">⚡ +340% conversões em 60 dias</span>
-            <span data-lang="en" hidden">⚡ +340% conversions in 60 days</span>
-          </p>
-        </div>
-        
-        <ul class="service-features">
-          <li>
-            <span data-lang="pt">Design responsivo premium</span>
-            <span data-lang="en" hidden>Premium responsive design</span>
-          </li>
-          <li>
-            <span data-lang="pt">SEO otimizado (Google)</span>
-            <span data-lang="en" hidden">SEO optimized (Google)</span>
-          </li>
-          <li>
-            <span data-lang="pt">Performance ultra-rápida</span>
-            <span data-lang="en" hidden>Ultra-fast performance</span>
-          </li>
-        </ul>
-        
-        <a href="/lan-html/landing-web-design.html" class="service-cta">
-          <span data-lang="pt">Solicitar Orçamento</span>
-          <span data-lang="en" hidden>Request Quote</span>
-          <svg viewBox="0 0 16 16" fill="currentColor">
-            <path d="M8.5 2.5a.5.5 0 0 0-1 0v5.793L5.354 6.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 8.293V2.5z"/>
-          </svg>
-        </a>
-      </div>
-
-      <!-- 3. APPS MÓVEIS -->
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 40 40" fill="none">
-            <rect x="10" y="4" width="20" height="32" rx="4" fill="none" stroke="url(#mobileGradient)" stroke-width="2"/>
-            <circle cx="20" cy="32" r="1.5" fill="#7c3aed"/>
-            <rect x="14" y="8" width="12" height="2" rx="1" fill="#7c3aed" opacity="0.6"/>
-            <rect x="13" y="12" width="4" height="4" rx="1" fill="#10b981"/>
-            <rect x="18" y="12" width="4" height="4" rx="1" fill="#f59e0b"/>
-            <rect x="23" y="12" width="4" height="4" rx="1" fill="#ef4444"/>
-            <rect x="13" y="17" width="4" height="4" rx="1" fill="#8b5cf6"/>
-            <rect x="18" y="17" width="4" height="4" rx="1" fill="#06b6d4"/>
-            <rect x="23" y="17" width="4" height="4" rx="1" fill="#84cc16"/>
-            <rect x="13" y="24" width="14" height="2" rx="1" fill="#7c3aed" opacity="0.4"/>
-            <rect x="13" y="27" width="10" height="1" rx="0.5" fill="#64748b" opacity="0.6"/>
-            <defs>
-              <linearGradient id="mobileGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#7c3aed"/>
-                <stop offset="100%" stop-color="#10b981"/>
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-        
-        <h3 class="service-title">
-          <span data-lang="pt">Apps Móveis</span>
-          <span data-lang="en" hidden>Mobile Apps</span>
-        </h3>
-        
-        <p class="service-description">
-          <span data-lang="pt">
-            Aplicações móveis nativas e híbridas que conectam a sua marca aos clientes 24/7.
-          </span>
-          <span data-lang="en" hidden">
-            Native and hybrid mobile applications that connect your brand to customers 24/7.
-          </span>
-        </p>
-        
-        <div class="service-highlight">
-          <p class="service-highlight-text">
-            <span data-lang="pt">📱 Engagement +250% vs website</span>
-            <span data-lang="en" hidden">📱 Engagement +250% vs website</span>
-          </p>
-        </div>
-        
-        <ul class="service-features">
-          <li>
-            <span data-lang="pt">iOS & Android nativos</span>
-            <span data-lang="en" hidden">Native iOS & Android</span>
-          </li>
-          <li>
-            <span data-lang="pt">Push notifications</span>
-            <span data-lang="en" hidden">Push notifications</span>
-          </li>
-          <li>
-            <span data-lang="pt">Integração com sistemas</span>
-            <span data-lang="en" hidden">System integration</span>
-          </li>
-        </ul>
-        
-        <a href="/lan-html/landing-apps.html" class="service-cta">
-          <span data-lang="pt">Ver Demos</span>
-          <span data-lang="en" hidden">View Demos</span>
-          <svg viewBox="0 0 16 16" fill="currentColor">
-            <path d="M8.5 2.5a.5.5 0 0 0-1 0v5.793L5.354 6.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 8.293V2.5z"/>
-          </svg>
-        </a>
-      </div>
-
-      <!-- 4. AUTOMAÇÃO & IA -->
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 40 40" fill="none">
-            <circle cx="20" cy="20" r="8" fill="none" stroke="url(#aiGradient)" stroke-width="2"/>
-            <circle cx="20" cy="20" r="3" fill="#7c3aed"/>
-            <path d="M20 4 L24 8 L20 12 L16 8 Z" fill="#10b981"/>
-            <path d="M36 20 L32 16 L28 20 L32 24 Z" fill="#10b981"/>
-            <path d="M20 36 L16 32 L20 28 L24 32 Z" fill="#10b981"/>
-            <path d="M4 20 L8 24 L12 20 L8 16 Z" fill="#10b981"/>
-            <line x1="20" y1="6" x2="20" y2="12" stroke="#7c3aed" stroke-width="2"/>
-            <line x1="34" y1="20" x2="28" y2="20" stroke="#7c3aed" stroke-width="2"/>
-            <line x1="20" y1="34" x2="20" y2="28" stroke="#7c3aed" stroke-width="2"/>
-            <line x1="6" y1="20" x2="12" y2="20" stroke="#7c3aed" stroke-width="2"/>
-            <defs>
-              <linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#7c3aed"/>
-                <stop offset="100%" stop-color="#10b981"/>
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-        
-        <h3 class="service-title">
-          <span data-lang="pt">Automação & IA</span>
-          <span data-lang="en" hidden>Automation & AI</span>
-        </h3>
-        
-        <p class="service-description">
-          <span data-lang="pt">
-            Chatbots inteligentes e automação de processos que reduzem custos e aumentam eficiência.
-          </span>
-          <span data-lang="en" hidden">
-            Intelligent chatbots and process automation that reduce costs and increase efficiency.
-          </span>
-        </p>
-        
-        <div class="service-highlight">
-          <p class="service-highlight-text">
-            <span data-lang="pt">🤖 -80% tempo em tarefas repetitivas</span>
-            <span data-lang="en" hidden">🤖 -80% time on repetitive tasks</span>
-          </p>
-        </div>
-        
-        <ul class="service-features">
-          <li>
-            <span data-lang="pt">Chatbots personalizados</span>
-            <span data-lang="en" hidden>Custom chatbots</span>
-          </li>
-          <li>
-            <span data-lang="pt">Automação de vendas</span>
-            <span data-lang="en" hidden">Sales automation</span>
-          </li>
-          <li>
-            <span data-lang="pt">Integração WhatsApp</span>
-            <span data-lang="en" hidden">WhatsApp integration</span>
-          </li>
-        </ul>
-        
-        <a href="/lan-html/landing-automacao.html" class="service-cta">
-          <span data-lang="pt">Agendar Demo</span>
-          <span data-lang="en" hidden">Schedule Demo</span>
-          <svg viewBox="0 0 16 16" fill="currentColor">
-            <path d="M8.5 2.5a.5.5 0 0 0-1 0v5.793L5.354 6.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 8.293V2.5z"/>
-          </svg>
-        </a>
-      </div>
-
-      <!-- 5. LOJAS ONLINE -->
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 40 40" fill="none">
-            <path d="M8 8 L10 6 L30 6 L32 8 L30 32 L10 32 Z" fill="none" stroke="url(#ecomGradient)" stroke-width="2"/>
-            <path d="M8 8 L32 8 L30 14 L10 14 Z" fill="#7c3aed" opacity="0.3"/>
-            <circle cx="16" cy="26" r="2" fill="#10b981"/>
-            <circle cx="24" cy="26" r="2" fill="#10b981"/>
-            <rect x="14" y="18" width="12" height="2" rx="1" fill="#7c3aed"/>
-            <rect x="14" y="21" width="8" height="1.5" rx="0.75" fill="#64748b"/>
-            <path d="M20 2 L22 6 L18 6 Z" fill="#f59e0b"/>
-            <defs>
-              <linearGradient id="ecomGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#7c3aed"/>
-                <stop offset="100%" stop-color="#10b981"/>
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-        
-        <h3 class="service-title">
-          <span data-lang="pt">Lojas Online</span>
-          <span data-lang="en" hidden>Online Stores</span>
-        </h3>
-        
-        <p class="service-description">
-          <span data-lang="pt">
-            E-commerce completo com pagamentos seguros, gestão de stock e análise de vendas avançada.
-          </span>
-          <span data-lang="en" hidden">
-            Complete e-commerce with secure payments, inventory management and advanced sales analytics.
-          </span>
-        </p>
-        
-        <div class="service-highlight">
-          <p class="service-highlight-text">
-            <span data-lang="pt">💰 ROI médio de 420% em 6 meses</span>
-            <span data-lang="en" hidden">💰 Average ROI of 420% in 6 months</span>
-          </p>
-        </div>
-        
-        <ul class="service-features">
-          <li>
-            <span data-lang="pt">Pagamentos MB/Paypal/Stripe</span>
-            <span data-lang="en" hidden>MB/Paypal/Stripe payments</span>
-          </li>
-          <li>
-            <span data-lang="pt">Gestão automática de stock</span>
-            <span data-lang="en" hidden>Automatic inventory management</span>
-          </li>
-          <li>
-            <span data-lang="pt">Analytics avançado</span>
-            <span data-lang="en" hidden>Advanced analytics</span>
-          </li>
-        </ul>
-        
-        <a href="/lan-html/landing-ecommerce.html" class="service-cta">
-          <span data-lang="pt">Ver Lojas</span>
-          <span data-lang="en" hidden>View Stores</span>
-          <svg viewBox="0 0 16 16" fill="currentColor">
-            <path d="M8.5 2.5a.5.5 0 0 0-1 0v5.793L5.354 6.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 8.293V2.5z"/>
-          </svg>
-        </a>
-      </div>
-
-      <!-- 6. MARKETING DIGITAL -->
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 40 40" fill="none">
-            <circle cx="20" cy="20" r="16" fill="none" stroke="url(#marketGradient)" stroke-width="2"/>
-            <circle cx="20" cy="20" r="10" fill="none" stroke="#7c3aed" stroke-width="1.5"/>
-            <circle cx="20" cy="20" r="4" fill="#7c3aed"/>
-            <path d="M20 4 L22 10 L20 16 L18 10 Z" fill="#10b981"/>
-            <path d="M36 20 L30 18 L24 20 L30 22 Z" fill="#10b981"/>
-            <path d="M20 36 L18 30 L20 24 L22 30 Z" fill="#10b981"/>
-            <path d="M4 20 L10 22 L16 20 L10 18 Z" fill="#10b981"/>
-            <circle cx="28" cy="12" r="2" fill="#f59e0b"/>
-            <circle cx="28" cy="28" r="2" fill="#f59e0b"/>
-            <circle cx="12" cy="28" r="2" fill="#f59e0b"/>
-            <circle cx="12" cy="12" r="2" fill="#f59e0b"/>
-            <defs>
-              <linearGradient id="marketGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#7c3aed"/>
-                <stop offset="100%" stop-color="#10b981"/>
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-        
-        <h3 class="service-title">
-          <span data-lang="pt">Marketing Digital</span>
-          <span data-lang="en" hidden>Digital Marketing</span>
-        </h3>
-        
-        <p class="service-description">
-          <span data-lang="pt">
-            Estratégias 360° que posicionam a sua marca no digital e geram leads qualificados constantemente.
-          </span>
-          <span data-lang="en" hidden>
-            360° strategies that position your brand digitally and generate qualified leads consistently.
-          </span>
-        </p>
-        
-        <div class="service-highlight">
-          <p class="service-highlight-text">
-            <span data-lang="pt">📈 +180% leads em 90 dias</span>
-            <span data-lang="en" hidden">📈 +180% leads in 90 days</span>
-          </p>
-        </div>
-        
-        <ul class="service-features">
-          <li>
-            <span data-lang="pt">Google Ads & Facebook Ads</span>
-            <span data-lang="en" hidden>Google Ads & Facebook Ads</span>
-          </li>
-          <li>
-            <span data-lang="pt">SEO & Content Marketing</span>
-            <span data-lang="en" hidden>SEO & Content Marketing</span>
-          </li>
-          <li>
-            <span data-lang="pt">Social Media Management</span>
-            <span data-lang="en" hidden>Social Media Management</span>
-          </li>
-        </ul>
-        
-        <a href="/lan-html/marketing-digital.index.html" class="service-cta">
-          <span data-lang="pt">Estratégia Grátis</span>
-          <span data-lang="en" hidden>Free Strategy</span>
-          <svg viewBox="0 0 16 16" fill="currentColor">
-            <path d="M8.5 2.5a.5.5 0 0 0-1 0v5.793L5.354 6.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 8.293V2.5z"/>
-          </svg>
-        </a>
-      </div>
-
-    </div> <!-- Fim services-grid -->
-  </div> <!-- Fim container -->
-</section> <!-- Fim services -->
-
-
-
-    <!-- ============================================
-     EBOOKS - RENOVAÇÃO PREMIUM v2.0
-     ============================================ -->
-<section id="ebooks" class="ebooks">
-  <div class="container">
-    <!-- Header da Seção -->
-    <div class="ebooks-header">
-      <h2 class="section-title">
-        <span data-lang="pt">Ebooks Estratégicos Premium</span>
-        <span data-lang="en" hidden>Premium Strategic Ebooks</span>
-      </h2>
-
-      <p class="section-subtitle">
-        <span data-lang="pt">
-          Conhecimento estratégico condensado que normalmente custa centenas de euros em consultorias. 
-          Acesso instantâneo ao know-how que transformará o seu negócio.
-        </span>
-        <span data-lang="en" hidden>
-          Condensed strategic knowledge that normally costs hundreds of euros in consulting. 
-          Instant access to know-how that will transform your business.
-        </span>
-      </p>
-
-      <!-- Pricing Info -->
-      <div class="ebooks-pricing">
-        <span class="ebooks-price">5€</span>
-        <span class="ebooks-price-note">
-          <span data-lang="pt">cada ebook</span>
-          <span data-lang="en" hidden>per ebook</span>
-        </span>
-      </div>
-
-      <!-- MBWay Payment Info -->
-      <div class="ebooks-payment-info">
-        <div class="ebooks-mbway">
-          📱 <span data-lang="pt">Pagamento via MBWay:</span>
-          <span data-lang="en" hidden>Payment via MBWay:</span>
-          <span class="ebooks-mbway-number">961 227 666</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Grid de Ebooks -->
-    <div class="ebooks-grid">
-
-      <!-- EBOOK 1: ESTRATÉGIA DIGITAL -->
-      <div class="ebook-card">
-        <div class="ebook-visual">
-          <div class="ebook-icon">📘</div>
-          <div class="ebook-meta">
-            <div class="ebook-price">5€</div>
-            <div class="ebook-pages">
-              <span data-lang="pt">47 páginas • PDF</span>
-              <span data-lang="en" hidden>47 pages • PDF</span>
-            </div>
-          </div>
-        </div>
-        
-        <h3 class="ebook-title">
-          <span data-lang="pt">Guia Definitivo de Estratégia Digital</span>
-          <span data-lang="en" hidden>Ultimate Digital Strategy Guide</span>
-        </h3>
-        
-        <p class="ebook-description">
-          <span data-lang="pt">
-            Metodologia completa para criar uma presença digital que gera receita consistente. 
-            Das bases do posicionamento até estratégias avançadas de conversão.
-          </span>
-          <span data-lang="en" hidden>
-            Complete methodology to create a digital presence that generates consistent revenue. 
-            From positioning basics to advanced conversion strategies.
-          </span>
-        </p>
-        
-        <ul class="ebook-features">
-          <li>
-            <span data-lang="pt">Framework de posicionamento digital</span>
-            <span data-lang="en" hidden>Digital positioning framework</span>
-          </li>
-          <li>
-            <span data-lang="pt">12 estratégias de aquisição de clientes</span>
-            <span data-lang="en" hidden>12 customer acquisition strategies</span>
-          </li>
-          <li>
-            <span data-lang="pt">Templates e checklists práticos</span>
-            <span data-lang="en" hidden>Practical templates and checklists</span>
-          </li>
-          <li>
-            <span data-lang="pt">Casos de estudo reais (Portugal)</span>
-            <span data-lang="en" hidden>Real case studies (Portugal)</span>
-          </li>
-        </ul>
-        
-        <a href="https://wa.me/351964977047?text=Olá! Quero comprar o ebook 'Guia Definitivo de Estratégia Digital' por 5€. Meu MBWay é: [SEU_NÚMERO]" 
-           class="ebook-purchase" target="_blank">
-          <span data-lang="pt">Comprar via WhatsApp</span>
-          <span data-lang="en" hidden>Buy via WhatsApp</span>
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
-          </svg>
-        </a>
-      </div>
-
-      <!-- EBOOK 2: AUTOMAÇÃO & IA -->
-      <div class="ebook-card">
-        <div class="ebook-visual">
-          <div class="ebook-icon">🤖</div>
-          <div class="ebook-meta">
-            <div class="ebook-price">5€</div>
-            <div class="ebook-pages">
-              <span data-lang="pt">38 páginas • PDF</span>
-              <span data-lang="en" hidden>38 pages • PDF</span>
-            </div>
-          </div>
-        </div>
-        
-        <h3 class="ebook-title">
-          <span data-lang="pt">Automação & IA para Negócios</span>
-          <span data-lang="en" hidden>Automation & AI for Business</span>
-        </h3>
-        
-        <p class="ebook-description">
-          <span data-lang="pt">
-            Manual prático para implementar automação inteligente que reduz custos operacionais 
-            em até 80% e liberta tempo para focar no crescimento.
-          </span>
-          <span data-lang="en" hidden>
-            Practical manual to implement intelligent automation that reduces operational costs 
-            by up to 80% and frees time to focus on growth.
-          </span>
-        </p>
-        
-        <ul class="ebook-features">
-          <li>
-            <span data-lang="pt">20 processos para automatizar hoje</span>
-            <span data-lang="en" hidden>20 processes to automate today</span>
-          </li>
-          <li>
-            <span data-lang="pt">Chatbots que vendem automaticamente</span>
-            <span data-lang="en" hidden>Chatbots that sell automatically</span>
-          </li>
-          <li>
-            <span data-lang="pt">Ferramentas gratuitas e pagas</span>
-            <span data-lang="en" hidden>Free and paid tools</span>
-          </li>
-          <li>
-            <span data-lang="pt">ROI calculado em cada automação</span>
-            <span data-lang="en" hidden>ROI calculated for each automation</span>
-          </li>
-        </ul>
-        
-        <a href="https://wa.me/351964977047?text=Olá! Quero comprar o ebook 'Automação %26 IA para Negócios' por 5€. Meu MBWay é: [SEU_NÚMERO]" 
-           class="ebook-purchase" target="_blank">
-          <span data-lang="pt">Comprar via WhatsApp</span>
-          <span data-lang="en" hidden>Buy via WhatsApp</span>
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
-          </svg>
-        </a>
-      </div>
-
-      <!-- EBOOK 3: MARKETING LOCAL -->
-      <div class="ebook-card">
-        <div class="ebook-visual">
-          <div class="ebook-icon">📍</div>
-          <div class="ebook-meta">
-            <div class="ebook-price">5€</div>
-            <div class="ebook-pages">
-              <span data-lang="pt">32 páginas • PDF</span>
-              <span data-lang="en" hidden>32 pages • PDF</span>
-            </div>
-          </div>
-        </div>
-        
-        <h3 class="ebook-title">
-          <span data-lang="pt">Marketing Local Que Funciona</span>
-          <span data-lang="en" hidden>Local Marketing That Works</span>
-        </h3>
-        
-        <p class="ebook-description">
-          <span data-lang="pt">
-            Estratégias específicas para negócios locais dominarem o Google Maps, 
-            redes sociais e gerarem clientes na sua região geográfica.
-          </span>
-          <span data-lang="en" hidden">
-            Specific strategies for local businesses to dominate Google Maps, 
-            social networks and generate customers in their geographical region.
-          </span>
-        </p>
-        
-        <ul class="ebook-features">
-          <li>
-            <span data-lang="pt">SEO local: aparecer em 1º no Google</span>
-            <span data-lang="en" hidden>Local SEO: appear 1st on Google</span>
-          </li>
-          <li>
-            <span data-lang="pt">Google My Business otimizado</span>
-            <span data-lang="en" hidden>Optimized Google My Business</span>
-          </li>
-          <li>
-            <span data-lang="pt">Facebook/Instagram para locais</span>
-            <span data-lang="en" hidden>Facebook/Instagram for locals</span>
-          </li>
-          <li>
-            <span data-lang="pt">Scripts para abordagem presencial</span>
-            <span data-lang="en" hidden>Scripts for in-person approach</span>
-          </li>
-        </ul>
-        
-        <a href="https://wa.me/351964977047?text=Olá! Quero comprar o ebook 'Marketing Local Que Funciona' por 5€. Meu MBWay é: [SEU_NÚMERO]" 
-           class="ebook-purchase" target="_blank">
-          <span data-lang="pt">Comprar via WhatsApp</span>
-          <span data-lang="en" hidden>Buy via WhatsApp</span>
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
-          </svg>
-        </a>
-      </div>
-
-      <!-- EBOOK 4: VENDAS DIGITAIS -->
-      <div class="ebook-card">
-        <div class="ebook-visual">
-          <div class="ebook-icon">💰</div>
-          <div class="ebook-meta">
-            <div class="ebook-price">5€</div>
-            <div class="ebook-pages">
-              <span data-lang="pt">41 páginas • PDF</span>
-              <span data-lang="en" hidden">41 pages • PDF</span>
-            </div>
-          </div>
-        </div>
-        
-        <h3 class="ebook-title">
-          <span data-lang="pt">Funil de Vendas Digital</span>
-          <span data-lang="en" hidden">Digital Sales Funnel</span>
-        </h3>
-        
-        <p class="ebook-description">
-          <span data-lang="pt">
-            Metodologia step-by-step para criar funis que convertem visitantes em clientes pagantes, 
-            incluindo copywriting, automação e análise de métricas.
-          </span>
-          <span data-lang="en" hidden">
-            Step-by-step methodology to create funnels that convert visitors into paying customers, 
-            including copywriting, automation and metrics analysis.
-          </span>
-        </p>
-        
-        <ul class="ebook-features">
-          <li>
-            <span data-lang="pt">Templates de landing pages</span>
-            <span data-lang="en" hidden">Landing page templates</span>
-          </li>
-          <li>
-            <span data-lang="pt">Emails que vendem (sequências)</span>
-            <span data-lang="en" hidden">Emails that sell (sequences)</span>
-          </li>
-          <li>
-            <span data-lang="pt">Análise de conversão detalhada</span>
-            <span data-lang="en" hidden>Detailed conversion analysis</span>
-          </li>
-          <li>
-            <span data-lang="pt">A/B testing que funciona</span>
-            <span data-lang="en" hidden">A/B testing that works</span>
-          </li>
-        </ul>
-        
-        <a href="https://wa.me/351964977047?text=Olá! Quero comprar o ebook 'Funil de Vendas Digital' por 5€. Meu MBWay é: [SEU_NÚMERO]" 
-           class="ebook-purchase" target="_blank">
-          <span data-lang="pt">Comprar via WhatsApp</span>
-          <span data-lang="en" hidden>Buy via WhatsApp</span>
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
-          </svg>
-        </a>
-      </div>
-
-    </div> <!-- Fim ebooks-grid -->
-
-    <!-- Value Proposition -->
-    <div class="ebooks-value">
-      <h3 class="ebooks-value-title">
-        <span data-lang="pt">💎 Por que investir 5€?</span>
-        <span data-lang="en" hidden">💎 Why invest 5€?</span>
-      </h3>
-      <p class="ebooks-value-text">
-        <span data-lang="pt">
-          Cada ebook condensa anos de experiência e centenas de horas de consultoria em estratégias práticas. 
-          O valor que vai extrair supera em muito o investimento. Garantia de satisfação ou devolução do dinheiro.
-        </span>
-        <span data-lang="en" hidden">
-          Each ebook condenses years of experience and hundreds of consulting hours into practical strategies. 
-          The value you'll extract far exceeds the investment. Satisfaction guarantee or money back.
-        </span>
-      </p>
-    </div>
-
-  </div> <!-- Fim container -->
-</section> <!-- Fim ebooks -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Sobre Section -->
-    <section id="about" class="about">
-  <div class="container">
-    <div class="about-content about-card">
-
+    
+    <!-- Main Content -->
+    <div class="about-content">
       <div class="about-image">
         <img src="img/Logo3d.png" alt="C&M Tecnologia" class="about-image-logo">
       </div>
 
-                <div class="about-text">
-                    <h2 class="section-title">
-                    <span data-lang="pt">Sobre a C&amp;M Tecnologia</span>
-                    <span data-lang="en" hidden>About C&amp;M Technology</span>
-                    </h2>
-                    <p class="about-description">
-                    <span data-lang="pt">
-                        A C&amp;M Tecnologia nasceu com o propósito de transformar ideias digitais em resultados concretos para negócios reais.
-                        Há mais de 5 anos, ajudamos empresas a fortalecer a sua presença online por meio de soluções estratégicas em design,
-                        desenvolvimento e marketing digital. Atendemos empreendedores e pequenos negócios que buscam crescimento sustentável,
-                        utilizando tecnologia de forma inteligente, acessível e orientada à performance.
-                        Cada projeto é desenvolvido com foco em resultado, escalabilidade e retorno sobre investimento.
-                    </span>
-                    <span data-lang="en" hidden>
-                        C&amp;M Technology was created to transform digital ideas into real, measurable results for real businesses.
-                        For over 5 years, we have helped companies strengthen their online presence through strategic design,
-                        development, and digital marketing solutions. We work with entrepreneurs and small businesses seeking sustainable growth,
-                        using technology in an intelligent, accessible, and performance-driven way.
-                        Every project is built with a focus on results, scalability, and return on investment.
-                    </span>
-                    </p>
+      <div class="about-text">
+        <h2 class="section-title">
+          <span data-lang="pt">C&M Tecnologia</span>
+          <span data-lang="en" hidden>C&M Technology</span>
+        </h2>
+        
+        <p class="about-description">
+          <span data-lang="pt">
+            Há mais de 5 anos transformamos ideias digitais em resultados concretos. 
+            Ajudamos negócios a crescer online com tecnologia inteligente, design estratégico 
+            e automação que gera ROI real.
+          </span>
+          <span data-lang="en" hidden>
+            For over 5 years we've been transforming digital ideas into concrete results. 
+            We help businesses grow online with intelligent technology, strategic design 
+            and automation that generates real ROI.
+          </span>
+        </p>
+      </div>
+    </div>
 
+    <!-- Quick Stats -->
+    <div class="about-stats">
+      <div class="about-stat">
+        <span class="about-stat-number">150+</span>
+        <span class="about-stat-label">
+          <span data-lang="pt">Projetos Entregues</span>
+          <span data-lang="en" hidden>Projects Delivered</span>
+        </span>
+      </div>
+      
+      <div class="about-stat">
+        <span class="about-stat-number">5+</span>
+        <span class="about-stat-label">
+          <span data-lang="pt">Anos no Mercado</span>
+          <span data-lang="en" hidden>Years in Market</span>
+        </span>
+      </div>
+      
+      <div class="about-stat">
+        <span class="about-stat-number">98%</span>
+        <span class="about-stat-label">
+          <span data-lang="pt">Clientes Satisfeitos</span>
+          <span data-lang="en" hidden">Satisfied Clients</span>
+        </span>
+      </div>
+    </div>
 
-                    <div class="about-differentials">
-                        <div class="differential">
-                            <span class="differential-icon">✅</span>
-                            <div>
-                                <h4>
-                        <span data-lang="pt">Soluções Sob Medida</span>
-                        <span data-lang="en" hidden>Tailored Solutions</span>
-                    </h4>
-                    <p>
-                        <span data-lang="pt">
-                            Desenvolvemos estratégias personalizadas, alinhadas aos objetivos, público e momento do o seu negócio.
-                        </span>
-                        <span data-lang="en" hidden>
-                            We develop customized strategies aligned with your business goals, audience, and current stage.
-                        </span>
-                        </p>
-                            </div>
-                        </div>
-                        <div class="differential">
-                            <span class="differential-icon">✅</span>
-                            <div>
-                               <h4>
-                        <span data-lang="pt">Estrutura Completa</span>
-                        <span data-lang="en" hidden>End-to-End Structure</span>
-                        </h4>
-                  <p>
-                        <span data-lang="pt">
-                            Do design à automação, entregamos soluções integradas que simplificam processos e aceleram resultados.
-                        </span>
-                        <span data-lang="en" hidden>
-                            From design to automation, we deliver integrated solutions that simplify processes and accelerate results.
-                        </span>
-                        </p>
-                            </div>
-                        </div>
-                        <div class="differential">
-                            <span class="differential-icon">✅</span>
-                            <div>
-                                <h4>
-                        <span data-lang="pt">Foco em Performance</span>
-                        <span data-lang="en" hidden>Performance-Driven</span>
-                        </h4>
-                                <p>
-                            <span data-lang="pt">
-                                Trabalhamos com métricas, análise de dados e otimização contínua para maximizar seus resultados.
-                            </span>
-                            <span data-lang="en" hidden>
-                                We work with metrics, data analysis, and continuous optimization to maximize your results.
-                            </span>
-                            </p>
-                    </div>
-                        </div>
-                        <div class="differential">
-                            <span class="differential-icon">✅</span>
-                            <div>
-                               <h4>
-                        <span data-lang="pt">Parceria de Longo Prazo</span>
-                        <span data-lang="en" hidden>Long-Term Partnership</span>
-                        </h4>
-                               <p>
-                    <span data-lang="pt">
-                        Mais do que projetos, construímos relacionamentos duradouros com suporte e acompanhamento constante.
-                    </span>
-                    <span data-lang="en" hidden>
-                        More than projects, we build long-term relationships with continuous support and follow-up.
-                    </span>
-                    </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="about-process">
-                        <h3>
-                    <span data-lang="pt">Nosso Processo</span>
-                    <span data-lang="en" hidden>Our Process</span>
-                    </h3>
-                        <div class="process-steps">
-                            <div class="process-step">
-                                <span class="process-number">1</span>
-                               <p>
-                            <span data-lang="pt">Discovery</span>
-                            <span data-lang="en" hidden>Discovery</span>
-                            </p>
-                            </div>
-                            <div class="process-arrow">→</div>
-                            <div class="process-step">
-                                <span class="process-number">2</span>
-                               <p>
-                                    <span data-lang="pt">Design</span>
-                                    <span data-lang="en" hidden>Design</span>
-                                    </p>
-                            </div>
-                            <div class="process-arrow">→</div>
-                            <div class="process-step">
-                                <span class="process-number">3</span>
-                                <p>
-                            <span data-lang="pt">Desenvolvimento</span>
-                            <span data-lang="en" hidden>Development</span>
-                            </p>
-                            </div>
-                            <div class="process-arrow">→</div>
-                            <div class="process-step">
-                                <span class="process-number">4</span>
-                                <p>
-                        <span data-lang="pt">Suporte</span>
-                        <span data-lang="en" hidden>Support</span>
-                        </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="about-stats">
-                        <div class="stat">
-                            <h4 class="stat-number" data-count="10">0</h4>
-                            <p>
-                    <span data-lang="pt">Projetos Entregues</span>
-                    <span data-lang="en" hidden>Projects Delivered</span>
-                    </p>
-                        </div>
-                        <div class="stat">
-                            <h4 class="stat-number" data-count="10">0</h4>
-                            <p>
-                    <span data-lang="pt">Clientes Satisfeitos</span>
-                    <span data-lang="en" hidden>Satisfied Clients</span>
-                    </p>
-
-                        </div>
-                        <div class="stat">
-                            <h4 class="stat-number" data-count="5">0</h4>
-                            <p>
-                <span data-lang="pt">Anos de Experiência</span>
-                <span data-lang="en" hidden>Years of Experience</span>
-                </p>
-
-                        </div>
-                        <div class="stat">
-                            <h4 class="stat-number" data-count="100">0</h4>
-                            <p>
-                        <span data-lang="pt">% Dedicação</span>
-                        <span data-lang="en" hidden>% Commitment</span>
-                        </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Key Differentials (Simplified) -->
+    <div class="about-differentials">
+      
+      <div class="about-differential">
+        <div class="about-differential-icon">🎯</div>
+        <div class="about-differential-content">
+          <h4>
+            <span data-lang="pt">Soluções Sob Medida</span>
+            <span data-lang="en" hidden>Tailored Solutions</span>
+          </h4>
+          <p>
+            <span data-lang="pt">
+              Estratégias personalizadas alinhadas aos seus objetivos e mercado.
+            </span>
+            <span data-lang="en" hidden">
+              Personalized strategies aligned with your goals and market.
+            </span>
+          </p>
         </div>
-    </section>
+      </div>
 
-    <!-- ============================================
-         TESTEMUNHOS - PREMIUM SECTION
-         ============================================ -->
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <h2 class="section-title">
-                <span data-lang="pt">Resultados Que Falam Por Si</span>
-                <span data-lang="en" hidden>Results That Speak for Themselves</span>
-            </h2>
-
-            <p class="section-subtitle">
-                <span data-lang="pt">
-                    Não acredite apenas nas nossas palavras. Veja o que dizem os empresários 
-                    que já transformaram seus negócios connosco.
-                </span>
-                <span data-lang="en" hidden>
-                    Don't just take our word for it. See what business owners 
-                    who have already transformed their businesses with us say.
-                </span>
-            </p>
-
-
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">
-                <span data-lang="pt">
-                    "Entrega rápida, site perfeito e suporte impecável. A C&amp;M Tecnologia transformou minha presença online. Recomendo muito!"
-                </span>
-                <span data-lang="en" hidden>
-                    "Fast delivery, flawless website, and outstanding support. C&amp;M Technology transformed my online presence. Highly recommended!"
-                </span>
-                </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar"></div>
-                        <div>
-                            <h4 class="author-name">João Silva</h4>
-                            <p class="author-role">
-                        <span data-lang="pt">CEO - Empresa Tech</span>
-                        <span data-lang="en" hidden>CEO - Tech Company</span>
-                        </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
-                  <p class="testimonial-text">
-                <span data-lang="pt">
-                    "Transformou meu negócio completamente. Antes eu tinha dúvidas, agora tenho resultados mensuráveis. Equipe profissional e dedicada!"
-                </span>
-                <span data-lang="en" hidden>
-                    "Completely transformed my business. I used to have doubts-now I have measurable results. Professional and dedicated team!"
-                </span>
-                </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar"></div>
-                        <div>
-                            <h4 class="author-name">Maria Santos</h4>
-                            <p class="author-role">
-                        <span data-lang="pt">Founder - StartUp Digital</span>
-                        <span data-lang="en" hidden>Founder - Digital Startup</span>
-                        </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">
-                    <span data-lang="pt">
-                        "Suporte impecável mesmo após o projeto finalizado. Sinto-me seguro com a C&amp;M Tecnologia cuidando do meu negócio online."
-                    </span>
-                    <span data-lang="en" hidden>
-                        "Outstanding support even after project delivery. I feel confident with C&amp;M Technology managing my online business."
-                    </span>
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar"></div>
-                        <div>
-                            <h4 class="author-name">Carlos Oliveira</h4>
-                            <p class="author-role">
-                <span data-lang="pt">Empresário - E-Commerce</span>
-                <span data-lang="en" hidden>Business Owner - E-Commerce</span>
-                </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="about-differential">
+        <div class="about-differential-icon">⚡</div>
+        <div class="about-differential-content">
+          <h4>
+            <span data-lang="pt">Automação Inteligente</span>
+            <span data-lang="en" hidden">Smart Automation</span>
+          </h4>
+          <p>
+            <span data-lang="pt">
+              Reduzimos custos operacionais e aumentamos eficiência com IA.
+            </span>
+            <span data-lang="en" hidden">
+              We reduce operational costs and increase efficiency with AI.
+            </span>
+          </p>
         </div>
-    </section>
+      </div>
+
+      <div class="about-differential">
+        <div class="about-differential-icon">📈</div>
+        <div class="about-differential-content">
+          <h4>
+            <span data-lang="pt">Foco em Resultados</span>
+            <span data-lang="en" hidden">Results-Focused</span>
+          </h4>
+          <p>
+            <span data-lang="pt">
+              Trabalhamos com métricas e otimização contínua para maximizar ROI.
+            </span>
+            <span data-lang="en" hidden">
+              We work with metrics and continuous optimization to maximize ROI.
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <div class="about-differential">
+        <div class="about-differential-icon">🤝</div>
+        <div class="about-differential-content">
+          <h4>
+            <span data-lang="pt">Parceria de Longo Prazo</span>
+            <span data-lang="en" hidden">Long-term Partnership</span>
+          </h4>
+          <p>
+            <span data-lang="pt">
+              Suporte contínuo e relacionamento duradouro, não apenas projetos pontuais.
+            </span>
+            <span data-lang="en" hidden>
+              Continuous support and lasting relationships, not just one-off projects.
+            </span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Call to Action -->
+    <div class="about-cta">
+      <h3 class="about-cta-title">
+        <span data-lang="pt">Pronto para Transformar Seu Negócio?</span>
+        <span data-lang="en" hidden>Ready to Transform Your Business?</span>
+      </h3>
+      
+      <p class="about-cta-text">
+        <span data-lang="pt">
+          Vamos conversar sobre como a tecnologia pode acelerar seus resultados.
+        </span>
+        <span data-lang="en" hidden>
+          Let's talk about how technology can accelerate your results.
+        </span>
+      </p>
+      
+      <a href="https://wa.me/351964977047?text=Olá! Gostaria de uma consultoria gratuita sobre automação e tecnologia para o meu negócio." 
+         class="about-cta-button" target="_blank">
+        <span data-lang="pt">Consultoria Gratuita</span>
+        <span data-lang="en" hidden>Free Consultation</span>
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+        </svg>
+      </a>
+    </div>
+
+  </div> <!-- Fim container -->
+</section> <!-- Fim about -->
 
     <!-- FAQ Section -->
     <section id="faq" class="faq">
