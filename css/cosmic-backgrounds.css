@@ -1,120 +1,25 @@
 /* ===========================================
-   COSMIC BACKGROUNDS v2.0 - Clean Version
+   COSMIC BACKGROUND - Fundo Realista Único
    Website: C&M Tecnologia
    =========================================== */
 
-/* Hero Section */
-.hero-automation {
+body {
     background-image: 
-        linear-gradient(180deg, rgba(10, 10, 20, 0.85) 0%, rgba(15, 5, 30, 0.7) 50%, rgba(10, 10, 20, 0.9) 100%),
+        linear-gradient(180deg, 
+            rgba(10, 10, 20, 0.75) 0%, 
+            rgba(15, 5, 30, 0.6) 30%,
+            rgba(10, 5, 25, 0.65) 70%,
+            rgba(10, 10, 20, 0.8) 100%),
         url('../img/nebula-jwst-ultra.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-/* Marketing Section (Robô) */
-#marketing,
-.marketing-section {
-    background-image: 
-        linear-gradient(180deg, rgba(10, 10, 20, 0.88) 0%, rgba(20, 10, 40, 0.75) 50%, rgba(10, 10, 20, 0.9) 100%),
-        url('../img/galaxy-spiral-4k.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* Services Section */
-#services,
-.services {
-    background-image: 
-        linear-gradient(180deg, rgba(10, 10, 20, 0.9) 0%, rgba(15, 5, 30, 0.8) 50%, rgba(10, 10, 20, 0.92) 100%),
-        url('../img/galaxy-vibrant-4k.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* Ebooks Section */
-#ebooks,
-.ebooks {
-    background-image: 
-        linear-gradient(180deg, rgba(10, 10, 20, 0.88) 0%, rgba(20, 10, 35, 0.78) 50%, rgba(10, 10, 20, 0.9) 100%),
-        url('../img/pillars-creation-4k.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* About Section */
-#about,
-.about {
-    background-image: 
-        linear-gradient(180deg, rgba(10, 10, 20, 0.9) 0%, rgba(15, 8, 30, 0.8) 50%, rgba(10, 10, 20, 0.92) 100%),
-        url('../img/galaxy-dark-subtle.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* Testimonials Section */
-#testimonials,
-.testimonials {
-    background-image: 
-        linear-gradient(180deg, rgba(10, 10, 20, 0.9) 0%, rgba(18, 8, 35, 0.82) 50%, rgba(10, 10, 20, 0.92) 100%),
-        url('../img/galaxy-bg-nebula.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* FAQ Section */
-#faq,
-.faq {
-    background-image: 
-        linear-gradient(180deg, rgba(10, 10, 20, 0.9) 0%, rgba(15, 5, 30, 0.8) 50%, rgba(10, 10, 20, 0.92) 100%),
-        url('../img/galaxy-background-4k.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* Contact Section */
-#contact,
-.contact {
-    background-image: 
-        linear-gradient(180deg, rgba(10, 10, 20, 0.88) 0%, rgba(20, 10, 40, 0.78) 50%, rgba(10, 10, 20, 0.9) 100%),
-        url('../img/galaxy-bg-1.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* Footer */
-.footer,
-footer {
-    background-image: 
-        linear-gradient(180deg, rgba(5, 5, 15, 0.95) 0%, rgba(10, 5, 20, 0.9) 50%, rgba(5, 5, 15, 0.98) 100%),
-        url('../img/galaxy-spiral-4k.png');
-    background-size: cover;
-    background-position: center bottom;
-    background-repeat: no-repeat;
-}
-
-/* ===========================================
-   MOBILE OPTIMIZATION
-   =========================================== */
+/* Mobile - melhor performance */
 @media (max-width: 768px) {
-    .hero-automation,
-    #marketing,
-    #services,
-    #ebooks,
-    #about,
-    #testimonials,
-    #faq,
-    #contact,
-    .footer,
-    footer {
+    body {
         background-attachment: scroll;
     }
 }
