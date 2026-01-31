@@ -44,56 +44,7 @@
         /* Background via cosmic-backgrounds.css */
 
         /* Elementos flutuantes decorativos */
-        .floating-orbs {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            overflow: hidden;
-            pointer-events: none;
-        }
-
-        .orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(40px);
-            opacity: 0.3;
-            animation: float 20s ease-in-out infinite;
-        }
-
-        .orb-1 {
-            width: 400px;
-            height: 400px;
-            background: linear-gradient(135deg, var(--color-purple), var(--color-green));
-            top: -200px;
-            left: -200px;
-            animation-delay: 0s;
-        }
-
-        .orb-2 {
-            width: 300px;
-            height: 300px;
-            background: linear-gradient(135deg, var(--color-yellow), var(--color-purple));
-            top: 50%;
-            right: -150px;
-            animation-delay: 5s;
-        }
-
-        .orb-3 {
-            width: 350px;
-            height: 350px;
-            background: linear-gradient(135deg, var(--color-green), var(--color-yellow));
-            bottom: -150px;
-            left: 20%;
-            animation-delay: 10s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) translateX(0px); }
-            50% { transform: translateY(-50px) translateX(30px); }
-        }
+        /* Floating orbs removidos - usa cosmic-backgrounds.css */
 
         /* Header */
         header {
@@ -996,10 +947,7 @@
   <link rel="stylesheet" href="/css/landing-common.css">
 </head>
 <body >
-    <div class="floating-orbs">
-    </div>
-
-    <!-- Header -->
+        <!-- Header -->
     <header>
         <a href="/" class="logo">
             <img src="../img/Logo3d.png" alt="C&M Tecnologia">
@@ -1401,7 +1349,6 @@
    
 
     <!-- Premium Scripts -->
-    <script src="/js/galaxy-background.js"></script>
     <script src="/js/scroll-animations.js"></script>
     <script src="/js/back-to-top.js"></script>
 </body>

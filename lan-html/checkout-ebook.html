@@ -41,25 +41,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== BACKGROUND ===== */
-.bg-animation {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background: 
-    radial-gradient(ellipse 600px 400px at 30% 20%, var(--primary-glow), transparent 50%),
-    radial-gradient(ellipse 500px 400px at 70% 80%, var(--accent-glow), transparent 50%);
-}
-
-.grid-pattern {
-  position: fixed;
-  inset: 0;
-  background-image: 
-    linear-gradient(rgba(124, 77, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(124, 77, 255, 0.02) 1px, transparent 1px);
-  background-size: 50px 50px;
-  z-index: -1;
-}
+/* Background via cosmic-backgrounds.css */
 
 /* ===== HEADER ===== */
 header {
@@ -872,7 +854,6 @@ document.getElementById('paymentForm').addEventListener('submit', function(e) {
 </script>
 
     <!-- Premium Scripts -->
-    <script src="/js/galaxy-background.js"></script>
     <script src="/js/scroll-animations.js"></script>
     <script src="/js/back-to-top.js"></script>
 </body>
