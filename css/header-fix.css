@@ -53,3 +53,25 @@
 .menu-toggle span {
   background: #fff !important;
 }
+
+/* CONTACT - Background consistente */
+.contact,
+#contact {
+  background: linear-gradient(180deg, 
+    rgba(15, 15, 35, 0.95) 0%,
+    rgba(20, 20, 50, 0.98) 100%
+  ) !important;
+  position: relative;
+}
+
+.contact::before,
+#contact::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(124, 58, 237, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 58, 237, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+}
